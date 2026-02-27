@@ -1,0 +1,58 @@
+[gd_scene format=3 uid="uid://clx7te0yh7qd7"]
+
+[ext_resource type="Script" uid="uid://nsw1ryc0bmma" path="res://scripts/nic_test_character_body.gd" id="1_cbin5"]
+[ext_resource type="Texture2D" uid="uid://bkm1fo3aun0vx" path="res://icon.svg" id="1_dohkx"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_tcue6"]
+normal = Vector2(0, 1)
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_dohkx"]
+normal = Vector2(1, 0)
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_cbin5"]
+normal = Vector2(-1, 0)
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_kro6g"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_tcue6"]
+radius = 64.0
+
+[node name="NicTestScene" type="Node2D" unique_id=1643663551]
+
+[node name="Walls" type="Node2D" parent="." unique_id=1034049683]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Walls" unique_id=1946795859]
+position = Vector2(0, -300)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/StaticBody2D" unique_id=873584865]
+shape = SubResource("WorldBoundaryShape2D_tcue6")
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="Walls" unique_id=1896183431]
+position = Vector2(-400, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/StaticBody2D2" unique_id=1911246718]
+shape = SubResource("WorldBoundaryShape2D_dohkx")
+
+[node name="StaticBody2D3" type="StaticBody2D" parent="Walls" unique_id=743062309]
+position = Vector2(400, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/StaticBody2D3" unique_id=1486975341]
+shape = SubResource("WorldBoundaryShape2D_cbin5")
+
+[node name="StaticBody2D4" type="StaticBody2D" parent="Walls" unique_id=1904099461]
+position = Vector2(0, 300)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/StaticBody2D4" unique_id=954399681]
+shape = SubResource("WorldBoundaryShape2D_kro6g")
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="." unique_id=1030886141]
+script = ExtResource("1_cbin5")
+
+[node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D" unique_id=1530377354]
+texture = ExtResource("1_dohkx")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D" unique_id=2097612239]
+shape = SubResource("CircleShape2D_tcue6")
+debug_color = Color(0.9852746, 0, 0.33999246, 0.41960785)
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1222837401]
