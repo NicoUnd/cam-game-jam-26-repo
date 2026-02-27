@@ -1,55 +1,10 @@
 [gd_scene format=3 uid="uid://ccjfl140rl4xs"]
 
-[ext_resource type="Texture2D" uid="uid://bkm1fo3aun0vx" path="res://icon.svg" id="2_cfqmq"]
 [ext_resource type="Texture2D" uid="uid://dacin8rntyvx0" path="res://assets/sprites/wall.png" id="3_1hvfy"]
+[ext_resource type="PackedScene" uid="uid://yn8xdstbyhre" path="res://scenes/player.tscn" id="3_tqlmn"]
 [ext_resource type="Texture2D" uid="uid://bc7mdr52ny7l5" path="res://assets/sprites/rock.png" id="4_1hvfy"]
-
-[sub_resource type="GDScript" id="GDScript_cfqmq"]
-script/source = "extends CharacterBody2D
-
-@export var player_speed = 300
-@export var push_force = 1600
-@export var dash_distance = 200
-@export var dash_speed = 900
-@export var dash_cooldown = 0.5
-var _time_since_last_dash = dash_cooldown
-var _is_dashing = false
-var _dash_start
-var _dash_dir
-
-func get_input():
-	var input_dir = Input.get_vector(\"left\", \"right\", \"up\", \"down\")
-	velocity = input_dir * player_speed
-	
-func _physics_process(delta):
-	get_input()
-	_time_since_last_dash += delta
-	var speed = velocity.length()
-	if speed > 0:
-		_dash_dir = velocity.normalized()
-		move_and_slide()
-
-		for i in get_slide_collision_count():
-			var collision := get_slide_collision(i)
-			var collider := collision.get_collider()
-			
-			if collider is RigidBody2D:
-				var push_direction := -collision.get_normal()
-				collider.apply_central_force(push_direction * push_force)
-
-	if _time_since_last_dash > dash_cooldown and Input.is_action_just_pressed(\"Dash\"):
-		_dash_start = position
-		_is_dashing = true
-	
-	if _is_dashing:
-		move_and_collide(_dash_dir * dash_speed * delta)
-		if (position - _dash_start).length() > dash_distance or get_slide_collision_count() > 0:
-			_is_dashing = false
-		_time_since_last_dash = 0
-		
-"
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_1hvfy"]
+[ext_resource type="PackedScene" uid="uid://cd180mx115x52" path="res://scenes/medusa.tscn" id="4_lyql5"]
+[ext_resource type="Script" uid="uid://d114r30gu8vjt" path="res://scripts/enemies/enemy.gd" id="5_jxcts"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tqlmn"]
 
@@ -61,20 +16,6 @@ func _physics_process(delta):
 load_path = "res://.godot/imported/wall.png-a2b2dda47b1ed3651589e27171e28380.ctex"
 
 [node name="TaylorTestScene" type="Node2D" unique_id=1982165155]
-
-[node name="CharacterBody2D" type="CharacterBody2D" parent="." unique_id=694235561]
-position = Vector2(500, 300)
-script = SubResource("GDScript_cfqmq")
-dash_distance = 80
-dash_speed = 500
-
-[node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D" unique_id=1224851239]
-scale = Vector2(0.25, 0.25)
-texture = ExtResource("2_cfqmq")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D" unique_id=567353004]
-scale = Vector2(1.55, 1.55)
-shape = SubResource("RectangleShape2D_1hvfy")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=649236708]
 position = Vector2(300, 150)
@@ -108,4 +49,19 @@ scale = Vector2(3.71, 2.52)
 shape = SubResource("RectangleShape2D_jxcts")
 
 [node name="Sprite2D" type="Sprite2D" parent="StaticBody2D2" unique_id=1551363071]
+texture = SubResource("CompressedTexture2D_ch57m")
+
+[node name="Player" parent="." unique_id=1399442204 instance=ExtResource("3_tqlmn")]
+
+[node name="Medusa" parent="Player" unique_id=1342946002 instance=ExtResource("4_lyql5")]
+
+[node name="StaticBody2D3" type="StaticBody2D" parent="." unique_id=1752569045 groups=["Enemies"]]
+position = Vector2(600, 300)
+script = ExtResource("5_jxcts")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D3" unique_id=2082267483]
+scale = Vector2(3.71, 2.52)
+shape = SubResource("RectangleShape2D_jxcts")
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D3" unique_id=130147502]
 texture = SubResource("CompressedTexture2D_ch57m")
