@@ -15,6 +15,9 @@
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_ch57m"]
 load_path = "res://.godot/imported/wall.png-a2b2dda47b1ed3651589e27171e28380.ctex"
 
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_tqlmn"]
+load_path = "res://.godot/imported/wall.png-a2b2dda47b1ed3651589e27171e28380.ctex"
+
 [node name="TaylorTestScene" type="Node2D" unique_id=1982165155]
 
 [node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=649236708]
@@ -65,4 +68,4 @@ scale = Vector2(3.71, 2.52)
 shape = SubResource("RectangleShape2D_jxcts")
 
 [node name="Sprite2D" type="Sprite2D" parent="StaticBody2D3" unique_id=130147502]
-texture = SubResource("CompressedTexture2D_ch57m")
+texture = SubResource("CompressedTexture2D_tqlmn")
