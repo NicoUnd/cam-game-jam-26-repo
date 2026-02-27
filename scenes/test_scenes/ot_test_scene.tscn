@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://cvy1keuhnhbkx"]
 
 [ext_resource type="Texture2D" uid="uid://bkm1fo3aun0vx" path="res://icon.svg" id="1_ikgco"]
+[ext_resource type="Script" uid="uid://gd6bfgsq144s" path="res://scripts/ot_test_character_body.gd" id="1_octwc"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_octwc"]
 normal = Vector2(0, 1)
@@ -45,6 +46,7 @@ position = Vector2(400, 0)
 shape = SubResource("WorldBoundaryShape2D_ld1aj")
 
 [node name="CharacterBody2D" type="CharacterBody2D" parent="." unique_id=1481557606]
+script = ExtResource("1_octwc")
 
 [node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D" unique_id=582403733]
 texture = ExtResource("1_ikgco")
