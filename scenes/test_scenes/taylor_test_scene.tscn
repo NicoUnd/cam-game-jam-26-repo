@@ -59,6 +59,7 @@ texture = SubResource("CompressedTexture2D_ch57m")
 [node name="Player" parent="." unique_id=1399442204 instance=ExtResource("3_tqlmn")]
 
 [node name="Medusa" parent="Player" unique_id=1342946002 instance=ExtResource("4_lyql5")]
+visible = false
 
 [node name="StaticBody2D3" type="StaticBody2D" parent="." unique_id=1752569045 groups=["Enemies"]]
 position = Vector2(600, 300)
