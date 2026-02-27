@@ -1,0 +1,56 @@
+[gd_scene format=3 uid="uid://cvy1keuhnhbkx"]
+
+[ext_resource type="Texture2D" uid="uid://bkm1fo3aun0vx" path="res://icon.svg" id="1_ikgco"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_octwc"]
+normal = Vector2(0, 1)
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_dupy8"]
+normal = Vector2(1, 0)
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_s17rr"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_ld1aj"]
+normal = Vector2(-1, 0)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_d0kq7"]
+radius = 64.0
+
+[node name="OtTestScene" type="Node2D" unique_id=2001211051]
+
+[node name="Walls" type="Node2D" parent="." unique_id=1498339644]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Walls" unique_id=178177168]
+position = Vector2(0, -300)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/StaticBody2D" unique_id=100171146]
+shape = SubResource("WorldBoundaryShape2D_octwc")
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="Walls" unique_id=65805043]
+position = Vector2(-400, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/StaticBody2D2" unique_id=447430915]
+shape = SubResource("WorldBoundaryShape2D_dupy8")
+
+[node name="StaticBody2D3" type="StaticBody2D" parent="Walls" unique_id=1312332267]
+position = Vector2(0, 300)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/StaticBody2D3" unique_id=199620596]
+shape = SubResource("WorldBoundaryShape2D_s17rr")
+
+[node name="StaticBody2D4" type="StaticBody2D" parent="Walls" unique_id=1330900965]
+position = Vector2(400, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/StaticBody2D4" unique_id=1117358960]
+shape = SubResource("WorldBoundaryShape2D_ld1aj")
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="." unique_id=1481557606]
+
+[node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D" unique_id=582403733]
+texture = ExtResource("1_ikgco")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D" unique_id=785339139]
+shape = SubResource("CircleShape2D_d0kq7")
+debug_color = Color(0.9911035, 0, 0.27581844, 0.41960785)
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=486985394]
