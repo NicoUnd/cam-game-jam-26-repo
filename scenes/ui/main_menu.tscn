@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://bqv8yh3131mxf" path="res://scripts/main_menu.gd" id="1_1g8jr"]
 [ext_resource type="FontFile" uid="uid://bekfx0qjolqss" path="res://assets/fonts/ithaca-font/Ithaca-LVB75.ttf" id="1_sl1te"]
 [ext_resource type="PackedScene" uid="uid://bvfh111qyafjd" path="res://scenes/ui/button.tscn" id="2_fe2o3"]
+[ext_resource type="AudioStream" uid="uid://umvw70uhb2t0" path="res://assets/audio/music/menu_music1.wav" id="2_m1kxf"]
 
 [node name="MainMenu" type="Control" unique_id=2079963728]
 layout_mode = 3
@@ -12,6 +13,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_1g8jr")
+menu_music = ExtResource("2_m1kxf")
 
 [node name="MarginContainer" type="MarginContainer" parent="." unique_id=345482774]
 layout_mode = 1

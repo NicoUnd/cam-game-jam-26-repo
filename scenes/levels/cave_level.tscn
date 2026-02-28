@@ -13,6 +13,8 @@
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
+[node name="Black" parent="Camera2D" parent_id_path=PackedInt32Array(1355967810) index="0" unique_id=694241931 instance=ExtResource("18_jkg2q")]
+
 [node name="Nwall" parent="." index="3" unique_id=420910691]
 position = Vector2(0, -220)
 
@@ -267,7 +269,3 @@ texture = ExtResource("4_3b5nr")
 position = Vector2(-24, -343)
 scale = Vector2(3, 3)
 texture = ExtResource("4_3b5nr")
-
-[node name="CanvasLayer" type="CanvasLayer" parent="Y-Sort" parent_id_path=PackedInt32Array(1050274422) index="1" unique_id=1998736802]
-
-[node name="Black" parent="Y-Sort/CanvasLayer" index="0" unique_id=694241931 instance=ExtResource("18_jkg2q")]

@@ -15,6 +15,11 @@ run/main_scene="uid://dudgtjljsy10w"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://icon.svg"
 
+[autoload]
+
+LevelManager="*uid://bnm1iojrvtts6"
+AudioManager="*uid://djkrppw25o2vn"
+
 [display]
 
 window/size/mode=2
