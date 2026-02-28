@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://cweqfsfxkp66q" path="res://scripts/obstacles/obstacle.gd" id="1_hof70"]
 
 [node name="Obstacle" type="StaticBody2D" unique_id=12530250]
+y_sort_enabled = true
 collision_layer = 4
 collision_mask = 0
 script = ExtResource("1_hof70")

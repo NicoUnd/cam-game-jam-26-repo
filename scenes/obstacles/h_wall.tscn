@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://1r34p0avoibv"]
+
+[ext_resource type="PackedScene" uid="uid://cw8tuh2nkh5a5" path="res://scenes/obstacles/obstacle.tscn" id="1_rxlm5"]
+[ext_resource type="Texture2D" uid="uid://dc0euoxbr21o3" path="res://assets/sprites/hwall.png" id="2_dfu6u"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dfu6u"]
+size = Vector2(96, 83)
+
+[node name="HWall" unique_id=12530250 instance=ExtResource("1_rxlm5")]
+
+[node name="Sprite2D" parent="." index="0" unique_id=772725384]
+texture = ExtResource("2_dfu6u")
+
+[node name="CollisionShape2D" parent="." index="1" unique_id=1902074252]
+position = Vector2(0, 42)
+shape = SubResource("RectangleShape2D_dfu6u")
