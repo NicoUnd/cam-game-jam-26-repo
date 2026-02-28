@@ -3,7 +3,6 @@
 [ext_resource type="Texture2D" uid="uid://dacin8rntyvx0" path="res://assets/sprites/wall.png" id="3_1hvfy"]
 [ext_resource type="PackedScene" uid="uid://yn8xdstbyhre" path="res://scenes/player.tscn" id="3_tqlmn"]
 [ext_resource type="Texture2D" uid="uid://bc7mdr52ny7l5" path="res://assets/sprites/rock.png" id="4_1hvfy"]
-[ext_resource type="PackedScene" uid="uid://cd180mx115x52" path="res://scenes/medusa.tscn" id="4_lyql5"]
 [ext_resource type="PackedScene" uid="uid://c8oau2rn4hi80" path="res://scenes/enemies/snake.tscn" id="7_8gu4r"]
 [ext_resource type="PackedScene" uid="uid://dyd4vj2mlckcx" path="res://scenes/muddy_puddle.tscn" id="7_ch57m"]
 [ext_resource type="PackedScene" uid="uid://dmsv13enx4ipe" path="res://scenes/obstacles/withered_log.tscn" id="7_jxcts"]
@@ -54,9 +53,6 @@ shape = SubResource("RectangleShape2D_jxcts")
 texture = SubResource("CompressedTexture2D_ch57m")
 
 [node name="Player" parent="." unique_id=1399442204 instance=ExtResource("3_tqlmn")]
-
-[node name="Medusa" parent="Player" unique_id=1342946002 instance=ExtResource("4_lyql5")]
-visible = false
 
 [node name="MuddyPuddle" parent="." unique_id=206173280 instance=ExtResource("7_ch57m")]
 position = Vector2(100, 100)

@@ -8,15 +8,15 @@ signal interacted
 
 @onready var _canvas_group: CanvasGroup = $CanvasGroup
 @onready var _interaction_button: TextureButton = $TextureButton
-@onready var _nine_patch: NinePatchRect = $CanvasGroup/NinePatchRect
 
 func _ready() -> void:
 	$CanvasGroup/NinePatchRect/Label.text = label_text
 	
+	_canvas_group.material = _canvas_group.material.duplicate()
 	if not locked:
 		unlock()
-	else:
-		_canvas_group.set_instance_shader_parameter("progress", 1.0)
+	#else:
+		#_canvas_group.set_instance_shader_parameter("progress", 1.0)
 
 func unlock() -> void:
 	_interaction_button.pressed.connect(_on_button_pressed)
@@ -25,31 +25,12 @@ func unlock() -> void:
 
 func _on_mouse_entered() -> void:
 	var tween = create_tween()
-	
-	var current_progress = _canvas_group.get_instance_shader_parameter("progress")
-	if current_progress == null:
-		current_progress = 0.0 
-		
-	tween.tween_method(
-		func(val: float): _canvas_group.set_instance_shader_parameter("progress", val),
-		current_progress,
-		1.0,
-		petrification_duration
-	)
+	tween.tween_property(_canvas_group.material, "shader_parameter/progress", 1.0, petrification_duration)
 
 func _on_mouse_exited() -> void:
 	var tween = create_tween()
-	
-	var current_progress = _canvas_group.get_instance_shader_parameter("progress")
-	if current_progress == null:
-		current_progress = 1.0
+	tween.tween_property(_canvas_group.material, "shader_parameter/progress", 0.0, petrification_duration)
 
-	tween.tween_method(
-		func(val: float): _canvas_group.set_instance_shader_parameter("progress", val),
-		current_progress,
-		0.0,
-		petrification_duration
-	)
 
 func _on_button_pressed() -> void:
 	interacted.emit()
