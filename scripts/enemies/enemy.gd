@@ -27,9 +27,11 @@ var _been_sleeping_for: float = 0;
 
 @export var default_state: ENEMY_STATE = ENEMY_STATE.IDLE;
 
-@onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
+@onready var animated_sprite_2d: AnimatedSprite2D = $Flippable/AnimatedSprite2D
 
 @onready var spotted: Spotted = $Spotted
+
+@onready var flippable: Node2D = $Flippable
 
 enum ENEMY_STATE {IDLE, SLEEPING, CHASING, PETRIFIED};
 var state: ENEMY_STATE = ENEMY_STATE.SLEEPING;
@@ -60,6 +62,10 @@ func sleep() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta: float) -> void:
+	if player.state == Player.PLAYER_STATE.DYING:
+		state = ENEMY_STATE.IDLE;
+		return;
+	
 	match state:
 		ENEMY_STATE.PETRIFIED:
 			return;
@@ -70,7 +76,7 @@ func _physics_process(delta: float) -> void:
 	
 	move(delta)
 	attack(delta)
-	animated_sprite_2d.flip_h = linear_velocity.x < 0;
+	flippable.scale.x = -1 if linear_velocity.x < 0 else 1;
 	
 	if state == ENEMY_STATE.IDLE and _been_idle_for > idle_until_sleep:
 		sleep();
@@ -106,12 +112,12 @@ func move(delta: float) -> void:
 			linear_velocity = direction * speed
 
 func attack(delta : float) -> void:
-	if _player_in_range and _time_since_player_in_range <= player_attack_grace:
+	if _player_in_range and _time_since_player_in_range <= player_attack_grace and player.state != Player.PLAYER_STATE.DASHING:
 		_time_since_player_in_range += delta
 	if _time_since_last_attack > attack_cooldown:
 		if _player_in_range: 
 			if _time_since_player_in_range > player_attack_grace:
-				get_tree().quit()
+				player.die();
 		for object : Destructable in objects_in_range:
 			object.take_damage(damage)
 		_time_since_last_attack = 0

@@ -5,21 +5,17 @@
 [ext_resource type="Texture2D" uid="uid://ctumttjnvgfvt" path="res://assets/sprites/rock_wall_side.png" id="3_jgdsl"]
 [ext_resource type="Texture2D" uid="uid://cf68s2g5ycvyy" path="res://assets/sprites/outside.png" id="4_3b5nr"]
 [ext_resource type="Texture2D" uid="uid://bxjon1ikb20gs" path="res://assets/sprites/rock_wall_bottom.png" id="5_wr2x8"]
-[ext_resource type="PackedScene" uid="uid://dgm4ae64akcuu" path="res://scenes/obstacles/v_wall.tscn" id="7_3b5nr"]
-[ext_resource type="PackedScene" uid="uid://c8oau2rn4hi80" path="res://scenes/enemies/snake.tscn" id="8_3b5nr"]
-[ext_resource type="PackedScene" uid="uid://b5kfhqcljyb8n" path="res://scenes/obstacles/v_wall_bottom.tscn" id="8_wr2x8"]
-[ext_resource type="PackedScene" uid="uid://cfy8f18vpt5oi" path="res://scenes/obstacles/v_wall_top.tscn" id="9_wr2x8"]
-[ext_resource type="PackedScene" uid="uid://1r34p0avoibv" path="res://scenes/obstacles/h_wall.tscn" id="10_w0sk1"]
-[ext_resource type="PackedScene" uid="uid://pd1mcvb1knm8" path="res://scenes/obstacles/h_wall_left.tscn" id="11_8t11a"]
-[ext_resource type="PackedScene" uid="uid://h0ie0t1ggrai" path="res://scenes/obstacles/h_wall_right.tscn" id="12_8t11a"]
-[ext_resource type="PackedScene" uid="uid://dcvo6ylw4wftk" path="res://scenes/enemies/rat.tscn" id="13_ruawh"]
-[ext_resource type="PackedScene" uid="uid://dyd4vj2mlckcx" path="res://scenes/muddy_puddle.tscn" id="14_dr6go"]
-[ext_resource type="PackedScene" uid="uid://d3tmox7ixgkd0" path="res://scenes/enemies/minotaur.tscn" id="14_rlwp5"]
-[ext_resource type="PackedScene" uid="uid://ccl0jq7i4c6ju" path="res://scenes/enemies/bat.tscn" id="15_q3r4p"]
+[ext_resource type="PackedScene" uid="uid://04chy73giuu4" path="res://scenes/ui/black.tscn" id="18_jkg2q"]
 
 [node name="CaveLevel" unique_id=951364413 instance=ExtResource("1_axssm")]
 
-[node name="Nwall" parent="." index="2" unique_id=420910691]
+[node name="TextBoxManager" parent="." index="0" unique_id=2063301136]
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Black" parent="Camera2D" parent_id_path=PackedInt32Array(1355967810) index="0" unique_id=694241931 instance=ExtResource("18_jkg2q")]
+
+[node name="Nwall" parent="." index="3" unique_id=420910691]
 position = Vector2(0, -220)
 
 [node name="Sprite2D" type="Sprite2D" parent="Nwall" index="1" unique_id=1786223352]
@@ -273,49 +269,3 @@ texture = ExtResource("4_3b5nr")
 position = Vector2(-24, -343)
 scale = Vector2(3, 3)
 texture = ExtResource("4_3b5nr")
-
-[node name="VWall2" parent="Y-Sort" parent_id_path=PackedInt32Array(1050274422) index="1" unique_id=744864027 instance=ExtResource("7_3b5nr")]
-position = Vector2(-217, -107)
-
-[node name="VWallBottom" parent="Y-Sort" parent_id_path=PackedInt32Array(1050274422) index="2" unique_id=1199561359 instance=ExtResource("8_wr2x8")]
-position = Vector2(-217, -11)
-
-[node name="VWall3" parent="Y-Sort" parent_id_path=PackedInt32Array(1050274422) index="3" unique_id=1361780974 instance=ExtResource("7_3b5nr")]
-position = Vector2(-139, 254)
-
-[node name="VWallTop" parent="Y-Sort" parent_id_path=PackedInt32Array(1050274422) index="4" unique_id=1133356562 instance=ExtResource("9_wr2x8")]
-position = Vector2(-139, 158)
-
-[node name="VWallTop2" parent="Y-Sort" parent_id_path=PackedInt32Array(1050274422) index="5" unique_id=12530250 instance=ExtResource("9_wr2x8")]
-position = Vector2(-217, -203)
-
-[node name="HWall" parent="Y-Sort" parent_id_path=PackedInt32Array(1050274422) index="6" unique_id=290078322 instance=ExtResource("10_w0sk1")]
-position = Vector2(475, 109)
-
-[node name="HWallLeft" parent="Y-Sort" parent_id_path=PackedInt32Array(1050274422) index="7" unique_id=182583635 instance=ExtResource("11_8t11a")]
-position = Vector2(379, 109)
-
-[node name="HWall2" parent="Y-Sort" parent_id_path=PackedInt32Array(1050274422) index="8" unique_id=706670525 instance=ExtResource("10_w0sk1")]
-position = Vector2(192, -120)
-
-[node name="HWallLeft2" parent="Y-Sort" parent_id_path=PackedInt32Array(1050274422) index="9" unique_id=1423459984 instance=ExtResource("11_8t11a")]
-position = Vector2(96, -120)
-
-[node name="HWallRight" parent="Y-Sort" parent_id_path=PackedInt32Array(1050274422) index="10" unique_id=69894450 instance=ExtResource("12_8t11a")]
-position = Vector2(288, -120)
-
-[node name="Rat" parent="Y-Sort" parent_id_path=PackedInt32Array(1050274422) index="11" unique_id=255767826 instance=ExtResource("13_ruawh")]
-position = Vector2(366, -146)
-
-[node name="Minotaur" parent="Y-Sort" parent_id_path=PackedInt32Array(1050274422) index="12" unique_id=517489634 instance=ExtResource("14_rlwp5")]
-position = Vector2(-325, -47)
-linear_damp = 1.0
-
-[node name="bat" parent="Y-Sort" parent_id_path=PackedInt32Array(1050274422) index="13" unique_id=2084104924 instance=ExtResource("15_q3r4p")]
-position = Vector2(-205, 235)
-
-[node name="Snake" parent="Y-Sort" parent_id_path=PackedInt32Array(1050274422) index="14" unique_id=668174716 instance=ExtResource("8_3b5nr")]
-position = Vector2(178, 156)
-
-[node name="MuddyPuddle" parent="." index="7" unique_id=206173280 instance=ExtResource("14_dr6go")]
-position = Vector2(-187, 89)

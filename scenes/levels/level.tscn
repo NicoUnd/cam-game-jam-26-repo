@@ -2,6 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://hgelqskh7k8v" path="res://assets/sprites/floor.png" id="1_377w7"]
 [ext_resource type="PackedScene" uid="uid://yn8xdstbyhre" path="res://scenes/player.tscn" id="2_bovvr"]
+[ext_resource type="PackedScene" uid="uid://7dehfnrb6r5g" path="res://scenes/ui/text_box_manager.tscn" id="3_b2cq8"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_bovvr"]
 texture = ExtResource("1_377w7")
@@ -27,6 +28,12 @@ normal = Vector2(-1, 0)
 normal = Vector2(1, 0)
 
 [node name="Level" type="Node2D" unique_id=951364413]
+
+[node name="TextBoxManager" parent="." unique_id=2063301136 instance=ExtResource("3_b2cq8")]
+offset_left = -573.0
+offset_top = -323.0
+offset_right = 577.0
+offset_bottom = 329.0
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1355967810]
 

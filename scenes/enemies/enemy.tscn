@@ -86,16 +86,20 @@ linear_damp_mode = 1
 linear_damp = 15.0
 script = ExtResource("1_6xk8f")
 damage = 50
-
-[node name="AttackArea2D" type="Area2D" parent="." unique_id=1413472798]
-scale = Vector2(1, 0.99999994)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="AttackArea2D" unique_id=1899254083]
+attack_cooldown = 0.0
+player_attack_grace = 0.1
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=580851608]
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1003921594]
+[node name="Flippable" type="Node2D" parent="." unique_id=1096698229]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Flippable" unique_id=1003921594]
 scale = Vector2(3, 3)
+
+[node name="HitboxArea2D" type="Area2D" parent="Flippable" unique_id=1413472798]
+scale = Vector2(1, 0.99999994)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Flippable/HitboxArea2D" unique_id=1899254083]
 
 [node name="Spotted" parent="." unique_id=153104076 instance=ExtResource("2_8e3ao")]
 visible = false
@@ -116,7 +120,7 @@ script = ExtResource("4_fcftc")
 [node name="Timer" type="Timer" parent="Sleeping" unique_id=116733340]
 autostart = true
 
-[connection signal="body_entered" from="AttackArea2D" to="." method="_on_hurtbox_entered"]
-[connection signal="body_exited" from="AttackArea2D" to="." method="_on_hurtbox_exited"]
+[connection signal="body_entered" from="Flippable/HitboxArea2D" to="." method="_on_hurtbox_entered"]
+[connection signal="body_exited" from="Flippable/HitboxArea2D" to="." method="_on_hurtbox_exited"]
 [connection signal="animation_finished" from="Sleeping" to="Sleeping" method="_on_animation_finished"]
 [connection signal="timeout" from="Sleeping/Timer" to="Sleeping" method="_on_timer_timeout"]

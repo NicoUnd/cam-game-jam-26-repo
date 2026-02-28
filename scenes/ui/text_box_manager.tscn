@@ -1,0 +1,97 @@
+[gd_scene format=3 uid="uid://7dehfnrb6r5g"]
+
+[ext_resource type="Script" uid="uid://dp7f5o24qmqtf" path="res://scripts/text_box_manager.gd" id="1_le2l2"]
+[ext_resource type="Texture2D" uid="uid://7sjs0o1hpc0c" path="res://assets/sprites/button.png" id="2_uxnun"]
+[ext_resource type="FontFile" uid="uid://bekfx0qjolqss" path="res://assets/fonts/ithaca-font/Ithaca-LVB75.ttf" id="3_x2ven"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_uxnun"]
+font_size = 48
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="Animation" id="Animation_x2ven"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_uxnun"]
+resource_name = "show_fade"
+length = 5.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1, 4, 5),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_x2ven"]
+_data = {
+&"RESET": SubResource("Animation_x2ven"),
+&"show_fade": SubResource("Animation_uxnun")
+}
+
+[node name="TextBoxManager" type="Control" unique_id=2063301136]
+z_index = 25
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_le2l2")
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=478648583]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 100
+theme_override_constants/margin_top = 30
+theme_override_constants/margin_right = 100
+
+[node name="NinePatchRect" type="NinePatchRect" parent="MarginContainer" unique_id=264917266]
+custom_minimum_size = Vector2(160, 96)
+layout_mode = 2
+size_flags_vertical = 0
+texture = ExtResource("2_uxnun")
+patch_margin_left = 30
+patch_margin_top = 30
+patch_margin_right = 30
+patch_margin_bottom = 30
+
+[node name="Label" type="Label" parent="MarginContainer/NinePatchRect" unique_id=610332569]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.8901961, 0.7058824, 0.28235295, 1)
+theme_override_fonts/font = ExtResource("3_x2ven")
+theme_override_font_sizes/font_size = 32
+text = "Move around with WASD or arrow keys"
+label_settings = SubResource("LabelSettings_uxnun")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="MarginContainer/NinePatchRect" unique_id=21186510]
+libraries/ = SubResource("AnimationLibrary_x2ven")
+
+[connection signal="animation_finished" from="MarginContainer/NinePatchRect/AnimationPlayer" to="." method="_on_animation_player_animation_finished"]

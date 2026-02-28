@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://0vgobjrb0dgv"]
+
+[node name="Interactable" type="RigidBody2D" unique_id=1420951582]
+collision_layer = 8
+collision_mask = 0
+lock_rotation = true
+linear_damp = 15.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2099662116]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=270204127]
+scale = Vector2(3, 3)
