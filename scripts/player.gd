@@ -3,6 +3,8 @@ class_name Player
 
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
 
+@onready var medusa: Node2D = $Medusa
+
 @export var player_speed: float = 300
 @export var push_force: float = 1600
 @export var dash_distance: float = 200
@@ -88,6 +90,9 @@ func _physics_process(delta):
 	play_animation("idle");
 	
 
+func _process(delta: float) -> void:
+	if Input.is_action_just_pressed("Petrify"):
+		medusa.petrify(_last_input_direction);
 
 func _on_animated_sprite_2d_animation_finished() -> void:
 	if _is_dashing:

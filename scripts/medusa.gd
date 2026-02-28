@@ -23,7 +23,3 @@ func petrify(looking_dir : Vector2):
 				var result = state_space.intersect_ray(query)
 				if result.is_empty():
 					enemy.petrify()
-
-func _process(delta: float) -> void:
-	if Input.is_action_just_pressed("Petrify"):
-		petrify(Vector2.RIGHT)

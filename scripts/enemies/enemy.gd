@@ -33,12 +33,16 @@ func _ready() -> void:
 	animated_sprite_2d.material = animated_sprite_2d.material.duplicate()
 
 func petrify() -> void:
-	if _is_petrified:
+	if state == ENEMY_STATE.PETRIFIED:
 		return
-	_is_petrified = true
+	state = ENEMY_STATE.PETRIFIED;
 	animated_sprite_2d.stop()
 	var tween = create_tween()
 	tween.tween_property(animated_sprite_2d.material, "shader_parameter/progress", 1.0, petrification_duration)
+
+func spotted_player() -> void:
+	state = ENEMY_STATE.CHASING;
+	_last_spotted = 0;
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta: float) -> void:
@@ -56,7 +60,8 @@ func _physics_process(delta: float) -> void:
 		state = ENEMY_STATE.SLEEPING;
 	
 	var state_space = get_world_2d().direct_space_state
-	var query = PhysicsRayQueryParameters2D.create(global_position, Player.player.position, 4)
+	var collision_mask: int = 8 if collision_layer == 2 else 16;
+	var query = PhysicsRayQueryParameters2D.create(global_position, Player.player.position, collision_mask)
 	#query.exclude = enemies_and_player
 	var result = state_space.intersect_ray(query)
 	if result.is_empty():

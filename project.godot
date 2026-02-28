@@ -75,9 +75,11 @@ Petrify={
 [layer_names]
 
 2d_physics/layer_1="player"
-2d_physics/layer_2="enemies"
-2d_physics/layer_3="objects"
-2d_physics/layer_4="hitboxes"
+2d_physics/layer_2="ground enemies"
+2d_physics/layer_3="air enemies"
+2d_physics/layer_4="ground objects"
+2d_physics/layer_5="air objects"
+2d_physics/layer_6="hitboxes"
 
 [physics]
 

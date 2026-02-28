@@ -1,11 +1,6 @@
 [gd_scene format=3 uid="uid://cd180mx115x52"]
 
-[ext_resource type="Texture2D" uid="uid://bnp830vttgbow" path="res://assets/sprites/medusa.png" id="1_452na"]
 [ext_resource type="Script" uid="uid://y3v6xwenfcl1" path="res://scripts/medusa.gd" id="1_d57jd"]
 
 [node name="Medusa" type="Node2D" unique_id=1342946002]
 script = ExtResource("1_d57jd")
-
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=21988859]
-scale = Vector2(0.1, 0.1)
-texture = ExtResource("1_452na")
