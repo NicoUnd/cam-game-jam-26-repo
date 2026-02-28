@@ -4,6 +4,5 @@ class_name Destructable
 
 func take_damage(damage : int) -> void:
 	health -= damage
-	print("health = ", health)
 	if health <= 0:
 		queue_free()
