@@ -62,6 +62,10 @@ func sleep() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta: float) -> void:
+	if player.state == Player.PLAYER_STATE.DYING:
+		state = ENEMY_STATE.IDLE;
+		return;
+	
 	match state:
 		ENEMY_STATE.PETRIFIED:
 			return;
@@ -108,12 +112,12 @@ func move(delta: float) -> void:
 			linear_velocity = direction * speed
 
 func attack(delta : float) -> void:
-	if _player_in_range and _time_since_player_in_range <= player_attack_grace:
+	if _player_in_range and _time_since_player_in_range <= player_attack_grace and player.state != Player.PLAYER_STATE.DASHING:
 		_time_since_player_in_range += delta
 	if _time_since_last_attack > attack_cooldown:
 		if _player_in_range: 
 			if _time_since_player_in_range > player_attack_grace:
-				get_tree().quit()
+				player.die();
 		for object : Destructable in objects_in_range:
 			object.take_damage(damage)
 		_time_since_last_attack = 0

@@ -308,16 +308,20 @@ position = Vector2(288, -120)
 
 [node name="Rat" parent="Y-Sort" parent_id_path=PackedInt32Array(1050274422) index="11" unique_id=255767826 instance=ExtResource("13_ruawh")]
 position = Vector2(366, -146)
+attack_cooldown = 1.0
 
 [node name="Minotaur" parent="Y-Sort" parent_id_path=PackedInt32Array(1050274422) index="12" unique_id=517489634 instance=ExtResource("14_rlwp5")]
 position = Vector2(-325, -47)
 linear_damp = 1.0
+attack_cooldown = 1.0
 
 [node name="bat" parent="Y-Sort" parent_id_path=PackedInt32Array(1050274422) index="13" unique_id=2084104924 instance=ExtResource("15_q3r4p")]
 position = Vector2(-205, 235)
+attack_cooldown = 1.0
 
 [node name="Snake" parent="Y-Sort" parent_id_path=PackedInt32Array(1050274422) index="14" unique_id=668174716 instance=ExtResource("8_3b5nr")]
 position = Vector2(178, 156)
+attack_cooldown = 1.0
 
 [node name="Pillar" parent="Y-Sort" parent_id_path=PackedInt32Array(1050274422) index="15" unique_id=2045595200 instance=ExtResource("16_avmx4")]
 position = Vector2(-101, -50)

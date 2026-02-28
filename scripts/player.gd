@@ -13,6 +13,8 @@ class_name Player
 
 @export var footstep_sounds: AudioStream;
 
+@onready var hurtbox_area_2d: Area2D = $HurtboxArea2D
+
 var _time_since_last_dash: float = dash_cooldown
 #var _dash_start: Vector2
 var _last_input_direction: Vector2 = Vector2.RIGHT;
@@ -49,6 +51,9 @@ func play_animation(animation_name: String, duration : float = -1) -> void:
 		animated_sprite_2d.play(animation_name, anim_speed_multiplier)
 
 func _physics_process(delta):
+	if state == PLAYER_STATE.DYING:
+		return;
+	
 	_time_since_last_dash += delta
 	
 	if _time_since_last_dash > dash_cooldown and Input.is_action_just_pressed("Dash"):
@@ -56,7 +61,7 @@ func _physics_process(delta):
 		state = PLAYER_STATE.DASHING;
 	
 	set_collision_mask_value(2, state != PLAYER_STATE.DASHING); # don't collide with enemies when dashing
-	
+	hurtbox_area_2d.monitorable = state != PLAYER_STATE.DASHING;
 	
 	match state:
 		PLAYER_STATE.BUMPING:
@@ -100,13 +105,16 @@ func _physics_process(delta):
 		return;
 	
 	play_animation("idle");
-	
 
 func die() -> void:
 	animated_sprite_2d.play("die");
+	print("DIE")
 	state = PLAYER_STATE.DYING;
+	set_collision_layer_value(8 + 16, true);
 
 func _process(delta: float) -> void:
+	if state == PLAYER_STATE.DYING:
+		return;
 	if Input.is_action_just_pressed("Petrify"):
 		medusa.petrify(_last_input_direction);
 
