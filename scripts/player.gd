@@ -8,9 +8,12 @@ class_name Player
 @export var dash_distance: float = 200
 @export var dash_speed: float = 900
 @export var dash_cooldown: float = 0.5
+
+@export var footstep_sounds: AudioStream;
+
 var _time_since_last_dash: float = dash_cooldown
 var _is_dashing: float = false
-var _dash_start: Vector2
+#var _dash_start: Vector2
 var _last_input_direction: Vector2
 
 var _last_x_right: bool;
@@ -37,16 +40,17 @@ func _physics_process(delta):
 	var speed = velocity.length()
 	
 	if _time_since_last_dash > dash_cooldown and Input.is_action_just_pressed("Dash"):
-		_dash_start = position
+		#_dash_start = position
 		_is_dashing = true
 	
 	if _is_dashing:
-		move_and_collide(_last_input_direction * dash_speed * delta)
-		if (position - _dash_start).length() > dash_distance or get_slide_collision_count() > 0:
-			_is_dashing = false
-		_time_since_last_dash = 0
-		play_animation("roll");
-		print("ROLL")
+		if move_and_collide(_last_input_direction * dash_speed * delta): # collided with something
+			play_animation("bump");
+		else:
+			play_animation("roll");
+		#if (position - _dash_start).length() > dash_distance or get_slide_collision_count() > 0:
+		#	_is_dashing = false
+		#_time_since_last_dash = 0
 		return;
 	
 	if speed > 0:
@@ -74,3 +78,9 @@ func _physics_process(delta):
 	
 	play_animation("idle");
 	
+
+
+func _on_animated_sprite_2d_animation_finished() -> void:
+	if _is_dashing:
+		_time_since_last_dash = 0;
+		_is_dashing = false;
