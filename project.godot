@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="CamGameJam26"
-run/main_scene="uid://clx7te0yh7qd7"
+run/main_scene="uid://dudgtjljsy10w"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://icon.svg"
 
