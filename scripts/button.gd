@@ -1,8 +1,6 @@
 extends Control
 
-# Prioritising encapsulation by keeping variables private but editable in the Inspector.
-# (This is the GDScript equivalent of [SerializeField] private).
-@export var _fade_duration: float = 0.3
+@export var petrification_duration: float = 0.6
 
 @onready var _canvas_group: CanvasGroup = $CanvasGroup
 @onready var _interaction_button: TextureButton = $TextureButton
@@ -17,8 +15,8 @@ func _ready() -> void:
 
 func _on_mouse_entered() -> void:
 	var tween = create_tween()
-	tween.tween_property(_canvas_group.material, "shader_parameter/progress", 1.0, _fade_duration)
+	tween.tween_property(_canvas_group.material, "shader_parameter/progress", 1.0, petrification_duration)
 
 func _on_mouse_exited() -> void:
 	var tween = create_tween()
-	tween.tween_property(_canvas_group.material, "shader_parameter/progress", 0.0, _fade_duration)
+	tween.tween_property(_canvas_group.material, "shader_parameter/progress", 0.0, petrification_duration)

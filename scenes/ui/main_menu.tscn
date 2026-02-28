@@ -7,17 +7,19 @@
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_x2yvf"]
 shader = ExtResource("2_1g8jr")
+shader_parameter/use_canvas_group = true
 shader_parameter/progress = 0.0
 shader_parameter/stone_tint = Color(0.62091947, 0.5992716, 0.55412227, 1)
-shader_parameter/tint_weight = 0.85
+shader_parameter/tint_weight = 0.50000002375
 shader_parameter/edge_blur = 0.05
 shader_parameter/pixel_resolution = Vector2(32, 8)
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_m1kxf"]
 shader = ExtResource("2_1g8jr")
+shader_parameter/use_canvas_group = true
 shader_parameter/progress = 0.0
 shader_parameter/stone_tint = Color(0.62091947, 0.5992716, 0.55412227, 1)
-shader_parameter/tint_weight = 0.85
+shader_parameter/tint_weight = 0.50000002375
 shader_parameter/edge_blur = 0.05
 shader_parameter/pixel_resolution = Vector2(32, 8)
 

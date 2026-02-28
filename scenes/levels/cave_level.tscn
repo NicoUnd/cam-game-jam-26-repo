@@ -306,3 +306,5 @@ position = Vector2(288, -120)
 
 [node name="Rat" parent="Y-Sort" parent_id_path=PackedInt32Array(1050274422) index="12" unique_id=255767826 instance=ExtResource("13_ruawh")]
 position = Vector2(402, -27)
+attack_cooldown = null
+player_attack_grace = null

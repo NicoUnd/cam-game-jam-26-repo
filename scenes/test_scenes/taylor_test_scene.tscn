@@ -4,9 +4,9 @@
 [ext_resource type="PackedScene" uid="uid://yn8xdstbyhre" path="res://scenes/player.tscn" id="3_tqlmn"]
 [ext_resource type="Texture2D" uid="uid://bc7mdr52ny7l5" path="res://assets/sprites/rock.png" id="4_1hvfy"]
 [ext_resource type="PackedScene" uid="uid://cd180mx115x52" path="res://scenes/medusa.tscn" id="4_lyql5"]
-[ext_resource type="PackedScene" uid="uid://28fxek2ibb54" path="res://scenes/enemies/enemy.tscn" id="7_8gu4r"]
+[ext_resource type="PackedScene" uid="uid://c8oau2rn4hi80" path="res://scenes/enemies/snake.tscn" id="7_8gu4r"]
 [ext_resource type="PackedScene" uid="uid://dyd4vj2mlckcx" path="res://scenes/muddy_puddle.tscn" id="7_ch57m"]
-[ext_resource type="PackedScene" uid="uid://dmsv13enx4ipe" path="res://scenes/withered_log.tscn" id="7_jxcts"]
+[ext_resource type="PackedScene" uid="uid://dmsv13enx4ipe" path="res://scenes/obstacles/withered_log.tscn" id="7_jxcts"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tqlmn"]
 
@@ -54,8 +54,6 @@ shape = SubResource("RectangleShape2D_jxcts")
 texture = SubResource("CompressedTexture2D_ch57m")
 
 [node name="Player" parent="." unique_id=1399442204 instance=ExtResource("3_tqlmn")]
-player_speed = 300.0
-push_force = 1600.0
 
 [node name="Medusa" parent="Player" unique_id=1342946002 instance=ExtResource("4_lyql5")]
 visible = false
@@ -85,8 +83,8 @@ position = Vector2(340, 330)
 [node name="WitheredLog7" parent="." unique_id=326514505 instance=ExtResource("7_jxcts")]
 position = Vector2(358, 362)
 
-[node name="Enemy2" parent="." unique_id=668174716 instance=ExtResource("7_8gu4r")]
-position = Vector2(529, 300)
+[node name="Snake" parent="." unique_id=668174716 instance=ExtResource("7_8gu4r")]
+position = Vector2(259, 388)
 
-[node name="Enemy" parent="." unique_id=119862411 instance=ExtResource("7_8gu4r")]
-position = Vector2(444, 337)
+[node name="Snake2" parent="." unique_id=64516892 instance=ExtResource("7_8gu4r")]
+position = Vector2(246, 486)
