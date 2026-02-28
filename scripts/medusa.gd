@@ -37,5 +37,5 @@ func petrify(looking_dir : Vector2):
 	else:
 		for enemy in petrified_enemies:
 			enemy.z_index = 30
-			LevelSelect.max_level_complete = LevelSelect.current_level
+			LevelManager.max_level_complete = max(LevelManager.max_level_index, LevelManager.current_level)
 		FadeToBlack.fade_to_black.fade_in(switch_to_level_select, "You Win")
