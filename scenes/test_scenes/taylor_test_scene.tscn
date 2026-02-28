@@ -4,8 +4,9 @@
 [ext_resource type="PackedScene" uid="uid://yn8xdstbyhre" path="res://scenes/player.tscn" id="3_tqlmn"]
 [ext_resource type="Texture2D" uid="uid://bc7mdr52ny7l5" path="res://assets/sprites/rock.png" id="4_1hvfy"]
 [ext_resource type="PackedScene" uid="uid://cd180mx115x52" path="res://scenes/medusa.tscn" id="4_lyql5"]
-[ext_resource type="Script" uid="uid://d114r30gu8vjt" path="res://scripts/enemies/enemy.gd" id="5_jxcts"]
+[ext_resource type="PackedScene" uid="uid://28fxek2ibb54" path="res://scenes/enemies/enemy.tscn" id="7_8gu4r"]
 [ext_resource type="PackedScene" uid="uid://dyd4vj2mlckcx" path="res://scenes/muddy_puddle.tscn" id="7_ch57m"]
+[ext_resource type="PackedScene" uid="uid://dmsv13enx4ipe" path="res://scenes/withered_log.tscn" id="7_jxcts"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tqlmn"]
 
@@ -15,11 +16,6 @@
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_ch57m"]
 load_path = "res://.godot/imported/wall.png-a2b2dda47b1ed3651589e27171e28380.ctex"
-
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_tqlmn"]
-load_path = "res://.godot/imported/wall.png-a2b2dda47b1ed3651589e27171e28380.ctex"
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_ch57m"]
 
 [node name="TaylorTestScene" type="Node2D" unique_id=1982165155]
 
@@ -62,36 +58,33 @@ texture = SubResource("CompressedTexture2D_ch57m")
 [node name="Medusa" parent="Player" unique_id=1342946002 instance=ExtResource("4_lyql5")]
 visible = false
 
-[node name="StaticBody2D3" type="RigidBody2D" parent="." unique_id=1243197217 groups=["Enemies"]]
-position = Vector2(600, 300)
-gravity_scale = 0.0
-lock_rotation = true
-linear_damp_mode = 1
-linear_damp = 15.0
-script = ExtResource("5_jxcts")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D3" unique_id=2082267483]
-scale = Vector2(3.71, 2.52)
-shape = SubResource("RectangleShape2D_jxcts")
-
-[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D3" unique_id=130147502]
-texture = SubResource("CompressedTexture2D_tqlmn")
-
-[node name="StaticBody2D4" type="RigidBody2D" parent="." unique_id=2092735224 groups=["Enemies"]]
-position = Vector2(507.33, 300)
-gravity_scale = 0.0
-lock_rotation = true
-linear_damp_mode = 1
-linear_damp = 15.0
-script = ExtResource("5_jxcts")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D4" unique_id=954450019]
-scale = Vector2(3.71, 2.52)
-shape = SubResource("RectangleShape2D_ch57m")
-
-[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D4" unique_id=137264177]
-texture = SubResource("CompressedTexture2D_tqlmn")
-
 [node name="MuddyPuddle" parent="." unique_id=206173280 instance=ExtResource("7_ch57m")]
 position = Vector2(100, 100)
 scale = Vector2(3, 3)
+
+[node name="WitheredLog" parent="." unique_id=1571200499 instance=ExtResource("7_jxcts")]
+position = Vector2(328, 297)
+
+[node name="WitheredLog2" parent="." unique_id=2005761688 instance=ExtResource("7_jxcts")]
+position = Vector2(346, 274)
+
+[node name="WitheredLog3" parent="." unique_id=1706586795 instance=ExtResource("7_jxcts")]
+position = Vector2(369, 250)
+
+[node name="WitheredLog4" parent="." unique_id=1011920283 instance=ExtResource("7_jxcts")]
+position = Vector2(394, 228)
+
+[node name="WitheredLog5" parent="." unique_id=1860960794 instance=ExtResource("7_jxcts")]
+position = Vector2(425, 220)
+
+[node name="WitheredLog6" parent="." unique_id=1264150180 instance=ExtResource("7_jxcts")]
+position = Vector2(340, 330)
+
+[node name="WitheredLog7" parent="." unique_id=326514505 instance=ExtResource("7_jxcts")]
+position = Vector2(358, 362)
+
+[node name="Enemy2" parent="." unique_id=668174716 instance=ExtResource("7_8gu4r")]
+position = Vector2(529, 300)
+
+[node name="Enemy" parent="." unique_id=119862411 instance=ExtResource("7_8gu4r")]
+position = Vector2(444, 337)
