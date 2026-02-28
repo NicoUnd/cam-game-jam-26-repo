@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://dgm4ae64akcuu"]
+
+[ext_resource type="PackedScene" uid="uid://cw8tuh2nkh5a5" path="res://scenes/obstacles/obstacle.tscn" id="1_onfxq"]
+[ext_resource type="Texture2D" uid="uid://dacin8rntyvx0" path="res://assets/sprites/wall.png" id="2_dpbbt"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dpbbt"]
+size = Vector2(42, 96)
+
+[node name="VWall" unique_id=12530250 instance=ExtResource("1_onfxq")]
+
+[node name="Sprite2D" parent="." index="0" unique_id=772725384]
+texture = ExtResource("2_dpbbt")
+
+[node name="CollisionShape2D" parent="." index="1" unique_id=1902074252]
+shape = SubResource("RectangleShape2D_dpbbt")

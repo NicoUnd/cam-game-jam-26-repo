@@ -1,283 +1,279 @@
 [gd_scene format=3 uid="uid://bidivnh002n86"]
 
 [ext_resource type="PackedScene" uid="uid://dbt3y68kh4xu1" path="res://scenes/levels/level.tscn" id="1_axssm"]
-[ext_resource type="PackedScene" uid="uid://oevq5je3vugy" path="res://scenes/obstacles/rock_1.tscn" id="2_5q5lc"]
-[ext_resource type="Texture2D" uid="uid://d1wr8uyp1v7p3" path="res://assets/sprites/wall_base.png" id="3_3b5nr"]
+[ext_resource type="Texture2D" uid="uid://dfxut7u4e1npb" path="res://assets/sprites/rock_wall.png" id="2_krvej"]
 [ext_resource type="Texture2D" uid="uid://ctumttjnvgfvt" path="res://assets/sprites/rock_wall_side.png" id="3_jgdsl"]
-[ext_resource type="Texture2D" uid="uid://dacin8rntyvx0" path="res://assets/sprites/wall.png" id="3_krvej"]
-[ext_resource type="PackedScene" uid="uid://c3gfts6w6tdd2" path="res://scenes/obstacles/rock_2.tscn" id="3_wfvs6"]
-[ext_resource type="PackedScene" uid="uid://dtf37yphqw0cu" path="res://scenes/obstacles/rock_3.tscn" id="4_5rgdf"]
+[ext_resource type="Texture2D" uid="uid://cf68s2g5ycvyy" path="res://assets/sprites/outside.png" id="4_3b5nr"]
+[ext_resource type="Texture2D" uid="uid://bxjon1ikb20gs" path="res://assets/sprites/rock_wall_bottom.png" id="5_wr2x8"]
+[ext_resource type="PackedScene" uid="uid://dgm4ae64akcuu" path="res://scenes/obstacles/v_wall.tscn" id="7_3b5nr"]
 [ext_resource type="PackedScene" uid="uid://c8oau2rn4hi80" path="res://scenes/enemies/snake.tscn" id="8_3b5nr"]
+[ext_resource type="PackedScene" uid="uid://b5kfhqcljyb8n" path="res://scenes/obstacles/v_wall_bottom.tscn" id="8_wr2x8"]
 
 [node name="CaveLevel" unique_id=951364413 instance=ExtResource("1_axssm")]
 
-[node name="Nwall" parent="." index="1" unique_id=420910691]
+[node name="Nwall" parent="." index="2" unique_id=420910691]
 position = Vector2(0, -220)
 
 [node name="Sprite2D" type="Sprite2D" parent="Nwall" index="1" unique_id=1786223352]
 y_sort_enabled = true
-position = Vector2(-350, -64.03)
+position = Vector2(-350, -168.03)
 scale = Vector2(3, 3)
-texture = ExtResource("3_krvej")
+texture = ExtResource("2_krvej")
 
 [node name="Sprite2D2" type="Sprite2D" parent="Nwall" index="2" unique_id=889063080]
 y_sort_enabled = true
-position = Vector2(-254, -64.03)
+position = Vector2(-254, -168.03)
 scale = Vector2(3, 3)
-texture = ExtResource("3_krvej")
+texture = ExtResource("2_krvej")
 
 [node name="Sprite2D3" type="Sprite2D" parent="Nwall" index="3" unique_id=314576343]
 y_sort_enabled = true
-position = Vector2(-158, -64.03)
+position = Vector2(-158, -168.03)
 scale = Vector2(3, 3)
-texture = ExtResource("3_krvej")
+texture = ExtResource("2_krvej")
 
 [node name="Sprite2D4" type="Sprite2D" parent="Nwall" index="4" unique_id=1843565265]
 y_sort_enabled = true
-position = Vector2(-62, -64.03)
+position = Vector2(-62, -168.03)
 scale = Vector2(3, 3)
-texture = ExtResource("3_krvej")
+texture = ExtResource("2_krvej")
 
 [node name="Sprite2D7" type="Sprite2D" parent="Nwall" index="5" unique_id=1530042732]
 y_sort_enabled = true
-position = Vector2(-542, -64.03)
+position = Vector2(-542, -168.03)
 scale = Vector2(3, 3)
-texture = ExtResource("3_krvej")
+texture = ExtResource("2_krvej")
 
 [node name="Sprite2D8" type="Sprite2D" parent="Nwall" index="6" unique_id=629281584]
 y_sort_enabled = true
-position = Vector2(-446, -64.03)
+position = Vector2(-446, -168.03)
 scale = Vector2(3, 3)
-texture = ExtResource("3_krvej")
+texture = ExtResource("2_krvej")
 
 [node name="Sprite2D9" type="Sprite2D" parent="Nwall" index="7" unique_id=525972512]
 y_sort_enabled = true
-position = Vector2(418, -64.03)
+position = Vector2(418, -168.03)
 scale = Vector2(3, 3)
-texture = ExtResource("3_krvej")
+texture = ExtResource("2_krvej")
 
 [node name="Sprite2D10" type="Sprite2D" parent="Nwall" index="8" unique_id=1928096423]
 y_sort_enabled = true
-position = Vector2(514, -64.03)
+position = Vector2(514, -168.03)
 scale = Vector2(3, 3)
-texture = ExtResource("3_krvej")
+texture = ExtResource("2_krvej")
 
 [node name="Sprite2D11" type="Sprite2D" parent="Nwall" index="9" unique_id=1275971235]
 y_sort_enabled = true
-position = Vector2(610, -64.03)
+position = Vector2(610, -168.03)
 scale = Vector2(3, 3)
-texture = ExtResource("3_krvej")
+texture = ExtResource("2_krvej")
 
 [node name="Sprite2D12" type="Sprite2D" parent="Nwall" index="10" unique_id=1934993287]
 y_sort_enabled = true
-position = Vector2(706, -64.03)
+position = Vector2(706, -168.03)
 scale = Vector2(3, 3)
-texture = ExtResource("3_krvej")
+texture = ExtResource("2_krvej")
 
 [node name="Sprite2D13" type="Sprite2D" parent="Nwall" index="11" unique_id=1450012451]
 y_sort_enabled = true
-position = Vector2(34, -64.03)
+position = Vector2(34, -168.03)
 scale = Vector2(3, 3)
-texture = ExtResource("3_krvej")
+texture = ExtResource("2_krvej")
 
 [node name="Sprite2D14" type="Sprite2D" parent="Nwall" index="12" unique_id=1271235413]
 y_sort_enabled = true
-position = Vector2(130, -64.03)
+position = Vector2(130, -168.03)
 scale = Vector2(3, 3)
-texture = ExtResource("3_krvej")
+texture = ExtResource("2_krvej")
 
 [node name="Sprite2D15" type="Sprite2D" parent="Nwall" index="13" unique_id=644778125]
 y_sort_enabled = true
-position = Vector2(226, -64.03)
+position = Vector2(226, -168.03)
 scale = Vector2(3, 3)
-texture = ExtResource("3_krvej")
+texture = ExtResource("2_krvej")
 
 [node name="Sprite2D16" type="Sprite2D" parent="Nwall" index="14" unique_id=1115977623]
 y_sort_enabled = true
-position = Vector2(322, -64.03)
+position = Vector2(322, -168.03)
 scale = Vector2(3, 3)
-texture = ExtResource("3_krvej")
+texture = ExtResource("2_krvej")
 
-[node name="Sprite2D29" type="Sprite2D" parent="Nwall" index="15" unique_id=1244490388]
-y_sort_enabled = true
-position = Vector2(-350, 31.97)
+[node name="Sprite2D" type="Sprite2D" parent="SWall" parent_id_path=PackedInt32Array(1978877461) index="1" unique_id=352723768]
+position = Vector2(-199, 14)
 scale = Vector2(3, 3)
-texture = ExtResource("3_3b5nr")
-flip_v = true
+texture = ExtResource("5_wr2x8")
 
-[node name="Sprite2D30" type="Sprite2D" parent="Nwall" index="16" unique_id=1226161733]
-y_sort_enabled = true
-position = Vector2(-254, 31.97)
+[node name="Sprite2D2" type="Sprite2D" parent="SWall" parent_id_path=PackedInt32Array(1978877461) index="2" unique_id=288129365]
+position = Vector2(-103, 14)
 scale = Vector2(3, 3)
-texture = ExtResource("3_3b5nr")
-flip_v = true
+texture = ExtResource("5_wr2x8")
 
-[node name="Sprite2D31" type="Sprite2D" parent="Nwall" index="17" unique_id=1935213088]
-y_sort_enabled = true
-position = Vector2(-158, 31.97)
+[node name="Sprite2D3" type="Sprite2D" parent="SWall" parent_id_path=PackedInt32Array(1978877461) index="3" unique_id=878578975]
+position = Vector2(-7, 14)
 scale = Vector2(3, 3)
-texture = ExtResource("3_3b5nr")
-flip_v = true
+texture = ExtResource("5_wr2x8")
 
-[node name="Sprite2D32" type="Sprite2D" parent="Nwall" index="18" unique_id=1797826976]
-y_sort_enabled = true
-position = Vector2(-62, 31.97)
+[node name="Sprite2D4" type="Sprite2D" parent="SWall" parent_id_path=PackedInt32Array(1978877461) index="4" unique_id=2133296017]
+position = Vector2(89, 14)
 scale = Vector2(3, 3)
-texture = ExtResource("3_3b5nr")
-flip_v = true
+texture = ExtResource("5_wr2x8")
 
-[node name="Sprite2D33" type="Sprite2D" parent="Nwall" index="19" unique_id=1425261138]
-y_sort_enabled = true
-position = Vector2(-542, 31.97)
+[node name="Sprite2D5" type="Sprite2D" parent="SWall" parent_id_path=PackedInt32Array(1978877461) index="5" unique_id=1838870964]
+position = Vector2(184, 14)
 scale = Vector2(3, 3)
-texture = ExtResource("3_3b5nr")
-flip_v = true
+texture = ExtResource("5_wr2x8")
 
-[node name="Sprite2D34" type="Sprite2D" parent="Nwall" index="20" unique_id=287205625]
-y_sort_enabled = true
-position = Vector2(-446, 31.97)
+[node name="Sprite2D6" type="Sprite2D" parent="SWall" parent_id_path=PackedInt32Array(1978877461) index="6" unique_id=978155517]
+position = Vector2(280, 14)
 scale = Vector2(3, 3)
-texture = ExtResource("3_3b5nr")
-flip_v = true
+texture = ExtResource("5_wr2x8")
 
-[node name="Sprite2D35" type="Sprite2D" parent="Nwall" index="21" unique_id=1972574354]
-y_sort_enabled = true
-position = Vector2(418, 31.97)
+[node name="Sprite2D7" type="Sprite2D" parent="SWall" parent_id_path=PackedInt32Array(1978877461) index="7" unique_id=1765029134]
+position = Vector2(376, 14)
 scale = Vector2(3, 3)
-texture = ExtResource("3_3b5nr")
-flip_v = true
+texture = ExtResource("5_wr2x8")
 
-[node name="Sprite2D36" type="Sprite2D" parent="Nwall" index="22" unique_id=1807624531]
-y_sort_enabled = true
-position = Vector2(514, 31.97)
+[node name="Sprite2D8" type="Sprite2D" parent="SWall" parent_id_path=PackedInt32Array(1978877461) index="8" unique_id=947941190]
+position = Vector2(472, 14)
 scale = Vector2(3, 3)
-texture = ExtResource("3_3b5nr")
-flip_v = true
+texture = ExtResource("5_wr2x8")
 
-[node name="Sprite2D37" type="Sprite2D" parent="Nwall" index="23" unique_id=476338758]
-y_sort_enabled = true
-position = Vector2(610, 31.97)
+[node name="Sprite2D9" type="Sprite2D" parent="SWall" parent_id_path=PackedInt32Array(1978877461) index="9" unique_id=650330096]
+position = Vector2(-487, 14)
 scale = Vector2(3, 3)
-texture = ExtResource("3_3b5nr")
-flip_v = true
+texture = ExtResource("5_wr2x8")
 
-[node name="Sprite2D38" type="Sprite2D" parent="Nwall" index="24" unique_id=1500298965]
-y_sort_enabled = true
-position = Vector2(706, 31.97)
+[node name="Sprite2D10" type="Sprite2D" parent="SWall" parent_id_path=PackedInt32Array(1978877461) index="10" unique_id=420094020]
+position = Vector2(-391, 14)
 scale = Vector2(3, 3)
-texture = ExtResource("3_3b5nr")
-flip_v = true
+texture = ExtResource("5_wr2x8")
 
-[node name="Sprite2D39" type="Sprite2D" parent="Nwall" index="25" unique_id=487291759]
-y_sort_enabled = true
-position = Vector2(34, 31.97)
+[node name="Sprite2D11" type="Sprite2D" parent="SWall" parent_id_path=PackedInt32Array(1978877461) index="11" unique_id=1630121789]
+position = Vector2(-295, 14)
 scale = Vector2(3, 3)
-texture = ExtResource("3_3b5nr")
-flip_v = true
+texture = ExtResource("5_wr2x8")
 
-[node name="Sprite2D40" type="Sprite2D" parent="Nwall" index="26" unique_id=2131857162]
-y_sort_enabled = true
-position = Vector2(130, 31.97)
+[node name="Sprite2D12" type="Sprite2D" parent="SWall" parent_id_path=PackedInt32Array(1978877461) index="12" unique_id=1231636726]
+position = Vector2(-547, 11)
 scale = Vector2(3, 3)
-texture = ExtResource("3_3b5nr")
-flip_v = true
+texture = ExtResource("4_3b5nr")
 
-[node name="Sprite2D41" type="Sprite2D" parent="Nwall" index="27" unique_id=1584750379]
-y_sort_enabled = true
-position = Vector2(226, 31.97)
+[node name="Sprite2D" type="Sprite2D" parent="EWall" parent_id_path=PackedInt32Array(1092714748) index="1" unique_id=303937264]
+position = Vector2(177, 112)
 scale = Vector2(3, 3)
-texture = ExtResource("3_3b5nr")
-flip_v = true
+texture = ExtResource("3_jgdsl")
+flip_h = true
 
-[node name="Sprite2D42" type="Sprite2D" parent="Nwall" index="28" unique_id=291840468]
-y_sort_enabled = true
-position = Vector2(322, 31.97)
+[node name="Sprite2D2" type="Sprite2D" parent="EWall" parent_id_path=PackedInt32Array(1092714748) index="2" unique_id=1787131208]
+position = Vector2(177, 15.999992)
 scale = Vector2(3, 3)
-texture = ExtResource("3_3b5nr")
-flip_v = true
+texture = ExtResource("3_jgdsl")
+flip_h = true
 
-[node name="Sprite2D" type="Sprite2D" parent="WWall" parent_id_path=PackedInt32Array(1177883733) index="1" unique_id=1449188068]
-position = Vector2(-250, 0)
+[node name="Sprite2D3" type="Sprite2D" parent="EWall" parent_id_path=PackedInt32Array(1092714748) index="3" unique_id=1142522014]
+position = Vector2(177, 303)
+scale = Vector2(3, 3)
+texture = ExtResource("3_jgdsl")
+flip_h = true
+
+[node name="Sprite2D4" type="Sprite2D" parent="EWall" parent_id_path=PackedInt32Array(1092714748) index="4" unique_id=248950271]
+position = Vector2(177, 207)
+scale = Vector2(3, 3)
+texture = ExtResource("3_jgdsl")
+flip_h = true
+
+[node name="Sprite2D5" type="Sprite2D" parent="EWall" parent_id_path=PackedInt32Array(1092714748) index="5" unique_id=681871889]
+position = Vector2(177, -271)
+scale = Vector2(3, 3)
+texture = ExtResource("3_jgdsl")
+flip_h = true
+
+[node name="Sprite2D6" type="Sprite2D" parent="EWall" parent_id_path=PackedInt32Array(1092714748) index="6" unique_id=1617343247]
+position = Vector2(177, -367)
+scale = Vector2(3, 3)
+texture = ExtResource("3_jgdsl")
+flip_h = true
+
+[node name="Sprite2D7" type="Sprite2D" parent="EWall" parent_id_path=PackedInt32Array(1092714748) index="7" unique_id=624233347]
+position = Vector2(177, -80)
+scale = Vector2(3, 3)
+texture = ExtResource("3_jgdsl")
+flip_h = true
+
+[node name="Sprite2D8" type="Sprite2D" parent="EWall" parent_id_path=PackedInt32Array(1092714748) index="8" unique_id=1944845204]
+position = Vector2(177, -176)
+scale = Vector2(3, 3)
+texture = ExtResource("3_jgdsl")
+flip_h = true
+
+[node name="Sprite2D9" type="Sprite2D" parent="EWall" parent_id_path=PackedInt32Array(1092714748) index="9" unique_id=1553761706]
+position = Vector2(30, -343)
+scale = Vector2(3, 3)
+texture = ExtResource("4_3b5nr")
+
+[node name="Sprite2D10" type="Sprite2D" parent="EWall" parent_id_path=PackedInt32Array(1092714748) index="10" unique_id=689405379]
+position = Vector2(27, -346)
+scale = Vector2(3, 3)
+texture = ExtResource("4_3b5nr")
+
+[node name="Sprite2D" type="Sprite2D" parent="WWall" parent_id_path=PackedInt32Array(1177883733) index="1" unique_id=1910046236]
+position = Vector2(-174, 112)
 scale = Vector2(3, 3)
 texture = ExtResource("3_jgdsl")
 
-[node name="Sprite2D2" type="Sprite2D" parent="WWall" parent_id_path=PackedInt32Array(1177883733) index="2" unique_id=1237250318]
-position = Vector2(-250, 96)
+[node name="Sprite2D2" type="Sprite2D" parent="WWall" parent_id_path=PackedInt32Array(1177883733) index="2" unique_id=1100748752]
+position = Vector2(-174, 15.999992)
 scale = Vector2(3, 3)
 texture = ExtResource("3_jgdsl")
 
-[node name="Sprite2D3" type="Sprite2D" parent="WWall" parent_id_path=PackedInt32Array(1177883733) index="3" unique_id=690436730]
-position = Vector2(-250, 192)
+[node name="Sprite2D3" type="Sprite2D" parent="WWall" parent_id_path=PackedInt32Array(1177883733) index="3" unique_id=2109264707]
+position = Vector2(-174, 303)
 scale = Vector2(3, 3)
 texture = ExtResource("3_jgdsl")
 
-[node name="Sprite2D4" type="Sprite2D" parent="WWall" parent_id_path=PackedInt32Array(1177883733) index="4" unique_id=1171172970]
-position = Vector2(-250, 288)
+[node name="Sprite2D4" type="Sprite2D" parent="WWall" parent_id_path=PackedInt32Array(1177883733) index="4" unique_id=555387505]
+position = Vector2(-174, 207)
 scale = Vector2(3, 3)
 texture = ExtResource("3_jgdsl")
 
-[node name="Sprite2D5" type="Sprite2D" parent="WWall" parent_id_path=PackedInt32Array(1177883733) index="5" unique_id=2088828152]
-position = Vector2(-250, -384)
+[node name="Sprite2D5" type="Sprite2D" parent="WWall" parent_id_path=PackedInt32Array(1177883733) index="5" unique_id=496760381]
+position = Vector2(-174, -271)
 scale = Vector2(3, 3)
 texture = ExtResource("3_jgdsl")
 
-[node name="Sprite2D6" type="Sprite2D" parent="WWall" parent_id_path=PackedInt32Array(1177883733) index="6" unique_id=1150922853]
-position = Vector2(-250, -288)
+[node name="Sprite2D6" type="Sprite2D" parent="WWall" parent_id_path=PackedInt32Array(1177883733) index="6" unique_id=1645352010]
+position = Vector2(-174, -367)
 scale = Vector2(3, 3)
 texture = ExtResource("3_jgdsl")
 
-[node name="Sprite2D7" type="Sprite2D" parent="WWall" parent_id_path=PackedInt32Array(1177883733) index="7" unique_id=515238298]
-position = Vector2(-250, -192)
+[node name="Sprite2D7" type="Sprite2D" parent="WWall" parent_id_path=PackedInt32Array(1177883733) index="7" unique_id=1687278147]
+position = Vector2(-174, -80)
 scale = Vector2(3, 3)
 texture = ExtResource("3_jgdsl")
 
-[node name="Sprite2D8" type="Sprite2D" parent="WWall" parent_id_path=PackedInt32Array(1177883733) index="8" unique_id=1946101531]
-position = Vector2(-250, -96)
+[node name="Sprite2D8" type="Sprite2D" parent="WWall" parent_id_path=PackedInt32Array(1177883733) index="8" unique_id=1529742781]
+position = Vector2(-174, -176)
 scale = Vector2(3, 3)
 texture = ExtResource("3_jgdsl")
 
-[node name="Player" parent="." index="6" unique_id=820894451]
-y_sort_enabled = true
+[node name="Sprite2D9" type="Sprite2D" parent="WWall" parent_id_path=PackedInt32Array(1177883733) index="9" unique_id=2063852070]
+position = Vector2(-20, -343)
+scale = Vector2(3, 3)
+texture = ExtResource("4_3b5nr")
 
-[node name="Rocks" type="Node2D" parent="." index="7" unique_id=39295882]
-visible = false
-y_sort_enabled = true
+[node name="Sprite2D10" type="Sprite2D" parent="WWall" parent_id_path=PackedInt32Array(1177883733) index="10" unique_id=1444522821]
+position = Vector2(-24, -343)
+scale = Vector2(3, 3)
+texture = ExtResource("4_3b5nr")
 
-[node name="Rock1" parent="Rocks" index="0" unique_id=1141129222 instance=ExtResource("2_5q5lc")]
-y_sort_enabled = true
-position = Vector2(-386, -318)
-
-[node name="Rock2" parent="Rocks" index="1" unique_id=599564363 instance=ExtResource("3_wfvs6")]
-position = Vector2(-257, -338)
-
-[node name="Rock4" parent="Rocks" index="2" unique_id=25674976 instance=ExtResource("2_5q5lc")]
-position = Vector2(-60, -315)
-
-[node name="Rock3" parent="Rocks" index="3" unique_id=1172594184 instance=ExtResource("4_5rgdf")]
-position = Vector2(-150, -328)
-
-[node name="Rock6" parent="Rocks" index="4" unique_id=1046276883 instance=ExtResource("4_5rgdf")]
-position = Vector2(170, -349)
-
-[node name="Rock5" parent="Rocks" index="5" unique_id=207002470 instance=ExtResource("3_wfvs6")]
-position = Vector2(62, -298)
-
-[node name="Rock7" parent="Rocks" index="6" unique_id=1235878593 instance=ExtResource("3_wfvs6")]
-position = Vector2(263, -317)
-rotation = 3.1415927
-scale = Vector2(1, -1)
-
-[node name="Rock8" parent="Rocks" index="7" unique_id=1583211249 instance=ExtResource("4_5rgdf")]
-position = Vector2(356, -305)
-rotation = 3.1415927
-scale = Vector2(1, -1)
-
-[node name="Rock9" parent="Rocks" index="8" unique_id=1409477588 instance=ExtResource("2_5q5lc")]
-position = Vector2(488, -273)
-rotation = 3.1415927
-scale = Vector2(1, -1)
-
-[node name="Snake" parent="." index="8" unique_id=668174716 instance=ExtResource("8_3b5nr")]
+[node name="Snake" parent="Y-Sort" parent_id_path=PackedInt32Array(1050274422) index="1" unique_id=668174716 instance=ExtResource("8_3b5nr")]
 position = Vector2(122, 51)
-collision_layer = 1
-collision_mask = 1
+
+[node name="VWall" parent="Y-Sort" parent_id_path=PackedInt32Array(1050274422) index="2" unique_id=12530250 instance=ExtResource("7_3b5nr")]
+position = Vector2(-217, -203)
+
+[node name="VWall2" parent="Y-Sort" parent_id_path=PackedInt32Array(1050274422) index="3" unique_id=744864027 instance=ExtResource("7_3b5nr")]
+position = Vector2(-217, -107)
+
+[node name="VWallBottom" parent="Y-Sort" parent_id_path=PackedInt32Array(1050274422) index="4" unique_id=1199561359 instance=ExtResource("8_wr2x8")]
+position = Vector2(-217, -11)

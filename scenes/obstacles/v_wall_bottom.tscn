@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://b5kfhqcljyb8n"]
+
+[ext_resource type="PackedScene" uid="uid://cw8tuh2nkh5a5" path="res://scenes/obstacles/obstacle.tscn" id="1_f6ujh"]
+[ext_resource type="Texture2D" uid="uid://ddc8gca7mo8b8" path="res://assets/sprites/wall_bottom.png" id="2_iqol2"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_f6ujh"]
+radius = 21.0
+height = 104.0
+
+[node name="VWallBottom" unique_id=12530250 instance=ExtResource("1_f6ujh")]
+
+[node name="Sprite2D" parent="." index="0" unique_id=772725384]
+texture = ExtResource("2_iqol2")
+
+[node name="CollisionShape2D" parent="." index="1" unique_id=1902074252]
+position = Vector2(0, -15)
+shape = SubResource("CapsuleShape2D_f6ujh")

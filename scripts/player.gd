@@ -54,6 +54,8 @@ func _physics_process(delta):
 		#_dash_start = position
 		_is_dashing = true
 	
+	set_collision_mask_value(2, not _is_dashing); # don't collide with enemies when dashing
+	
 	if _is_dashing:
 		if move_and_collide(_last_input_direction * dash_speed * delta): # collided with something
 			play_animation("bump");

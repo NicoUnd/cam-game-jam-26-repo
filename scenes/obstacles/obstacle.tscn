@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://cw8tuh2nkh5a5"]
+
+[ext_resource type="Script" uid="uid://cweqfsfxkp66q" path="res://scripts/obstacles/obstacle.gd" id="1_hof70"]
+
+[node name="Obstacle" type="StaticBody2D" unique_id=12530250]
+collision_layer = 4
+collision_mask = 0
+script = ExtResource("1_hof70")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=772725384]
+scale = Vector2(3, 3)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1902074252]
