@@ -123,3 +123,6 @@ position = Vector2(25, 1)
 rotation = 1.5707964
 shape = SubResource("CapsuleShape2D_a250b")
 debug_color = Color(0.9883315, 0, 0.30836073, 0.41960785)
+
+[node name="Sleeping" parent="." index="3" unique_id=2101557165]
+position = Vector2(88, -78)

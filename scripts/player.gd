@@ -15,6 +15,10 @@ class_name Player
 
 @onready var hurtbox_area_2d: Area2D = $HurtboxArea2D
 
+@onready var medusa_mist_1: MedusaMist = $MedusaMist1
+@onready var medusa_mist_2: MedusaMist = $MedusaMist2
+
+
 var _time_since_last_dash: float = dash_cooldown
 #var _dash_start: Vector2
 var _last_input_direction: Vector2 = Vector2.RIGHT;
@@ -22,7 +26,9 @@ var _last_input_direction: Vector2 = Vector2.RIGHT;
 var _last_x_right: bool;
 var _last_y_down: bool;
 
-enum PLAYER_STATE {DEFAULT, DASHING, BUMPING, DYING}
+var in_tutorial: bool = false;
+
+enum PLAYER_STATE {DEFAULT, DASHING, BUMPING, DYING, PETRIFYING}
 var state: PLAYER_STATE = PLAYER_STATE.DEFAULT;
 
 @onready var frames: SpriteFrames = animated_sprite_2d.sprite_frames
@@ -51,7 +57,7 @@ func play_animation(animation_name: String, duration : float = -1) -> void:
 		animated_sprite_2d.play(animation_name, anim_speed_multiplier)
 
 func _physics_process(delta):
-	if state == PLAYER_STATE.DYING:
+	if state in [PLAYER_STATE.DYING, PLAYER_STATE.PETRIFYING]:
 		return;
 	
 	_time_since_last_dash += delta
@@ -107,20 +113,36 @@ func _physics_process(delta):
 	play_animation("idle");
 
 func die() -> void:
-	animated_sprite_2d.play("die");
-	state = PLAYER_STATE.DYING;
-	set_collision_layer_value(8 + 16, true);
-	FadeToBlack.fade_to_black.fade_in(get_tree().reload_current_scene, "You Died")
+	if state != PLAYER_STATE.PETRIFYING:
+		animated_sprite_2d.play("die");
+		state = PLAYER_STATE.DYING;
+		set_collision_layer_value(8 + 16, true);
+		FadeToBlack.fade_to_black.fade_in(get_tree().reload_current_scene, "You Died")
+
+func petrify() -> void:
+	medusa.petrify(_last_input_direction);
+	animated_sprite_2d.play("petrify");
+	state = PLAYER_STATE.PETRIFYING;
+	
+	var input_direction: Vector2 = get_input_dir();
+	medusa_mist_1.position = Vector2.ZERO;
+	medusa_mist_1.visible = true;
+	medusa_mist_1.direction = input_direction.rotated(-PI/6);
+	medusa_mist_2.position = Vector2.ZERO;
+	medusa_mist_2.visible = true;
+	medusa_mist_2.direction = input_direction.rotated(PI/6);
 
 func _process(delta: float) -> void:
 	if state == PLAYER_STATE.DYING:
 		return;
 	if Input.is_action_just_pressed("Petrify"):
-		medusa.petrify(_last_input_direction);
+		petrify();
 
 func _on_animated_sprite_2d_animation_finished() -> void:
 	if state in [PLAYER_STATE.DASHING, PLAYER_STATE.BUMPING]:
 		_time_since_last_dash = 0;
+		state = PLAYER_STATE.DEFAULT;
+	elif state == PLAYER_STATE.PETRIFYING and in_tutorial:
 		state = PLAYER_STATE.DEFAULT;
 	#elif state == PLAYER_STATE.DYING:
 		#pass;
