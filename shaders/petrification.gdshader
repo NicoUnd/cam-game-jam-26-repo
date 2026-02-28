@@ -9,7 +9,7 @@ uniform bool use_canvas_group = false;
 // For a standard standalone Sprite2D, leave this at vec2(1.0, 1.0)
 uniform vec2 spritesheet_frames = vec2(1.0, 1.0); 
 
-uniform float progress : hint_range(0.0, 1.0) = 0.0;
+instance uniform float progress : hint_range(0.0, 1.0) = 0.0;
 uniform vec4 stone_tint : source_color = vec4(0.6, 0.6, 0.6, 1.0);
 uniform float tint_weight : hint_range(0.0, 1.0) = 0.85; 
 uniform float edge_blur : hint_range(0.0, 0.5) = 0.05;
