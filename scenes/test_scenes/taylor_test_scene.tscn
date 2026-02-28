@@ -18,6 +18,8 @@ load_path = "res://.godot/imported/wall.png-a2b2dda47b1ed3651589e27171e28380.cte
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_tqlmn"]
 load_path = "res://.godot/imported/wall.png-a2b2dda47b1ed3651589e27171e28380.ctex"
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ch57m"]
+
 [node name="TaylorTestScene" type="Node2D" unique_id=1982165155]
 
 [node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=649236708]
@@ -68,4 +70,15 @@ scale = Vector2(3.71, 2.52)
 shape = SubResource("RectangleShape2D_jxcts")
 
 [node name="Sprite2D" type="Sprite2D" parent="StaticBody2D3" unique_id=130147502]
+texture = SubResource("CompressedTexture2D_tqlmn")
+
+[node name="StaticBody2D4" type="StaticBody2D" parent="." unique_id=387399158 groups=["Enemies"]]
+position = Vector2(507.33, 300)
+script = ExtResource("5_jxcts")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D4" unique_id=954450019]
+scale = Vector2(3.71, 2.52)
+shape = SubResource("RectangleShape2D_ch57m")
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D4" unique_id=137264177]
 texture = SubResource("CompressedTexture2D_tqlmn")
