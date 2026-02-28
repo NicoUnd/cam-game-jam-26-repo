@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://pd1mcvb1knm8"]
+
+[ext_resource type="PackedScene" uid="uid://cw8tuh2nkh5a5" path="res://scenes/obstacles/obstacle.tscn" id="1_16ya1"]
+[ext_resource type="Texture2D" uid="uid://4i0llu6tc4bc" path="res://assets/sprites/hwall_left.png" id="2_ti7me"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_16ya1"]
+size = Vector2(62, 81)
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_16ya1"]
+radius = 26.0
+height = 82.0
+
+[node name="HWallLeft" unique_id=12530250 instance=ExtResource("1_16ya1")]
+
+[node name="Sprite2D" parent="." index="0" unique_id=772725384]
+texture = ExtResource("2_ti7me")
+
+[node name="CollisionShape2D" parent="." index="1" unique_id=1902074252]
+position = Vector2(17, 43)
+shape = SubResource("RectangleShape2D_16ya1")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="." index="2" unique_id=1379843395]
+position = Vector2(-15, 43)
+shape = SubResource("CapsuleShape2D_16ya1")
