@@ -3,21 +3,23 @@
 [ext_resource type="FontFile" uid="uid://bekfx0qjolqss" path="res://assets/fonts/ithaca-font/Ithaca-LVB75.ttf" id="1_sl1te"]
 [ext_resource type="Shader" uid="uid://ktmwyg86ce11" path="res://shaders/petrification.gdshader" id="2_1g8jr"]
 [ext_resource type="Script" uid="uid://bdx36qttw3ft8" path="res://scripts/button.gd" id="3_m1kxf"]
-[ext_resource type="Texture2D" uid="uid://cf68s2g5ycvyy" path="res://assets/sprites/outside.png" id="4_m1kxf"]
+[ext_resource type="Texture2D" uid="uid://7sjs0o1hpc0c" path="res://assets/sprites/button.png" id="4_m1kxf"]
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_1g8jr"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_x2yvf"]
 shader = ExtResource("2_1g8jr")
+shader_parameter/use_canvas_group = true
 shader_parameter/progress = 0.0
 shader_parameter/stone_tint = Color(0.62091947, 0.5992716, 0.55412227, 1)
-shader_parameter/tint_weight = 0.85
+shader_parameter/tint_weight = 0.50000002375
 shader_parameter/edge_blur = 0.05
 shader_parameter/pixel_resolution = Vector2(32, 8)
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_m1kxf"]
 shader = ExtResource("2_1g8jr")
+shader_parameter/use_canvas_group = true
 shader_parameter/progress = 0.0
 shader_parameter/stone_tint = Color(0.62091947, 0.5992716, 0.55412227, 1)
-shader_parameter/tint_weight = 0.85
+shader_parameter/tint_weight = 0.50000002375
 shader_parameter/edge_blur = 0.05
 shader_parameter/pixel_resolution = Vector2(32, 8)
 
@@ -53,7 +55,7 @@ text = "Perseus"
 horizontal_alignment = 1
 
 [node name="StartButton" type="Control" parent="MarginContainer/VBoxContainer" unique_id=1880642969]
-custom_minimum_size = Vector2(0, 32)
+custom_minimum_size = Vector2(0, 96)
 layout_mode = 2
 script = ExtResource("3_m1kxf")
 
@@ -65,27 +67,28 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="NinePatchRect" type="NinePatchRect" parent="MarginContainer/VBoxContainer/StartButton" unique_id=1907011162]
-material = SubResource("ShaderMaterial_1g8jr")
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-texture = ExtResource("4_m1kxf")
-patch_margin_left = 3
-patch_margin_top = 3
-patch_margin_right = 3
-patch_margin_bottom = 3
+[node name="CanvasGroup" type="CanvasGroup" parent="MarginContainer/VBoxContainer/StartButton" unique_id=1240722414]
+material = SubResource("ShaderMaterial_x2yvf")
 
-[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/StartButton/NinePatchRect" unique_id=1093793844]
+[node name="NinePatchRect" type="NinePatchRect" parent="MarginContainer/VBoxContainer/StartButton/CanvasGroup" unique_id=1907011162]
+custom_minimum_size = Vector2(160, 96)
+offset_right = 1052.0
+offset_bottom = 96.0
+size_flags_horizontal = 4
+texture = ExtResource("4_m1kxf")
+patch_margin_left = 30
+patch_margin_top = 30
+patch_margin_right = 30
+patch_margin_bottom = 30
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/StartButton/CanvasGroup/NinePatchRect" unique_id=1093793844]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_colors/font_color = Color(0.8901961, 0.7058824, 0.28235295, 1)
 theme_override_fonts/font = ExtResource("1_sl1te")
 theme_override_font_sizes/font_size = 32
 text = "Start Game"
@@ -93,7 +96,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="QuitButton" type="Control" parent="MarginContainer/VBoxContainer" unique_id=2060320491]
-custom_minimum_size = Vector2(0, 32)
+custom_minimum_size = Vector2(0, 96)
 layout_mode = 2
 script = ExtResource("3_m1kxf")
 
@@ -105,28 +108,27 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="NinePatchRect" type="NinePatchRect" parent="MarginContainer/VBoxContainer/QuitButton" unique_id=833339433]
+[node name="CanvasGroup" type="CanvasGroup" parent="MarginContainer/VBoxContainer/QuitButton" unique_id=757854140]
 material = SubResource("ShaderMaterial_m1kxf")
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-texture = ExtResource("4_m1kxf")
-region_rect = Rect2(0, 0, 16, 16)
-patch_margin_left = 4
-patch_margin_top = 4
-patch_margin_right = 4
-patch_margin_bottom = 4
 
-[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/QuitButton/NinePatchRect" unique_id=1565801519]
+[node name="NinePatchRect" type="NinePatchRect" parent="MarginContainer/VBoxContainer/QuitButton/CanvasGroup" unique_id=833339433]
+custom_minimum_size = Vector2(1052, 96)
+offset_right = 1052.0
+offset_bottom = 96.0
+texture = ExtResource("4_m1kxf")
+patch_margin_left = 30
+patch_margin_top = 30
+patch_margin_right = 30
+patch_margin_bottom = 30
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/QuitButton/CanvasGroup/NinePatchRect" unique_id=1565801519]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_colors/font_color = Color(0.8901961, 0.7058824, 0.28235295, 1)
 theme_override_fonts/font = ExtResource("1_sl1te")
 theme_override_font_sizes/font_size = 32
 text = "Quit Game"

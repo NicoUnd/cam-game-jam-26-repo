@@ -7,6 +7,8 @@ static var player : Player
 @export var damage : int = 5
 @export var attack_cooldown : float = 1.0
 @export var player_attack_grace : float = 0.2
+@export var petrification_duration: float = 1
+var _is_petrified : bool = false
 var objects_in_range : Array[Destructable] = []
 var _time_since_last_attack : float = 0.0
 var _player_in_range : bool = false
@@ -28,13 +30,15 @@ var state: ENEMY_STATE = ENEMY_STATE.SLEEPING;
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	player = Player.player
+	animated_sprite_2d.material = animated_sprite_2d.material.duplicate()
 
 func petrify() -> void:
-	state = ENEMY_STATE.PETRIFIED;
-
-func spotted_player() -> void:
-	state = ENEMY_STATE.CHASING;
-	_last_spotted = 0;
+	if _is_petrified:
+		return
+	_is_petrified = true
+	animated_sprite_2d.stop()
+	var tween = create_tween()
+	tween.tween_property(animated_sprite_2d.material, "shader_parameter/progress", 1.0, petrification_duration)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta: float) -> void:

@@ -1,12 +1,25 @@
 [gd_scene format=3 uid="uid://c8oau2rn4hi80"]
 
-[ext_resource type="Script" uid="uid://dxhgjggsmowsy" path="res://scripts/enemies/snake.gd" id="1_a250b"]
+[ext_resource type="Script" path="res://scripts/enemies/snake.gd" id="1_a250b"]
 [ext_resource type="PackedScene" uid="uid://28fxek2ibb54" path="res://scenes/enemies/enemy.tscn" id="1_lcdrh"]
 [ext_resource type="Texture2D" uid="uid://csuhyr5hd1h1" path="res://assets/sprites/snake_sheet.png" id="1_uprpt"]
+[ext_resource type="Shader" uid="uid://ktmwyg86ce11" path="res://shaders/petrification.gdshader" id="3_0y5n7"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_0y5n7"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_lcdrh"]
 radius = 11.495
 height = 59.43
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_3rqwa"]
+shader = ExtResource("3_0y5n7")
+shader_parameter/use_canvas_group = false
+shader_parameter/spritesheet_frames = Vector2(4, 1)
+shader_parameter/progress = 0.0
+shader_parameter/stone_tint = Color(0.6, 0.6, 0.6, 1)
+shader_parameter/tint_weight = 0.85
+shader_parameter/edge_blur = 0.05
+shader_parameter/pixel_resolution = Vector2(32, 8)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_lcdrh"]
 atlas = ExtResource("1_uprpt")
@@ -92,6 +105,9 @@ animations = [{
 [node name="Snake" unique_id=668174716 instance=ExtResource("1_lcdrh")]
 script = ExtResource("1_a250b")
 damage = 1
+
+[node name="CollisionShape2D" parent="AttackArea2D" parent_id_path=PackedInt32Array(1413472798) index="0" unique_id=1899254083]
+shape = SubResource("CapsuleShape2D_0y5n7")
 
 [node name="CollisionShape2D" parent="." index="1" unique_id=580851608]
 position = Vector2(4.84, -0.18)

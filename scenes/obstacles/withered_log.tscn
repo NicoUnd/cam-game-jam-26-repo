@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://dmsv13enx4ipe"]
+
+[ext_resource type="PackedScene" uid="uid://cw8tuh2nkh5a5" path="res://scenes/obstacles/obstacle.tscn" id="1_8yrv7"]
+[ext_resource type="Script" uid="uid://7qeeq1tljtg2" path="res://scripts/destructable.gd" id="1_c6prq"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_soy5x"]
+
+[node name="WitheredLog" unique_id=12530250 instance=ExtResource("1_8yrv7")]
+script = ExtResource("1_c6prq")
+health = 100
+
+[node name="CollisionShape2D" parent="." index="1" unique_id=1902074252]
+shape = SubResource("RectangleShape2D_soy5x")

@@ -1,4 +1,4 @@
-extends StaticBody2D
+extends Obstacle
 class_name Destructable 
 @export var health : int = 100
 
