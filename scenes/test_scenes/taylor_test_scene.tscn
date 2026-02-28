@@ -54,6 +54,8 @@ shape = SubResource("RectangleShape2D_jxcts")
 texture = SubResource("CompressedTexture2D_ch57m")
 
 [node name="Player" parent="." unique_id=1399442204 instance=ExtResource("3_tqlmn")]
+player_speed = 300.0
+push_force = 1600.0
 
 [node name="Medusa" parent="Player" unique_id=1342946002 instance=ExtResource("4_lyql5")]
 visible = false
