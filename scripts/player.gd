@@ -35,31 +35,7 @@ func _physics_process(delta):
 	get_input()
 	_time_since_last_dash += delta
 	var speed = velocity.length()
-	if speed > 0:
-		if not _is_dashing:
-			_last_input_direction = velocity.normalized()
-			if _last_input_direction.x > 0:
-				_last_x_right = true;
-			elif _last_input_direction.x < 0:
-				_last_x_right = false;
-			if _last_input_direction.y > 0:
-				_last_y_down = true;
-			elif _last_input_direction.y < 0:
-				_last_y_down = false;
-			play_animation("run");
-			print("HI")
-		move_and_slide()
-
-		for i in get_slide_collision_count():
-			var collision := get_slide_collision(i)
-			var collider := collision.get_collider()
-			
-			if collider is RigidBody2D:
-				var push_direction := -collision.get_normal()
-				collider.apply_central_force(push_direction * push_force)
-	elif not _is_dashing:
-		play_animation("idle");
-
+	
 	if _time_since_last_dash > dash_cooldown and Input.is_action_just_pressed("Dash"):
 		_dash_start = position
 		_is_dashing = true
@@ -71,3 +47,30 @@ func _physics_process(delta):
 		_time_since_last_dash = 0
 		play_animation("roll");
 		print("ROLL")
+		return;
+	
+	if speed > 0:
+		_last_input_direction = velocity.normalized()
+		if _last_input_direction.x > 0:
+			_last_x_right = true;
+		elif _last_input_direction.x < 0:
+			_last_x_right = false;
+		if _last_input_direction.y > 0:
+			_last_y_down = true;
+		elif _last_input_direction.y < 0:
+			_last_y_down = false;
+		play_animation("run");
+		print("HI")
+		move_and_slide()
+		
+		for i in get_slide_collision_count():
+			var collision := get_slide_collision(i)
+			var collider := collision.get_collider()
+			
+			if collider is RigidBody2D:
+				var push_direction := -collision.get_normal()
+				collider.apply_central_force(push_direction * push_force)
+		return;
+	
+	play_animation("idle");
+	
