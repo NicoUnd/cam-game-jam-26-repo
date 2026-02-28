@@ -14,6 +14,8 @@ var _player_in_range : bool = false
 var _time_since_player_in_range : float = 0
 
 
+@onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	player = Player.player
@@ -26,6 +28,7 @@ func _process(delta: float) -> void:
 	if not _is_petrified:
 		move(delta)
 		attack(delta)
+		animated_sprite_2d.flip_h = linear_velocity.x < 0;
 		
 func move(delta: float) -> void:
 	var direction = global_position.direction_to(player.global_position)

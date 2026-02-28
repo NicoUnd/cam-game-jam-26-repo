@@ -33,6 +33,7 @@ sources/0 = SubResource("TileSetAtlasSource_bovvr")
 [node name="Nwall" type="StaticBody2D" parent="." unique_id=420910691]
 z_index = -5
 position = Vector2(0, -300)
+collision_layer = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Nwall" unique_id=715951484]
 shape = SubResource("WorldBoundaryShape2D_ftxyw")
@@ -40,6 +41,7 @@ shape = SubResource("WorldBoundaryShape2D_ftxyw")
 [node name="EWall" type="StaticBody2D" parent="." unique_id=1092714748]
 z_index = -5
 position = Vector2(450, 0)
+collision_layer = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="EWall" unique_id=1445921430]
 shape = SubResource("WorldBoundaryShape2D_377w7")
@@ -47,6 +49,7 @@ shape = SubResource("WorldBoundaryShape2D_377w7")
 [node name="SWall" type="StaticBody2D" parent="." unique_id=1978877461]
 z_index = -5
 position = Vector2(0, 300)
+collision_layer = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="SWall" unique_id=1588299949]
 shape = SubResource("WorldBoundaryShape2D_bovvr")
@@ -54,6 +57,7 @@ shape = SubResource("WorldBoundaryShape2D_bovvr")
 [node name="WWall" type="StaticBody2D" parent="." unique_id=1177883733]
 z_index = -5
 position = Vector2(-450, 0)
+collision_layer = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="WWall" unique_id=645758242]
 shape = SubResource("WorldBoundaryShape2D_b2cq8")

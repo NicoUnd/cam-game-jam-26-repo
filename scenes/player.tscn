@@ -303,6 +303,7 @@ animations = [{
 }]
 
 [node name="Player" type="CharacterBody2D" unique_id=820894451]
+collision_mask = 6
 script = ExtResource("1_3vyb7")
 dash_distance = 150.0
 dash_speed = 400.0
