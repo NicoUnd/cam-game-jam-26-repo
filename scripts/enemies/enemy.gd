@@ -24,12 +24,12 @@ func petrify() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	if not _is_petrified:
-		var direction = global_position.direction_to(player.global_position)
-		var distance = global_position.distance_to(player.global_position)
-		linear_velocity = direction * speed
+		move(delta)
 		attack(delta)
 		
-		
+func move(delta: float) -> void:
+	var direction = global_position.direction_to(player.global_position)
+	linear_velocity = direction * speed
 
 func attack(delta : float) -> void:
 	if _player_in_range and _time_since_player_in_range <= player_attack_grace:
@@ -50,7 +50,6 @@ func _on_hurtbox_entered(body: Node2D) -> void:
 	elif body is Player:
 		_player_in_range = true
 		_time_since_player_in_range = 0
-
 
 func _on_hurtbox_exited(body: Node2D) -> void:
 	if body is Destructable:
