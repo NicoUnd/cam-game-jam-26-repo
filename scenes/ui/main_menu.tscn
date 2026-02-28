@@ -1,0 +1,134 @@
+[gd_scene format=3 uid="uid://dudgtjljsy10w"]
+
+[ext_resource type="FontFile" uid="uid://bekfx0qjolqss" path="res://assets/fonts/ithaca-font/Ithaca-LVB75.ttf" id="1_sl1te"]
+[ext_resource type="Shader" uid="uid://ktmwyg86ce11" path="res://shaders/petrification.gdshader" id="2_1g8jr"]
+[ext_resource type="Script" uid="uid://bdx36qttw3ft8" path="res://scripts/button.gd" id="3_m1kxf"]
+[ext_resource type="Texture2D" uid="uid://cf68s2g5ycvyy" path="res://assets/sprites/outside.png" id="4_m1kxf"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_1g8jr"]
+shader = ExtResource("2_1g8jr")
+shader_parameter/progress = 0.0
+shader_parameter/stone_tint = Color(0.62091947, 0.5992716, 0.55412227, 1)
+shader_parameter/tint_weight = 0.85
+shader_parameter/edge_blur = 0.05
+shader_parameter/pixel_resolution = Vector2(32, 8)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_m1kxf"]
+shader = ExtResource("2_1g8jr")
+shader_parameter/progress = 0.0
+shader_parameter/stone_tint = Color(0.62091947, 0.5992716, 0.55412227, 1)
+shader_parameter/tint_weight = 0.85
+shader_parameter/edge_blur = 0.05
+shader_parameter/pixel_resolution = Vector2(32, 8)
+
+[node name="MainMenu" type="Control" unique_id=2079963728]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=345482774]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_top = 40
+theme_override_constants/margin_right = 50
+theme_override_constants/margin_bottom = 40
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer" unique_id=1566054574]
+layout_mode = 2
+alignment = 1
+
+[node name="Title" type="Label" parent="MarginContainer/VBoxContainer" unique_id=596376252]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_sl1te")
+theme_override_font_sizes/font_size = 64
+text = "Perseus"
+horizontal_alignment = 1
+
+[node name="StartButton" type="Control" parent="MarginContainer/VBoxContainer" unique_id=1880642969]
+custom_minimum_size = Vector2(0, 32)
+layout_mode = 2
+script = ExtResource("3_m1kxf")
+
+[node name="TextureButton" type="TextureButton" parent="MarginContainer/VBoxContainer/StartButton" unique_id=1852119045]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="NinePatchRect" type="NinePatchRect" parent="MarginContainer/VBoxContainer/StartButton" unique_id=1907011162]
+material = SubResource("ShaderMaterial_1g8jr")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("4_m1kxf")
+patch_margin_left = 3
+patch_margin_top = 3
+patch_margin_right = 3
+patch_margin_bottom = 3
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/StartButton/NinePatchRect" unique_id=1093793844]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("1_sl1te")
+theme_override_font_sizes/font_size = 32
+text = "Start Game"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="QuitButton" type="Control" parent="MarginContainer/VBoxContainer" unique_id=2060320491]
+custom_minimum_size = Vector2(0, 32)
+layout_mode = 2
+script = ExtResource("3_m1kxf")
+
+[node name="TextureButton" type="TextureButton" parent="MarginContainer/VBoxContainer/QuitButton" unique_id=763853301]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="NinePatchRect" type="NinePatchRect" parent="MarginContainer/VBoxContainer/QuitButton" unique_id=833339433]
+material = SubResource("ShaderMaterial_m1kxf")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("4_m1kxf")
+region_rect = Rect2(0, 0, 16, 16)
+patch_margin_left = 4
+patch_margin_top = 4
+patch_margin_right = 4
+patch_margin_bottom = 4
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/QuitButton/NinePatchRect" unique_id=1565801519]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("1_sl1te")
+theme_override_font_sizes/font_size = 32
+text = "Quit Game"
+horizontal_alignment = 1
+vertical_alignment = 1
