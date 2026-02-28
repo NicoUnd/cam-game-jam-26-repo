@@ -3,7 +3,9 @@
 [ext_resource type="PackedScene" uid="uid://28fxek2ibb54" path="res://scenes/enemies/enemy.tscn" id="1_lcdrh"]
 [ext_resource type="Texture2D" uid="uid://csuhyr5hd1h1" path="res://assets/sprites/snake_sheet.png" id="1_uprpt"]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_0y5n7"]
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_a250b"]
+radius = 20.000002
+height = 40.000004
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_lcdrh"]
 radius = 11.495
@@ -170,8 +172,11 @@ animations = [{
 damage = 5
 sight_distance = 200.0
 
-[node name="CollisionShape2D" parent="AttackArea2D" parent_id_path=PackedInt32Array(1413472798) index="0" unique_id=1899254083]
-shape = SubResource("CapsuleShape2D_0y5n7")
+[node name="CollisionShape2D" parent="HitboxArea2D" parent_id_path=PackedInt32Array(1413472798) index="0" unique_id=1899254083]
+position = Vector2(24.805, -4.84)
+rotation = 1.5707964
+shape = SubResource("CapsuleShape2D_a250b")
+debug_color = Color(0.9883315, 0, 0.30836073, 0.41960785)
 
 [node name="CollisionShape2D" parent="." index="1" unique_id=580851608]
 position = Vector2(4.84, -0.18)

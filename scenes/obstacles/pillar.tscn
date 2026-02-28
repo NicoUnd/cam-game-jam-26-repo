@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://brp71dtg7r8e1"]
+
+[ext_resource type="PackedScene" uid="uid://cw8tuh2nkh5a5" path="res://scenes/obstacles/obstacle.tscn" id="1_2gch8"]
+[ext_resource type="Texture2D" uid="uid://dfgt4ub7es7rr" path="res://assets/sprites/pillar.png" id="2_ji6oi"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_2gch8"]
+radius = 18.0
+height = 70.0
+
+[node name="Pillar" unique_id=12530250 instance=ExtResource("1_2gch8")]
+
+[node name="Sprite2D" parent="." index="0" unique_id=772725384]
+texture = ExtResource("2_ji6oi")
+
+[node name="CollisionShape2D" parent="." index="1" unique_id=1902074252]
+position = Vector2(0, 37)
+shape = SubResource("CapsuleShape2D_2gch8")

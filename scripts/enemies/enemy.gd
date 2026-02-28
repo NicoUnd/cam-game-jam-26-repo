@@ -27,9 +27,11 @@ var _been_sleeping_for: float = 0;
 
 @export var default_state: ENEMY_STATE = ENEMY_STATE.IDLE;
 
-@onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
+@onready var animated_sprite_2d: AnimatedSprite2D = $Flippable/AnimatedSprite2D
 
 @onready var spotted: Spotted = $Spotted
+
+@onready var flippable: Node2D = $Flippable
 
 enum ENEMY_STATE {IDLE, SLEEPING, CHASING, PETRIFIED};
 var state: ENEMY_STATE = ENEMY_STATE.SLEEPING;
@@ -80,7 +82,7 @@ func _physics_process(delta: float) -> void:
 	
 	move(delta)
 	attack(delta)
-	animated_sprite_2d.flip_h = linear_velocity.x < 0;
+	flippable.scale.x = -1 if linear_velocity.x < 0 else 1;
 	
 	if state == ENEMY_STATE.IDLE and _been_idle_for > idle_until_sleep:
 		sleep();

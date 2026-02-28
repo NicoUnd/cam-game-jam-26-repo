@@ -1,0 +1,69 @@
+[gd_scene format=3 uid="uid://wab4gk5t5glw"]
+
+[ext_resource type="PackedScene" uid="uid://cw8tuh2nkh5a5" path="res://scenes/obstacles/obstacle.tscn" id="1_jxlug"]
+[ext_resource type="Texture2D" uid="uid://o54b34qbo2wv" path="res://assets/sprites/barrel.png" id="2_2xqb5"]
+[ext_resource type="Script" uid="uid://dn40jd2ksifjb" path="res://scripts/obstacles/barrel.gd" id="2_fmijs"]
+[ext_resource type="Texture2D" uid="uid://dbcme7w4asrhd" path="res://assets/sprites/barrel_sheet.png" id="3_2xqb5"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_jxlug"]
+radius = 25.0
+height = 60.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fmijs"]
+atlas = ExtResource("3_2xqb5")
+region = Rect2(0, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c8cku"]
+atlas = ExtResource("3_2xqb5")
+region = Rect2(24, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h57l5"]
+atlas = ExtResource("3_2xqb5")
+region = Rect2(48, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6kkj0"]
+atlas = ExtResource("3_2xqb5")
+region = Rect2(72, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1gaiw"]
+atlas = ExtResource("3_2xqb5")
+region = Rect2(96, 0, 24, 24)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_27pyu"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fmijs")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c8cku")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h57l5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6kkj0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1gaiw")
+}],
+"loop": false,
+"name": &"default",
+"speed": 8.0
+}]
+
+[node name="Barrel" unique_id=12530250 instance=ExtResource("1_jxlug")]
+collision_layer = 8
+script = ExtResource("2_fmijs")
+
+[node name="Sprite2D" parent="." index="0" unique_id=772725384]
+visible = false
+texture = ExtResource("2_2xqb5")
+
+[node name="CollisionShape2D" parent="." index="1" unique_id=1902074252]
+position = Vector2(0, 5)
+shape = SubResource("CapsuleShape2D_jxlug")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." index="2" unique_id=1978686464]
+scale = Vector2(3, 3)
+sprite_frames = SubResource("SpriteFrames_27pyu")
