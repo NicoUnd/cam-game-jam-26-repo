@@ -1,6 +1,5 @@
 [gd_scene format=3 uid="uid://c8oau2rn4hi80"]
 
-[ext_resource type="Script" uid="uid://dxhgjggsmowsy" path="res://scripts/enemies/snake.gd" id="1_a250b"]
 [ext_resource type="PackedScene" uid="uid://28fxek2ibb54" path="res://scenes/enemies/enemy.tscn" id="1_lcdrh"]
 [ext_resource type="Texture2D" uid="uid://csuhyr5hd1h1" path="res://assets/sprites/snake_sheet.png" id="1_uprpt"]
 [ext_resource type="Shader" uid="uid://ktmwyg86ce11" path="res://shaders/petrification.gdshader" id="3_0y5n7"]
@@ -103,8 +102,8 @@ animations = [{
 }]
 
 [node name="Snake" unique_id=668174716 instance=ExtResource("1_lcdrh")]
-script = ExtResource("1_a250b")
-damage = 1
+damage = 5
+sight_distance = 200.0
 
 [node name="CollisionShape2D" parent="AttackArea2D" parent_id_path=PackedInt32Array(1413472798) index="0" unique_id=1899254083]
 shape = SubResource("CapsuleShape2D_0y5n7")

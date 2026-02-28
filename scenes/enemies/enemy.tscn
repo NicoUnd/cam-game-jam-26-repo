@@ -105,6 +105,7 @@ position = Vector2(0, -58)
 
 [node name="Sleeping" type="AnimatedSprite2D" parent="." unique_id=2101557165]
 visible = false
+z_index = 19
 position = Vector2(61, -60)
 scale = Vector2(3, 3)
 sprite_frames = SubResource("SpriteFrames_8e3ao")

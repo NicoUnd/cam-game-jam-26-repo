@@ -1,7 +1,7 @@
 extends Node2D
 
 @onready var player : Player = $".."
-@export var vision_cone_angle : float = PI / 6
+@export var vision_cone_angle : float = PI / 3
 
 func petrify(looking_dir : Vector2):
 	var state_space = get_world_2d().direct_space_state

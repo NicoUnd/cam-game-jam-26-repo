@@ -44,7 +44,7 @@ func play_animation(animation_name: String, duration : float = -1) -> void:
 			var fps: float = frames.get_animation_speed(animation_name)
 			var base_duration: float = frame_count / fps
 			anim_speed_multiplier = base_duration / duration
-		print(anim_speed_multiplier)
+		#print(anim_speed_multiplier)
 		animated_sprite_2d.play(animation_name, anim_speed_multiplier)
 
 func _physics_process(delta):

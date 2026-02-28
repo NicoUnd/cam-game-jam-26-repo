@@ -16,9 +16,16 @@ var _time_since_player_in_range : float = 0
 
 var _last_spotted: float = INF;
 var _been_idle_for: float = 0;
+var _been_sleeping_for: float = 0;
+
+@export var sight_distance: float = 300;
 
 @export var chase_for: float = 3;
 @export var idle_until_sleep: float = 5;
+
+@export var min_sleep_time: float = 0;
+
+@export var default_state: ENEMY_STATE = ENEMY_STATE.IDLE;
 
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
 
@@ -31,10 +38,12 @@ var state: ENEMY_STATE = ENEMY_STATE.SLEEPING;
 func _ready() -> void:
 	player = Player.player
 	animated_sprite_2d.material = animated_sprite_2d.material.duplicate()
+	state = default_state;
 
 func petrify() -> void:
 	if state == ENEMY_STATE.PETRIFIED:
 		return
+	linear_velocity = Vector2.ZERO;
 	state = ENEMY_STATE.PETRIFIED;
 	animated_sprite_2d.stop()
 	var tween = create_tween()
@@ -44,6 +53,11 @@ func spotted_player() -> void:
 	state = ENEMY_STATE.CHASING;
 	_last_spotted = 0;
 
+func sleep() -> void:
+	state = ENEMY_STATE.SLEEPING;
+	_been_sleeping_for = 0;
+	linear_velocity = Vector2.ZERO;
+
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta: float) -> void:
 	match state:
@@ -51,21 +65,24 @@ func _physics_process(delta: float) -> void:
 			return;
 		ENEMY_STATE.IDLE:
 			_been_idle_for += delta;
+		ENEMY_STATE.SLEEPING:
+			_been_sleeping_for += delta;
 	
 	move(delta)
 	attack(delta)
 	animated_sprite_2d.flip_h = linear_velocity.x < 0;
 	
 	if state == ENEMY_STATE.IDLE and _been_idle_for > idle_until_sleep:
-		state = ENEMY_STATE.SLEEPING;
+		sleep();
 	
 	var state_space = get_world_2d().direct_space_state
 	var collision_mask: int = 8 if collision_layer == 2 else 16;
 	var query = PhysicsRayQueryParameters2D.create(global_position, Player.player.position, collision_mask)
 	#query.exclude = enemies_and_player
 	var result = state_space.intersect_ray(query)
-	if result.is_empty():
-		spotted_player();
+	if result.is_empty() and player.position.distance_to(position) < sight_distance:
+		if not (state == ENEMY_STATE.SLEEPING and _been_sleeping_for < min_sleep_time):
+			spotted_player();
 	else:
 		_last_spotted += delta;
 		if state == ENEMY_STATE.CHASING and _last_spotted > chase_for:
