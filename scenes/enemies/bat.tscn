@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://28fxek2ibb54" path="res://scenes/enemies/enemy.tscn" id="1_rt4uy"]
 [ext_resource type="Texture2D" uid="uid://drlcriftnr40k" path="res://assets/sprites/bat_sheet.png" id="2_4k4o5"]
-[ext_resource type="Script" path="res://scripts/enemies/bat.gd" id="2_5m14n"]
+[ext_resource type="Script" uid="uid://bgs1jjvpk3j54" path="res://scripts/enemies/bat.gd" id="2_5m14n"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_5m14n"]
 radius = 13.0
@@ -168,20 +168,20 @@ sight_distance = 250.0
 chase_for = 0.5
 idle_until_sleep = 9999.0
 
-[node name="CollisionShape2D" parent="." index="1" unique_id=580851608]
+[node name="CollisionShape2D" parent="." index="0" unique_id=580851608]
 position = Vector2(0, -19.48)
 shape = SubResource("CircleShape2D_5m14n")
 
-[node name="AnimatedSprite2D" parent="." index="2" unique_id=1003921594]
+[node name="AnimatedSprite2D" parent="Flippable" parent_id_path=PackedInt32Array(1096698229) index="0" unique_id=1003921594]
 material = SubResource("ShaderMaterial_i6os3")
 sprite_frames = SubResource("SpriteFrames_ss5yy")
-animation = &"sleep"
+animation = &"idle"
 autoplay = "idle"
 
-[node name="Spotted" parent="." index="3" unique_id=153104076]
+[node name="Spotted" parent="." index="2" unique_id=153104076]
 position = Vector2(0, -66)
 
-[node name="Timer" type="Timer" parent="." index="5" unique_id=1415654928]
+[node name="Timer" type="Timer" parent="." index="4" unique_id=1415654928]
 wait_time = 2.0
 autostart = true
 

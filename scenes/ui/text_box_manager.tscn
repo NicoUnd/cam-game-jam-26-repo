@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://7dehfnrb6r5g"]
+
+[ext_resource type="Script" uid="uid://dp7f5o24qmqtf" path="res://scripts/text_box_manager.gd" id="1_le2l2"]
+
+[node name="TextBoxManager" type="Control" unique_id=2063301136]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_le2l2")
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=478648583]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_top = 30
+theme_override_constants/margin_right = 50
