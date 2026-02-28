@@ -12,6 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://1r34p0avoibv" path="res://scenes/obstacles/h_wall.tscn" id="10_w0sk1"]
 [ext_resource type="PackedScene" uid="uid://pd1mcvb1knm8" path="res://scenes/obstacles/h_wall_left.tscn" id="11_8t11a"]
 [ext_resource type="PackedScene" uid="uid://h0ie0t1ggrai" path="res://scenes/obstacles/h_wall_right.tscn" id="12_8t11a"]
+[ext_resource type="PackedScene" uid="uid://dcvo6ylw4wftk" path="res://scenes/enemies/rat.tscn" id="13_ruawh"]
 
 [node name="CaveLevel" unique_id=951364413 instance=ExtResource("1_axssm")]
 
@@ -302,3 +303,6 @@ position = Vector2(96, -120)
 
 [node name="HWallRight" parent="Y-Sort" parent_id_path=PackedInt32Array(1050274422) index="11" unique_id=69894450 instance=ExtResource("12_8t11a")]
 position = Vector2(288, -120)
+
+[node name="Rat" parent="Y-Sort" parent_id_path=PackedInt32Array(1050274422) index="12" unique_id=255767826 instance=ExtResource("13_ruawh")]
+position = Vector2(402, -27)
