@@ -8,6 +8,8 @@ static var player : Player
 @export var attack_cooldown : float = 1.0
 @export var player_attack_grace : float = 0.2
 @export var petrification_duration: float = 1
+
+@export var player_hit_sound : AudioStream
 var _is_petrified : bool = false
 var objects_in_range : Array[Destructable] = []
 var _time_since_last_attack : float = 0.0
@@ -118,6 +120,7 @@ func attack(delta : float) -> void:
 		if _player_in_range: 
 			if _time_since_player_in_range > player_attack_grace:
 				player.die();
+				AudioManager.play_sfx(player_hit_sound)
 		for object : Destructable in objects_in_range:
 			object.take_damage(damage)
 		_time_since_last_attack = 0

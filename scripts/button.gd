@@ -5,6 +5,7 @@ class_name PetrifiableButton
 @export var petrification_duration: float = 0.6
 @export var label_text : String = ""
 @export var locked : bool = false
+@export var button_press_sound : AudioStream
 
 signal interacted
 
@@ -51,4 +52,5 @@ func _on_mouse_exited() -> void:
 
 
 func _on_button_pressed() -> void:
+	AudioManager.play_sfx(button_press_sound)
 	interacted.emit()

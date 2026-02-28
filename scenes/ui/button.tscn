@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://bvfh111qyafjd"]
 
 [ext_resource type="Script" uid="uid://bdx36qttw3ft8" path="res://scripts/button.gd" id="1_mrrss"]
+[ext_resource type="AudioStream" uid="uid://dudpvghbhrj6g" path="res://assets/audio/sound_effects/interact.wav" id="2_cxawc"]
 [ext_resource type="Shader" uid="uid://ktmwyg86ce11" path="res://shaders/petrification.gdshader" id="2_y0w6a"]
 [ext_resource type="Texture2D" uid="uid://7sjs0o1hpc0c" path="res://assets/sprites/button.png" id="3_cxawc"]
 [ext_resource type="FontFile" uid="uid://bekfx0qjolqss" path="res://assets/fonts/ithaca-font/Ithaca-LVB75.ttf" id="4_m4qnx"]
@@ -20,6 +21,7 @@ custom_minimum_size = Vector2(0, 96)
 layout_mode = 3
 anchors_preset = 0
 script = ExtResource("1_mrrss")
+button_press_sound = ExtResource("2_cxawc")
 
 [node name="TextureButton" type="TextureButton" parent="." unique_id=760975221]
 layout_mode = 1
