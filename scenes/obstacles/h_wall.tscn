@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://dc0euoxbr21o3" path="res://assets/sprites/hwall.png" id="2_dfu6u"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dfu6u"]
-size = Vector2(96, 83)
+size = Vector2(96, 94.5)
 
 [node name="HWall" unique_id=12530250 instance=ExtResource("1_rxlm5")]
 
@@ -12,5 +12,5 @@ size = Vector2(96, 83)
 texture = ExtResource("2_dfu6u")
 
 [node name="CollisionShape2D" parent="." index="1" unique_id=1902074252]
-position = Vector2(0, 42)
+position = Vector2(0, 36.25)
 shape = SubResource("RectangleShape2D_dfu6u")

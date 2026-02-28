@@ -13,6 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://pd1mcvb1knm8" path="res://scenes/obstacles/h_wall_left.tscn" id="11_8t11a"]
 [ext_resource type="PackedScene" uid="uid://h0ie0t1ggrai" path="res://scenes/obstacles/h_wall_right.tscn" id="12_8t11a"]
 [ext_resource type="PackedScene" uid="uid://dcvo6ylw4wftk" path="res://scenes/enemies/rat.tscn" id="13_ruawh"]
+[ext_resource type="PackedScene" uid="uid://dyd4vj2mlckcx" path="res://scenes/muddy_puddle.tscn" id="14_dr6go"]
 
 [node name="CaveLevel" unique_id=951364413 instance=ExtResource("1_axssm")]
 
@@ -305,4 +306,7 @@ position = Vector2(96, -120)
 position = Vector2(288, -120)
 
 [node name="Rat" parent="Y-Sort" parent_id_path=PackedInt32Array(1050274422) index="12" unique_id=255767826 instance=ExtResource("13_ruawh")]
-position = Vector2(402, -27)
+position = Vector2(366, -146)
+
+[node name="MuddyPuddle" parent="." index="7" unique_id=206173280 instance=ExtResource("14_dr6go")]
+position = Vector2(-187, 89)

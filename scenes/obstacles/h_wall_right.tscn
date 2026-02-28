@@ -4,11 +4,11 @@
 [ext_resource type="Texture2D" uid="uid://c4ur7kwrfj6d2" path="res://assets/sprites/hwall_right.png" id="2_s8j55"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_homsj"]
-size = Vector2(58, 80)
+size = Vector2(58, 91)
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_homsj"]
 radius = 27.0
-height = 82.0
+height = 90.0
 
 [node name="HWallRight" unique_id=12530250 instance=ExtResource("1_homsj")]
 
@@ -16,9 +16,9 @@ height = 82.0
 texture = ExtResource("2_s8j55")
 
 [node name="CollisionShape2D" parent="." index="1" unique_id=1902074252]
-position = Vector2(-19, 45)
+position = Vector2(-19, 39.5)
 shape = SubResource("RectangleShape2D_homsj")
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="." index="2" unique_id=191065372]
-position = Vector2(11, 45)
+position = Vector2(11, 40)
 shape = SubResource("CapsuleShape2D_homsj")
