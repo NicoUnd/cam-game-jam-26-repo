@@ -19,6 +19,9 @@ var _last_input_direction: Vector2
 var _last_x_right: bool;
 var _last_y_down: bool;
 
+
+@onready var frames: SpriteFrames = animated_sprite_2d.sprite_frames
+
 static var player: Player;
 
 func _enter_tree() -> void:
@@ -28,11 +31,19 @@ func get_input():
 	var input_dir = Input.get_vector("left", "right", "up", "down").normalized()
 	velocity = input_dir * player_speed
 
-func play_animation(animation_name: String) -> void:
+func play_animation(animation_name: String, duration : float = -1) -> void:
 	animated_sprite_2d.flip_h = not _last_x_right;
-	
 	var animation_direction: String = "forward" if _last_y_down else "backward";
-	animated_sprite_2d.play(animation_name + "_" + animation_direction)
+	animation_name += "_" + animation_direction
+	if frames.has_animation(animation_name):
+		var anim_speed_multiplier: float = 1
+		if duration != -1:
+			var frame_count : int = frames.get_frame_count(animation_name)
+			var fps: float = frames.get_animation_speed(animation_name)
+			var base_duration: float = frame_count / fps
+			anim_speed_multiplier = base_duration / duration
+		print(anim_speed_multiplier)
+		animated_sprite_2d.play(animation_name, anim_speed_multiplier)
 
 func _physics_process(delta):
 	get_input()
@@ -47,10 +58,7 @@ func _physics_process(delta):
 		if move_and_collide(_last_input_direction * dash_speed * delta): # collided with something
 			play_animation("bump");
 		else:
-			play_animation("roll");
-		#if (position - _dash_start).length() > dash_distance or get_slide_collision_count() > 0:
-		#	_is_dashing = false
-		#_time_since_last_dash = 0
+			play_animation("roll", dash_distance/dash_speed);
 		return;
 	
 	if speed > 0:
@@ -64,7 +72,6 @@ func _physics_process(delta):
 		elif _last_input_direction.y < 0:
 			_last_y_down = false;
 		play_animation("run");
-		print("HI")
 		move_and_slide()
 		
 		for i in get_slide_collision_count():
