@@ -19,9 +19,9 @@ scale = Vector2(1, 0.99999994)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AttackArea2D" unique_id=1899254083]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=580851608]
-scale = Vector2(3.71, 2.52)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1003921594]
+scale = Vector2(3, 3)
 
 [connection signal="body_entered" from="AttackArea2D" to="." method="_on_hurtbox_entered"]
 [connection signal="body_exited" from="AttackArea2D" to="." method="_on_hurtbox_exited"]

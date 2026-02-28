@@ -1,0 +1,56 @@
+[gd_scene format=3 uid="uid://dcvo6ylw4wftk"]
+
+[ext_resource type="PackedScene" uid="uid://28fxek2ibb54" path="res://scenes/enemies/enemy.tscn" id="1_qn0ow"]
+[ext_resource type="Texture2D" uid="uid://ds13fqv20ps75" path="res://assets/sprites/rat_sheet.png" id="2_l3lpa"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_qn0ow"]
+radius = 14.0
+height = 56.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_orb1r"]
+atlas = ExtResource("2_l3lpa")
+region = Rect2(0, 0, 32, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6756y"]
+atlas = ExtResource("2_l3lpa")
+region = Rect2(32, 0, 32, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fxid1"]
+atlas = ExtResource("2_l3lpa")
+region = Rect2(64, 0, 32, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ohayx"]
+atlas = ExtResource("2_l3lpa")
+region = Rect2(96, 0, 32, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_rl5i1"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_orb1r")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6756y")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fxid1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ohayx")
+}],
+"loop": true,
+"name": &"default",
+"speed": 8.0
+}]
+
+[node name="Rat" unique_id=668174716 instance=ExtResource("1_qn0ow")]
+speed = 150.0
+
+[node name="CollisionShape2D" parent="." index="1" unique_id=580851608]
+rotation = 1.5707964
+shape = SubResource("CapsuleShape2D_qn0ow")
+
+[node name="AnimatedSprite2D" parent="." index="2" unique_id=1003921594]
+sprite_frames = SubResource("SpriteFrames_rl5i1")
+autoplay = "default"
+frame_progress = 0.8456306
