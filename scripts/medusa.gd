@@ -5,6 +5,8 @@ extends Node2D
 
 var switch_to_level_select = func(): get_tree().change_scene_to_file("res://scenes/ui/level_select.tscn")
 
+var in_tutorial: bool = false;
+
 func petrify(looking_dir : Vector2):
 	var state_space = get_world_2d().direct_space_state
 	var enemies : Array[Node] = get_tree().current_scene.get_tree().get_nodes_in_group("Enemies")
@@ -30,6 +32,13 @@ func petrify(looking_dir : Vector2):
 					continue
 			non_petrified_enemies.append(enemy)
 	
+	if in_tutorial:
+		if enemies.size() > 0 and non_petrified_enemies.size() == 0:
+			for enemy in petrified_enemies:
+				enemy.z_index = 30
+			LevelManager.max_level_index = max(LevelManager.max_level_index, LevelManager.current_level_index)
+			FadeToBlack.fade_to_black.fade_in(switch_to_level_select, "You petrified all enemies")
+		return;
 	if (non_petrified_enemies.size() > 0):
 		for enemy in non_petrified_enemies:
 			enemy.z_index = 30
@@ -37,5 +46,5 @@ func petrify(looking_dir : Vector2):
 	else:
 		for enemy in petrified_enemies:
 			enemy.z_index = 30
-			LevelManager.max_level_complete = max(LevelManager.max_level_index, LevelManager.current_level)
-		FadeToBlack.fade_to_black.fade_in(switch_to_level_select, "You Win")
+		LevelManager.max_level_index = max(LevelManager.max_level_index, LevelManager.current_level_index)
+		FadeToBlack.fade_to_black.fade_in(switch_to_level_select, "You petrified all enemies")

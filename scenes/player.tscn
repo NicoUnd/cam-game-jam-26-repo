@@ -483,7 +483,7 @@ radius = 15.0
 
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_qhqgy"]
 particle_flag_disable_z = true
-spread = 60.0
+spread = 30.0
 initial_velocity_min = 800.0
 initial_velocity_max = 800.0
 scale_min = 4.0
@@ -529,7 +529,7 @@ explosiveness = 0.98
 fixed_fps = 60
 collision_base_size = 4.0
 trail_enabled = true
-trail_lifetime = 0.09999999999999999
+trail_lifetime = 0.1
 process_material = SubResource("ParticleProcessMaterial_qhqgy")
 
 [node name="PetrifyVisualsTimer" type="Timer" parent="." unique_id=478218549]

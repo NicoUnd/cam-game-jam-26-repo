@@ -5,15 +5,12 @@
 [ext_resource type="Texture2D" uid="uid://ctumttjnvgfvt" path="res://assets/sprites/rock_wall_side.png" id="3_jgdsl"]
 [ext_resource type="Texture2D" uid="uid://cf68s2g5ycvyy" path="res://assets/sprites/outside.png" id="4_3b5nr"]
 [ext_resource type="Texture2D" uid="uid://bxjon1ikb20gs" path="res://assets/sprites/rock_wall_bottom.png" id="5_wr2x8"]
-[ext_resource type="PackedScene" uid="uid://04chy73giuu4" path="res://scenes/ui/black.tscn" id="18_jkg2q"]
 
 [node name="CaveLevel" unique_id=951364413 instance=ExtResource("1_axssm")]
 
 [node name="TextBoxManager" parent="." index="0" unique_id=2063301136]
 size_flags_horizontal = 3
 size_flags_vertical = 3
-
-[node name="Black" parent="Camera2D" parent_id_path=PackedInt32Array(1355967810) index="0" unique_id=694241931 instance=ExtResource("18_jkg2q")]
 
 [node name="Nwall" parent="." index="3" unique_id=420910691]
 position = Vector2(0, -220)
