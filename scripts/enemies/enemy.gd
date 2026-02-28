@@ -1,4 +1,4 @@
-extends Node2D
+extends RigidBody2D
 class_name Enemy
 
 var collision_shape_2d: CollisionShape2D;
@@ -17,4 +17,6 @@ func petrify() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	if not _is_petrified:
-		position = position.move_toward(player.global_position, speed * delta)
+		var direction = global_position.direction_to(player.global_position)
+		var distance = global_position.distance_to(player.global_position)
+		linear_velocity = direction * speed

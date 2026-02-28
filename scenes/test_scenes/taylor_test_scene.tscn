@@ -5,6 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://bc7mdr52ny7l5" path="res://assets/sprites/rock.png" id="4_1hvfy"]
 [ext_resource type="PackedScene" uid="uid://cd180mx115x52" path="res://scenes/medusa.tscn" id="4_lyql5"]
 [ext_resource type="Script" uid="uid://d114r30gu8vjt" path="res://scripts/enemies/enemy.gd" id="5_jxcts"]
+[ext_resource type="PackedScene" uid="uid://dyd4vj2mlckcx" path="res://scenes/muddy_puddle.tscn" id="7_ch57m"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tqlmn"]
 
@@ -61,8 +62,12 @@ texture = SubResource("CompressedTexture2D_ch57m")
 [node name="Medusa" parent="Player" unique_id=1342946002 instance=ExtResource("4_lyql5")]
 visible = false
 
-[node name="StaticBody2D3" type="StaticBody2D" parent="." unique_id=1752569045 groups=["Enemies"]]
+[node name="StaticBody2D3" type="RigidBody2D" parent="." unique_id=1243197217 groups=["Enemies"]]
 position = Vector2(600, 300)
+gravity_scale = 0.0
+lock_rotation = true
+linear_damp_mode = 1
+linear_damp = 15.0
 script = ExtResource("5_jxcts")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D3" unique_id=2082267483]
@@ -72,8 +77,12 @@ shape = SubResource("RectangleShape2D_jxcts")
 [node name="Sprite2D" type="Sprite2D" parent="StaticBody2D3" unique_id=130147502]
 texture = SubResource("CompressedTexture2D_tqlmn")
 
-[node name="StaticBody2D4" type="StaticBody2D" parent="." unique_id=387399158 groups=["Enemies"]]
+[node name="StaticBody2D4" type="RigidBody2D" parent="." unique_id=2092735224 groups=["Enemies"]]
 position = Vector2(507.33, 300)
+gravity_scale = 0.0
+lock_rotation = true
+linear_damp_mode = 1
+linear_damp = 15.0
 script = ExtResource("5_jxcts")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D4" unique_id=954450019]
@@ -82,3 +91,7 @@ shape = SubResource("RectangleShape2D_ch57m")
 
 [node name="Sprite2D" type="Sprite2D" parent="StaticBody2D4" unique_id=137264177]
 texture = SubResource("CompressedTexture2D_tqlmn")
+
+[node name="MuddyPuddle" parent="." unique_id=206173280 instance=ExtResource("7_ch57m")]
+position = Vector2(100, 100)
+scale = Vector2(3, 3)

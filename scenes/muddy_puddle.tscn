@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://dyd4vj2mlckcx"]
+
+[ext_resource type="Script" uid="uid://co3m0m5wdrm5o" path="res://scripts/muddy_puddle.gd" id="1_mun5o"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_6t1j0"]
+
+[node name="MuddyPuddle" type="Area2D" unique_id=206173280]
+script = ExtResource("1_mun5o")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=592920953]
+shape = SubResource("CircleShape2D_6t1j0")
+debug_color = Color(0, 0.5882353, 0.7647059, 0.96862745)
