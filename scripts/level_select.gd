@@ -18,5 +18,5 @@ func _ready():
 func start_level(level : int) -> void:
 	print("res://scenes/levels/level_" + str(level) + ".tscn")
 	LevelManager.current_level_index = level
-	get_tree().change_scene_to_file("res://scenes/levels/cave_level.tscn")
+	get_tree().change_scene_to_file("res://scenes/levels/level_" + str(level) + ".tscn")
 	
