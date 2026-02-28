@@ -80,3 +80,5 @@ locked = true
 layout_mode = 2
 label_text = "Level 10"
 locked = true
+
+[connection signal="interacted" from="MarginContainer/ScrollContainer/VBoxContainer/Button1" to="." method="start_level" binds= [1]]

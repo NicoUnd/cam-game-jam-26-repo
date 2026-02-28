@@ -47,17 +47,7 @@ func petrify() -> void:
 	state = ENEMY_STATE.PETRIFIED;
 	animated_sprite_2d.stop()
 	var tween = create_tween()
-	#tween.tween_property(animated_sprite_2d.material, "shader_parameter/progress", 1.0, petrification_duration)
-	
-	var current_progress = animated_sprite_2d.get_instance_shader_parameter("progress")
-	if current_progress == null:
-		current_progress = 0.0
-	tween.tween_method(
-		func(val: float): animated_sprite_2d.set_instance_shader_parameter("progress", val),
-		current_progress,
-		1.0,
-		petrification_duration
-	)
+	tween.tween_property(animated_sprite_2d.material, "shader_parameter/progress", 1.0, petrification_duration)
 
 func spotted_player() -> void:
 	state = ENEMY_STATE.CHASING;
