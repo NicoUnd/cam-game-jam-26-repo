@@ -20,7 +20,7 @@ func petrify(looking_dir : Vector2):
 			var enemy_position : Vector2 = enemy.global_position
 			var enemy_direction : Vector2 = enemy_position - global_position
 			var angle_to_enemy = abs(enemy_direction.angle_to(looking_dir))
-			if angle_to_enemy < vision_cone_angle:
+			if angle_to_enemy < vision_cone_angle/2:
 				var query = PhysicsRayQueryParameters2D.create(global_position, enemy_position, 8 + 16)
 				#query.exclude = enemies_and_player
 				var result = state_space.intersect_ray(query)

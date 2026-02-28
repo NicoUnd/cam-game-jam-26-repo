@@ -7,6 +7,9 @@
 radius = 21.0
 height = 104.0
 
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_f6ujh"]
+polygon = PackedVector2Array(-20, -46, 18, -46, 16, 35, -18, 34)
+
 [node name="VWallBottom" unique_id=12530250 instance=ExtResource("1_f6ujh")]
 
 [node name="Sprite2D" parent="." index="0" unique_id=772725384]
@@ -15,3 +18,6 @@ texture = ExtResource("2_iqol2")
 [node name="CollisionShape2D" parent="." index="1" unique_id=1902074252]
 position = Vector2(0, -15)
 shape = SubResource("CapsuleShape2D_f6ujh")
+
+[node name="LightOccluder2D" parent="." index="2" unique_id=649625072]
+occluder = SubResource("OccluderPolygon2D_f6ujh")

@@ -6,6 +6,9 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dpbbt"]
 size = Vector2(42, 96)
 
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_dpbbt"]
+polygon = PackedVector2Array(-20, -47, 20, -48, 20, 46, -20, 46)
+
 [node name="VWall" unique_id=12530250 instance=ExtResource("1_onfxq")]
 
 [node name="Sprite2D" parent="." index="0" unique_id=772725384]
@@ -13,3 +16,6 @@ texture = ExtResource("2_dpbbt")
 
 [node name="CollisionShape2D" parent="." index="1" unique_id=1902074252]
 shape = SubResource("RectangleShape2D_dpbbt")
+
+[node name="LightOccluder2D" parent="." index="2" unique_id=649625072]
+occluder = SubResource("OccluderPolygon2D_dpbbt")

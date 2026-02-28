@@ -19,13 +19,25 @@ sources/0 = SubResource("TileSetAtlasSource_bovvr")
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_ftxyw"]
 normal = Vector2(-0.01030873, 0.99994683)
 
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_b2cq8"]
+polygon = PackedVector2Array(-595, 1, 603, -6, 624, -103, -654, -94, -605, -5)
+
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_bovvr"]
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_xb4v1"]
+polygon = PackedVector2Array(-588, 4, 636, 1, 650, 86, -647, 71)
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_377w7"]
 normal = Vector2(-1, 0)
 
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_urvlt"]
+polygon = PackedVector2Array(15, -355, 2, 331, 140, 319, 103, -354)
+
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_b2cq8"]
 normal = Vector2(1, 0)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_d4w6o"]
+polygon = PackedVector2Array(-78, -346, 2, -345, -2, 327, -117, 337)
 
 [node name="Level" type="Node2D" unique_id=951364413]
 
@@ -51,6 +63,9 @@ collision_layer = 24
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Nwall" unique_id=715951484]
 shape = SubResource("WorldBoundaryShape2D_ftxyw")
 
+[node name="LightOccluder2D" type="LightOccluder2D" parent="Nwall" unique_id=262598132]
+occluder = SubResource("OccluderPolygon2D_b2cq8")
+
 [node name="SWall" type="StaticBody2D" parent="." unique_id=1978877461]
 z_index = 5
 position = Vector2(0, 300)
@@ -58,6 +73,9 @@ collision_layer = 24
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="SWall" unique_id=1588299949]
 shape = SubResource("WorldBoundaryShape2D_bovvr")
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="SWall" unique_id=1696982299]
+occluder = SubResource("OccluderPolygon2D_xb4v1")
 
 [node name="EWall" type="StaticBody2D" parent="." unique_id=1092714748]
 z_index = -5
@@ -67,6 +85,9 @@ collision_layer = 24
 [node name="CollisionShape2D" type="CollisionShape2D" parent="EWall" unique_id=1445921430]
 shape = SubResource("WorldBoundaryShape2D_377w7")
 
+[node name="LightOccluder2D" type="LightOccluder2D" parent="EWall" unique_id=1517661320]
+occluder = SubResource("OccluderPolygon2D_urvlt")
+
 [node name="WWall" type="StaticBody2D" parent="." unique_id=1177883733]
 z_index = -5
 position = Vector2(-500, 0)
@@ -74,6 +95,9 @@ collision_layer = 24
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="WWall" unique_id=645758242]
 shape = SubResource("WorldBoundaryShape2D_b2cq8")
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="WWall" unique_id=1091087764]
+occluder = SubResource("OccluderPolygon2D_d4w6o")
 
 [node name="Y-Sort" type="Node2D" parent="." unique_id=1050274422]
 y_sort_enabled = true

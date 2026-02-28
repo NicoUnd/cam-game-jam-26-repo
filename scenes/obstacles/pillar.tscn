@@ -7,6 +7,9 @@
 radius = 18.0
 height = 80.0
 
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_2gch8"]
+polygon = PackedVector2Array(-16, -54, 18, -53, 17, 66, -18, 68)
+
 [node name="Pillar" unique_id=12530250 instance=ExtResource("1_2gch8")]
 
 [node name="Sprite2D" parent="." index="0" unique_id=772725384]
@@ -15,3 +18,6 @@ texture = ExtResource("2_ji6oi")
 [node name="CollisionShape2D" parent="." index="1" unique_id=1902074252]
 position = Vector2(0, 29)
 shape = SubResource("CapsuleShape2D_2gch8")
+
+[node name="LightOccluder2D" parent="." index="2" unique_id=649625072]
+occluder = SubResource("OccluderPolygon2D_2gch8")

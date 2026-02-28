@@ -15,9 +15,7 @@ class_name Player
 
 @onready var hurtbox_area_2d: Area2D = $HurtboxArea2D
 
-@onready var medusa_mist_1: MedusaMist = $MedusaMist1
-@onready var medusa_mist_2: MedusaMist = $MedusaMist2
-
+@onready var petrify_visuals_timer: Timer = $PetrifyVisualsTimer
 
 var _time_since_last_dash: float = dash_cooldown
 #var _dash_start: Vector2
@@ -32,6 +30,8 @@ enum PLAYER_STATE {DEFAULT, DASHING, BUMPING, DYING, PETRIFYING}
 var state: PLAYER_STATE = PLAYER_STATE.DEFAULT;
 
 @onready var frames: SpriteFrames = animated_sprite_2d.sprite_frames
+
+@onready var gpu_particles_2d: GPUParticles2D = $GPUParticles2D
 
 static var player: Player;
 
@@ -120,23 +120,33 @@ func die() -> void:
 		FadeToBlack.fade_to_black.fade_in(get_tree().reload_current_scene, "You Died")
 
 func petrify() -> void:
-	medusa.petrify(_last_input_direction);
+	#var direction: Vector2 = get_input_dir();
+	#_last_input_direction = direction;
 	animated_sprite_2d.play("petrify");
 	state = PLAYER_STATE.PETRIFYING;
 	
-	var input_direction: Vector2 = get_input_dir();
-	medusa_mist_1.position = Vector2.ZERO;
-	medusa_mist_1.visible = true;
-	medusa_mist_1.direction = input_direction.rotated(-PI/6);
-	medusa_mist_2.position = Vector2.ZERO;
-	medusa_mist_2.visible = true;
-	medusa_mist_2.direction = input_direction.rotated(PI/6);
+	gpu_particles_2d.emitting = false;
+	
+	petrify_visuals_timer.start(1);
+	
+	hurtbox_area_2d.monitorable = true;
+
+func petrify_visuals() -> void:
+	gpu_particles_2d.emitting = true;
+	gpu_particles_2d.rotation = _last_input_direction.angle();
+	gpu_particles_2d.visible = true;
+	gpu_particles_2d.restart();
+	medusa.petrify(_last_input_direction);
+	hurtbox_area_2d.monitorable = false;
 
 func _process(delta: float) -> void:
-	if state == PLAYER_STATE.DYING:
+	if state in [PLAYER_STATE.DYING, PLAYER_STATE.PETRIFYING]:
 		return;
 	if Input.is_action_just_pressed("Petrify"):
 		petrify();
+	
+	if in_tutorial:
+		hurtbox_area_2d.collision_layer = 0;
 
 func _on_animated_sprite_2d_animation_finished() -> void:
 	if state in [PLAYER_STATE.DASHING, PLAYER_STATE.BUMPING]:

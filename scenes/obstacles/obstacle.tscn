@@ -12,3 +12,5 @@ script = ExtResource("1_hof70")
 scale = Vector2(3, 3)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1902074252]
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="." unique_id=649625072]

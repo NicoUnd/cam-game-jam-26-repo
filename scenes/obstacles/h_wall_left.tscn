@@ -10,6 +10,9 @@ size = Vector2(62, 92.5)
 radius = 26.0
 height = 90.0
 
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_16ya1"]
+polygon = PackedVector2Array(-33, -18, 47, -20, 47, 87, -36, 89)
+
 [node name="HWallLeft" unique_id=12530250 instance=ExtResource("1_16ya1")]
 
 [node name="Sprite2D" parent="." index="0" unique_id=772725384]
@@ -22,3 +25,6 @@ shape = SubResource("RectangleShape2D_16ya1")
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="." index="2" unique_id=1379843395]
 position = Vector2(-15, 36)
 shape = SubResource("CapsuleShape2D_16ya1")
+
+[node name="LightOccluder2D" parent="." index="3" unique_id=649625072]
+occluder = SubResource("OccluderPolygon2D_16ya1")

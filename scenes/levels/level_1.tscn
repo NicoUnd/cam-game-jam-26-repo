@@ -10,7 +10,7 @@
 script = ExtResource("2_6iamk")
 
 [node name="TextBoxManager" parent="." index="0" unique_id=2063301136]
-queue = Array[String](["Move around with WASD or arrow keys", "Dodge roll with SPACE or SHIFT", "Beware dangerous enemies", "Enemies may sleep if they can't find you", "You have Medusa's head, but you can only use it once", "Press E to use Medusa's head"])
+queue = Array[String](["Move around with WASD or arrow keys", "Dodge roll with SPACE or SHIFT", "While dodging, you cannot be hit", "Beware dangerous enemies", "Enemies may sleep if they can't find you", "You have Medusa's head, but you can only use it once", "Press E to use Medusa's head", "Enemies need to see Medusa's head to become petified", "You need to pretrify all enemies with one use", "Good luck on your escape!"])
 
 [node name="Player" parent="Y-Sort" parent_id_path=PackedInt32Array(1050274422) index="0" unique_id=820894451]
 position = Vector2(-200, 0)
@@ -26,8 +26,8 @@ position = Vector2(0, 192)
 [node name="VWall4" parent="Y-Sort" parent_id_path=PackedInt32Array(1050274422) index="4" unique_id=24125278 instance=ExtResource("3_nsrm0")]
 position = Vector2(0, 96)
 
-[node name="VWallBottom" parent="Y-Sort" parent_id_path=PackedInt32Array(1050274422) index="6" unique_id=702361014 instance=ExtResource("4_6761a")]
+[node name="VWallBottom" parent="Y-Sort" parent_id_path=PackedInt32Array(1050274422) index="5" unique_id=702361014 instance=ExtResource("4_6761a")]
 position = Vector2(0, 288)
 
-[node name="VWallTop" parent="Y-Sort" parent_id_path=PackedInt32Array(1050274422) index="7" unique_id=1815281637 instance=ExtResource("5_sk5k4")]
+[node name="VWallTop" parent="Y-Sort" parent_id_path=PackedInt32Array(1050274422) index="6" unique_id=1815281637 instance=ExtResource("5_sk5k4")]
 position = Vector2(0, -192)

@@ -481,6 +481,18 @@ animations = [{
 [sub_resource type="CircleShape2D" id="CircleShape2D_qhqgy"]
 radius = 15.0
 
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_qhqgy"]
+particle_flag_disable_z = true
+spread = 60.0
+initial_velocity_min = 800.0
+initial_velocity_max = 800.0
+scale_min = 4.0
+scale_max = 4.0
+color = Color(0.59607846, 0.84705883, 0.6, 1)
+collision_mode = 1
+collision_friction = 1.0
+collision_bounce = 0.0
+
 [node name="Player" type="CharacterBody2D" unique_id=820894451]
 y_sort_enabled = true
 collision_mask = 42
@@ -506,13 +518,22 @@ frame_progress = 1.0
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HurtboxArea2D" unique_id=458579891]
 shape = SubResource("CircleShape2D_qhqgy")
 
-[node name="CPUParticles2D" type="CPUParticles2D" parent="." unique_id=1454091958]
+[node name="GPUParticles2D" type="GPUParticles2D" parent="." unique_id=2015913133]
+visible = false
+modulate = Color(1, 1, 1, 0.21176471)
+emitting = false
 amount = 256
-lifetime = 5.0
+lifetime = 3.0
+one_shot = true
 explosiveness = 0.98
-spread = 60.0
-gravity = Vector2(0, 0)
-initial_velocity_min = 400.0
-initial_velocity_max = 400.0
+fixed_fps = 60
+collision_base_size = 4.0
+trail_enabled = true
+trail_lifetime = 0.09999999999999999
+process_material = SubResource("ParticleProcessMaterial_qhqgy")
+
+[node name="PetrifyVisualsTimer" type="Timer" parent="." unique_id=478218549]
+one_shot = true
 
 [connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
+[connection signal="timeout" from="PetrifyVisualsTimer" to="." method="petrify_visuals"]
