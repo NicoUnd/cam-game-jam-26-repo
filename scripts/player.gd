@@ -108,9 +108,9 @@ func _physics_process(delta):
 
 func die() -> void:
 	animated_sprite_2d.play("die");
-	print("DIE")
 	state = PLAYER_STATE.DYING;
 	set_collision_layer_value(8 + 16, true);
+	FadeToBlack.fade_to_black.fade_in(get_tree().reload_current_scene, "You Died")
 
 func _process(delta: float) -> void:
 	if state == PLAYER_STATE.DYING:
@@ -122,5 +122,5 @@ func _on_animated_sprite_2d_animation_finished() -> void:
 	if state in [PLAYER_STATE.DASHING, PLAYER_STATE.BUMPING]:
 		_time_since_last_dash = 0;
 		state = PLAYER_STATE.DEFAULT;
-	elif state == PLAYER_STATE.DYING:
-		get_tree().reload_current_scene();
+	#elif state == PLAYER_STATE.DYING:
+		#pass;

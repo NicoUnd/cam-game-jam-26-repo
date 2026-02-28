@@ -18,6 +18,7 @@
 [ext_resource type="PackedScene" uid="uid://ccl0jq7i4c6ju" path="res://scenes/enemies/bat.tscn" id="15_q3r4p"]
 [ext_resource type="PackedScene" uid="uid://brp71dtg7r8e1" path="res://scenes/obstacles/pillar.tscn" id="16_avmx4"]
 [ext_resource type="PackedScene" uid="uid://wab4gk5t5glw" path="res://scenes/obstacles/barrel.tscn" id="17_gnv7r"]
+[ext_resource type="PackedScene" uid="uid://04chy73giuu4" path="res://scenes/ui/black.tscn" id="18_jkg2q"]
 
 [node name="CaveLevel" unique_id=951364413 instance=ExtResource("1_axssm")]
 
@@ -328,6 +329,10 @@ position = Vector2(-101, -50)
 
 [node name="Barrel" parent="Y-Sort" parent_id_path=PackedInt32Array(1050274422) index="16" unique_id=981812537 instance=ExtResource("17_gnv7r")]
 position = Vector2(52, 140)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="Y-Sort" parent_id_path=PackedInt32Array(1050274422) index="17" unique_id=1998736802]
+
+[node name="Black" parent="Y-Sort/CanvasLayer" index="0" unique_id=694241931 instance=ExtResource("18_jkg2q")]
 
 [node name="MuddyPuddle" parent="." index="7" unique_id=206173280 instance=ExtResource("14_dr6go")]
 position = Vector2(-187, 89)

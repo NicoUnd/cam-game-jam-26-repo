@@ -15,14 +15,17 @@ func _ready() -> void:
 	_canvas_group.material = _canvas_group.material.duplicate()
 	if not locked:
 		unlock()
-	#else:
-		#_canvas_group.set_instance_shader_parameter("progress", 1.0)
+	else:
+		_canvas_group.material.set_shader_parameter("progress", 1.0)
 
 func unlock() -> void:
 	_interaction_button.pressed.connect(_on_button_pressed)
 	_interaction_button.mouse_entered.connect(_on_mouse_entered)
 	_interaction_button.mouse_exited.connect(_on_mouse_exited)
-
+	
+	var tween = create_tween()
+	tween.tween_property(_canvas_group.material, "shader_parameter/progress", 0.0, petrification_duration)
+	
 func _on_mouse_entered() -> void:
 	var tween = create_tween()
 	tween.tween_property(_canvas_group.material, "shader_parameter/progress", 1.0, petrification_duration)

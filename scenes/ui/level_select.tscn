@@ -34,50 +34,61 @@ size_flags_vertical = 3
 
 [node name="Button1" parent="MarginContainer/ScrollContainer/VBoxContainer" unique_id=1402378235 instance=ExtResource("1_x15a5")]
 layout_mode = 2
+petrification_duration = null
 label_text = "Level 1"
+locked = null
 
 [node name="Button2" parent="MarginContainer/ScrollContainer/VBoxContainer" unique_id=1360980316 instance=ExtResource("1_x15a5")]
 layout_mode = 2
+petrification_duration = null
 label_text = "Level 2"
 locked = true
 
 [node name="Button3" parent="MarginContainer/ScrollContainer/VBoxContainer" unique_id=1893733811 instance=ExtResource("1_x15a5")]
 layout_mode = 2
+petrification_duration = null
 label_text = "Level 3"
 locked = true
 
 [node name="Button4" parent="MarginContainer/ScrollContainer/VBoxContainer" unique_id=813111450 instance=ExtResource("1_x15a5")]
 layout_mode = 2
+petrification_duration = null
 label_text = "Level 4"
 locked = true
 
 [node name="Button5" parent="MarginContainer/ScrollContainer/VBoxContainer" unique_id=1768224720 instance=ExtResource("1_x15a5")]
 layout_mode = 2
+petrification_duration = null
 label_text = "Level 5"
 locked = true
 
 [node name="Button6" parent="MarginContainer/ScrollContainer/VBoxContainer" unique_id=1089578851 instance=ExtResource("1_x15a5")]
 layout_mode = 2
+petrification_duration = null
 label_text = "Level 6"
 locked = true
 
 [node name="Button7" parent="MarginContainer/ScrollContainer/VBoxContainer" unique_id=331892769 instance=ExtResource("1_x15a5")]
 layout_mode = 2
+petrification_duration = null
 label_text = "Level 7"
 locked = true
 
 [node name="Button8" parent="MarginContainer/ScrollContainer/VBoxContainer" unique_id=826985835 instance=ExtResource("1_x15a5")]
 layout_mode = 2
+petrification_duration = null
 label_text = "Level 8"
 locked = true
 
 [node name="Button9" parent="MarginContainer/ScrollContainer/VBoxContainer" unique_id=2092880105 instance=ExtResource("1_x15a5")]
 layout_mode = 2
+petrification_duration = null
 label_text = "Level 9"
 locked = true
 
 [node name="Button10" parent="MarginContainer/ScrollContainer/VBoxContainer" unique_id=2132355953 instance=ExtResource("1_x15a5")]
 layout_mode = 2
+petrification_duration = null
 label_text = "Level 10"
 locked = true
 
