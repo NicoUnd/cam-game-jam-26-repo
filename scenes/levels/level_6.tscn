@@ -1,0 +1,67 @@
+[gd_scene format=3 uid="uid://co2l4tb2jyxj5"]
+
+[ext_resource type="PackedScene" uid="uid://bidivnh002n86" path="res://scenes/levels/cave_level.tscn" id="1_gfuhv"]
+[ext_resource type="PackedScene" uid="uid://dyd4vj2mlckcx" path="res://scenes/muddy_puddle.tscn" id="2_y2agi"]
+[ext_resource type="PackedScene" uid="uid://dgm4ae64akcuu" path="res://scenes/obstacles/v_wall.tscn" id="3_g44gb"]
+[ext_resource type="PackedScene" uid="uid://b5kfhqcljyb8n" path="res://scenes/obstacles/v_wall_bottom.tscn" id="4_741xk"]
+[ext_resource type="PackedScene" uid="uid://d3tmox7ixgkd0" path="res://scenes/enemies/minotaur.tscn" id="5_i0fhw"]
+[ext_resource type="PackedScene" uid="uid://brp71dtg7r8e1" path="res://scenes/obstacles/pillar.tscn" id="6_5wshb"]
+
+[node name="Level6" unique_id=951364413 instance=ExtResource("1_gfuhv")]
+
+[node name="MuddyPuddle" parent="." index="7" unique_id=206173280 instance=ExtResource("2_y2agi")]
+position = Vector2(-155, 143)
+
+[node name="MuddyPuddle2" parent="." index="8" unique_id=528235986 instance=ExtResource("2_y2agi")]
+position = Vector2(-260, -17)
+
+[node name="MuddyPuddle3" parent="." index="9" unique_id=1950276433 instance=ExtResource("2_y2agi")]
+position = Vector2(345, 31)
+
+[node name="Player" parent="Y-Sort" parent_id_path=PackedInt32Array(1050274422) index="0" unique_id=820894451]
+position = Vector2(1, -159)
+
+[node name="VWall" parent="Y-Sort" parent_id_path=PackedInt32Array(1050274422) index="1" unique_id=12530250 instance=ExtResource("3_g44gb")]
+position = Vector2(-86, -268)
+
+[node name="VWall2" parent="Y-Sort" parent_id_path=PackedInt32Array(1050274422) index="2" unique_id=1741084243 instance=ExtResource("3_g44gb")]
+position = Vector2(-86, -172)
+
+[node name="VWallBottom" parent="Y-Sort" parent_id_path=PackedInt32Array(1050274422) index="3" unique_id=1617408288 instance=ExtResource("4_741xk")]
+position = Vector2(-85, -78)
+
+[node name="VWall3" parent="Y-Sort" parent_id_path=PackedInt32Array(1050274422) index="4" unique_id=2083624997 instance=ExtResource("3_g44gb")]
+position = Vector2(105, -174)
+
+[node name="VWall4" parent="Y-Sort" parent_id_path=PackedInt32Array(1050274422) index="5" unique_id=1624615833 instance=ExtResource("3_g44gb")]
+position = Vector2(105, -80)
+
+[node name="VWallBottom2" parent="Y-Sort" parent_id_path=PackedInt32Array(1050274422) index="6" unique_id=378410526 instance=ExtResource("4_741xk")]
+position = Vector2(106, 14)
+
+[node name="VWall5" parent="Y-Sort" parent_id_path=PackedInt32Array(1050274422) index="7" unique_id=356811828 instance=ExtResource("3_g44gb")]
+position = Vector2(105, -174)
+
+[node name="VWall6" parent="Y-Sort" parent_id_path=PackedInt32Array(1050274422) index="8" unique_id=1591157019 instance=ExtResource("3_g44gb")]
+position = Vector2(105, -80)
+
+[node name="VWallBottom3" parent="Y-Sort" parent_id_path=PackedInt32Array(1050274422) index="9" unique_id=1067773478 instance=ExtResource("4_741xk")]
+position = Vector2(106, 14)
+
+[node name="VWall7" parent="Y-Sort" parent_id_path=PackedInt32Array(1050274422) index="10" unique_id=2035704126 instance=ExtResource("3_g44gb")]
+position = Vector2(105, -270)
+
+[node name="Minotaur" parent="Y-Sort" parent_id_path=PackedInt32Array(1050274422) index="11" unique_id=668174716 instance=ExtResource("5_i0fhw")]
+position = Vector2(205, -37)
+
+[node name="Minotaur2" parent="Y-Sort" parent_id_path=PackedInt32Array(1050274422) index="12" unique_id=172168049 instance=ExtResource("5_i0fhw")]
+position = Vector2(-179, -162)
+
+[node name="Pillar" parent="Y-Sort" parent_id_path=PackedInt32Array(1050274422) index="13" unique_id=740544262 instance=ExtResource("6_5wshb")]
+position = Vector2(-19, 30)
+
+[node name="Pillar2" parent="Y-Sort" parent_id_path=PackedInt32Array(1050274422) index="14" unique_id=808573785 instance=ExtResource("6_5wshb")]
+position = Vector2(297, 151)
+
+[node name="Pillar3" parent="Y-Sort" parent_id_path=PackedInt32Array(1050274422) index="15" unique_id=1839731873 instance=ExtResource("6_5wshb")]
+position = Vector2(-353, -120)

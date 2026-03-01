@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://b7y8r67mamrmi"]
+
+[ext_resource type="Texture2D" uid="uid://ddoha6rkpsrko" path="res://assets/sprites/weeds.png" id="1_e2fpa"]
+
+[node name="Weeds" type="Sprite2D" unique_id=357443366]
+z_index = -1
+scale = Vector2(3, 3)
+texture = ExtResource("1_e2fpa")

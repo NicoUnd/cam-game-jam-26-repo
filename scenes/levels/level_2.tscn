@@ -9,6 +9,8 @@
 [ext_resource type="PackedScene" uid="uid://dcvo6ylw4wftk" path="res://scenes/enemies/rat.tscn" id="7_ibugp"]
 [ext_resource type="PackedScene" uid="uid://1r34p0avoibv" path="res://scenes/obstacles/h_wall.tscn" id="8_8qukl"]
 [ext_resource type="PackedScene" uid="uid://h0ie0t1ggrai" path="res://scenes/obstacles/h_wall_right.tscn" id="9_3p04p"]
+[ext_resource type="PackedScene" uid="uid://dyd4vj2mlckcx" path="res://scenes/muddy_puddle.tscn" id="10_nt80m"]
+[ext_resource type="PackedScene" uid="uid://b7y8r67mamrmi" path="res://scenes/decals/weeds.tscn" id="10_qsp8v"]
 
 [node name="Level2" unique_id=951364413 instance=ExtResource("1_j2425")]
 
@@ -54,3 +56,12 @@ position = Vector2(-357, -46)
 
 [node name="Torch3" parent="Y-Sort" parent_id_path=PackedInt32Array(1050274422) index="13" unique_id=1890965422 instance=ExtResource("2_g2h2n")]
 position = Vector2(-384, -2)
+
+[node name="MuddyPuddle" parent="." index="8" unique_id=206173280 instance=ExtResource("10_nt80m")]
+position = Vector2(382, -140)
+
+[node name="Weeds" parent="." index="9" unique_id=357443366 instance=ExtResource("10_qsp8v")]
+position = Vector2(-106, -77)
+
+[node name="Weeds2" parent="." index="10" unique_id=542627646 instance=ExtResource("10_qsp8v")]
+position = Vector2(318, 85)
