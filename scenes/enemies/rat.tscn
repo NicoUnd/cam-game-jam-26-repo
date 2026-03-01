@@ -151,8 +151,9 @@ animations = [{
 "speed": 1.0
 }]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_qn0ow"]
-radius = 21.0
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_l3lpa"]
+radius = 18.000002
+height = 56.0
 
 [node name="Rat" unique_id=668174716 instance=ExtResource("1_qn0ow")]
 speed = 160.0
@@ -171,6 +172,7 @@ animation = &"sleep"
 autoplay = "idle"
 
 [node name="CollisionShape2D" parent="Flippable/HitboxArea2D" parent_id_path=PackedInt32Array(1413472798) index="0" unique_id=1899254083]
-position = Vector2(16, 2.0000002)
-shape = SubResource("CircleShape2D_qn0ow")
+position = Vector2(8, 1.0000001)
+rotation = 1.5707964
+shape = SubResource("CapsuleShape2D_l3lpa")
 debug_color = Color(0.88169146, 0.31910345, 0.2924747, 0.41960785)

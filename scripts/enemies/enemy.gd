@@ -18,7 +18,7 @@ var _time_since_player_in_range : float = 0
 
 var _last_spotted: float = INF;
 var _been_idle_for: float = 0;
-var _been_sleeping_for: float = 0;
+var _been_sleeping_for: float = INF;
 
 @export var sight_distance: float = 300;
 
@@ -34,6 +34,8 @@ var _been_sleeping_for: float = 0;
 @onready var spotted: Spotted = $Spotted
 
 @onready var flippable: Node2D = $Flippable
+
+@onready var hitbox_area_2d: Area2D = $Flippable/HitboxArea2D
 
 enum ENEMY_STATE {IDLE, SLEEPING, CHASING, PETRIFIED};
 var state: ENEMY_STATE = ENEMY_STATE.SLEEPING;
@@ -55,12 +57,14 @@ func petrify() -> void:
 
 func spotted_player() -> void:
 	state = ENEMY_STATE.CHASING;
+	hitbox_area_2d.monitoring = true;
 	_last_spotted = 0;
 
 func sleep() -> void:
 	state = ENEMY_STATE.SLEEPING;
 	_been_sleeping_for = 0;
 	linear_velocity = Vector2.ZERO;
+	hitbox_area_2d.monitoring = false;
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta: float) -> void:
@@ -96,6 +100,7 @@ func _physics_process(delta: float) -> void:
 		if state == ENEMY_STATE.CHASING and _last_spotted > chase_for:
 			state = ENEMY_STATE.IDLE;
 			_been_idle_for = 0;
+			hitbox_area_2d.monitoring = true;
 
 func _process(delta: float) -> void:
 	match state:

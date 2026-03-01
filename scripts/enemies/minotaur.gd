@@ -14,6 +14,13 @@ func move(delta: float) -> void:
 			linear_velocity += direction * ACCELERATION_MAGNITUDE * delta
 			print("MINOTAUR LINEAR VELOCITY: " + str(linear_velocity))
 
+func barrel_check() -> void:
+	var barrels: Array[Node] = get_tree().get_nodes_in_group("Barrels")
+	for barrel in barrels:
+		if not barrel.destroyed and barrel.position.distance_to(position) < 65:
+			barrel.destroy();
+			return;
+
 func _physics_process(delta: float) -> void:
 	super._physics_process(delta);
 	match state:
@@ -21,6 +28,7 @@ func _physics_process(delta: float) -> void:
 			return;
 	
 	if linear_velocity.distance_to(last_linear_velocity) > 250:
+		barrel_check();
 		sleep();
 	
 	last_linear_velocity = linear_velocity;

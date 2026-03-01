@@ -53,9 +53,9 @@ animations = [{
 }]
 
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_fmijs"]
-polygon = PackedVector2Array(-23, -4, -14, -32, 16, -32, 26, -5, 18, 30, -11, 33)
+polygon = PackedVector2Array(-18, -12, -15, -12, -15, -21, 15, -21, 15, -12, 18, -12, 18, 21, 15, 21, 15, 30, 12, 30, 12, 33, -12, 33, -12, 30, -15, 30, -15, 21, -18, 21)
 
-[node name="Barrel" unique_id=12530250 instance=ExtResource("1_jxlug")]
+[node name="Barrel" unique_id=12530250 groups=["Barrels"] instance=ExtResource("1_jxlug")]
 collision_layer = 8
 script = ExtResource("2_fmijs")
 
@@ -71,5 +71,5 @@ shape = SubResource("CapsuleShape2D_jxlug")
 scale = Vector2(3, 3)
 sprite_frames = SubResource("SpriteFrames_27pyu")
 
-[node name="LightOccluder2D" type="LightOccluder2D" parent="." index="3" unique_id=60597302]
+[node name="LightOccluder2D" parent="." index="3" unique_id=649625072]
 occluder = SubResource("OccluderPolygon2D_fmijs")

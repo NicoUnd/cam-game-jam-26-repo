@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://b6pqqv0un3518"]
+[gd_scene format=4 uid="uid://b6pqqv0un3518"]
 
 [ext_resource type="PackedScene" uid="uid://bidivnh002n86" path="res://scenes/levels/cave_level.tscn" id="1_r1vs7"]
 [ext_resource type="PackedScene" uid="uid://1r34p0avoibv" path="res://scenes/obstacles/h_wall.tscn" id="2_845dy"]
@@ -6,6 +6,11 @@
 [ext_resource type="PackedScene" uid="uid://wab4gk5t5glw" path="res://scenes/obstacles/barrel.tscn" id="4_laj7o"]
 [ext_resource type="PackedScene" uid="uid://cfy8f18vpt5oi" path="res://scenes/obstacles/v_wall_top.tscn" id="5_fi56y"]
 [ext_resource type="PackedScene" uid="uid://dcvo6ylw4wftk" path="res://scenes/enemies/rat.tscn" id="6_hldbq"]
+[ext_resource type="PackedScene" uid="uid://d3tmox7ixgkd0" path="res://scenes/enemies/minotaur.tscn" id="7_fsnos"]
+[ext_resource type="PackedScene" uid="uid://b5kfhqcljyb8n" path="res://scenes/obstacles/v_wall_bottom.tscn" id="9_tqnj0"]
+[ext_resource type="PackedScene" uid="uid://pd1mcvb1knm8" path="res://scenes/obstacles/h_wall_left.tscn" id="10_dwyms"]
+[ext_resource type="PackedScene" uid="uid://btkthn08if67o" path="res://scenes/torch_side.tscn" id="11_dwyms"]
+[ext_resource type="PackedScene" uid="uid://omp66yyj208e" path="res://scenes/torch.tscn" id="12_6xwso"]
 
 [node name="Level5" unique_id=951364413 instance=ExtResource("1_r1vs7")]
 
@@ -13,32 +18,79 @@
 visible = true
 queue = Array[String](["You can break barrels by rolling into them"])
 
+[node name="TileMapLayer" parent="." index="2" unique_id=1625917555]
+tile_map_data = PackedByteArray("AAAAAP//AAAAAAAAAAABAP//AAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD//wAAAAAAAAAAAAD+/wAAAAAAAAAAAAD+////AAAAAAAAAAD/////AAAAAAAAAAAAAP7/AAAAAAAAAAABAP7/AAAAAAAAAAD///3/AAAAAAAAAAD+//3/AAAAAAAAAAD9//7/AAAAAAAAAAD8//7/AAAAAAAAAAD7//7/AAAAAAAAAAD6////AAAAAAAAAAD7/wAAAAAAAAAAAAD8/wAAAAAAAAAAAAD9/wAAAAAAAAAAAAD///7/AAAAAAAAAAD+//7/AAAAAAAAAAD9////AAAAAAAAAAD6/wAAAAAAAAAAAAD9//3/AAAAAAAAAAD8//3/AAAAAAAAAAD7////AAAAAAAAAAD8////AAAAAAAAAAD7//3/AAAAAAAAAAD6//7/AAAAAAAAAAD5//7/AAAAAAAAAAD5////AAAAAAAAAAD6//3/AAAAAAAAAAD7//z/AAAAAAAAAAD7//v/AAAAAAAAAAD6//z/AAAAAAAAAAD5//z/AAAAAAAAAAD5//3/AAAAAAAAAAD4//3/AAAAAAAAAAD4//7/AAAAAAAAAAD4////AAAAAAAAAAD5/wAAAAAAAAAAAAD5/wEAAAAAAAAAAAD5/wIAAAAAAAAAAAD4/wEAAAAAAAAAAAD4/wAAAAAAAAAAAAD4/wIAAAAAAAAAAAD6/wEAAAAAAAAAAAD6/wIAAAAAAAAAAAD6/wMAAAAAAAAAAAD5/wMAAAAAAAAAAAD5/wQAAAAAAAAAAAD6/wQAAAAAAAAAAAD7/wMAAAAAAAAAAAD8/wMAAAAAAAAAAAD9/wMAAAAAAAAAAAD+/wQAAAAAAAAAAAD//wQAAAAAAAAAAAAAAAQAAAAAAAAAAAABAAQAAAAAAAAAAAD9/wQAAAAAAAAAAAD8/wQAAAAAAAAAAAD7/wQAAAAAAAAAAAACAAQAAAAAAAAAAAADAAQAAAAAAAAAAAAEAAQAAAAAAAAAAAAFAAQAAAAAAAAAAAAGAAQAAAAAAAAAAAAGAAMAAAAAAAAAAAAGAAIAAAAAAAAAAAAFAAIAAAAAAAAAAAAFAAEAAAAAAAAAAAAFAAAAAAAAAAAAAAAFAP//AAAAAAAAAAAGAP//AAAAAAAAAAAGAP7/AAAAAAAAAAAGAAAAAAAAAAAAAAAGAAEAAAAAAAAAAAACAP7/AAAAAAAAAAADAP7/AAAAAAAAAAAEAP7/AAAAAAAAAAAFAP7/AAAAAAAAAAADAP//AAAAAAAAAAACAP//AAAAAAAAAAAEAP//AAAAAAAAAAAEAAAAAAAAAAAAAAADAAAAAAAAAAAAAAACAAAAAAAAAAAAAAAEAAEAAAAAAAAAAAADAAEAAAAAAAAAAAACAAEAAAAAAAAAAAABAAEAAAAAAAAAAAAAAAEAAAAAAAAAAAD//wEAAAAAAAAAAAD+/wEAAAAAAAAAAAD9/wEAAAAAAAAAAAD8/wEAAAAAAAAAAAD7/wEAAAAAAAAAAAD7/wIAAAAAAAAAAAD8/wIAAAAAAAAAAAD9/wIAAAAAAAAAAAD+/wIAAAAAAAAAAAD//wIAAAAAAAAAAAAAAAIAAAAAAAAAAAABAAIAAAAAAAAAAAACAAIAAAAAAAAAAAADAAIAAAAAAAAAAAAEAAIAAAAAAAAAAAAFAAMAAAAAAAAAAAAEAAMAAAAAAAAAAAADAAMAAAAAAAAAAAACAAMAAAAAAAAAAAABAAMAAAAAAAAAAAAAAAMAAAAAAAAAAAD//wMAAAAAAAAAAAD+/wMAAAAAAAAAAAAAAP3/AAAAAAAAAAABAP3/AAAAAAAAAAACAP3/AAAAAAAAAAADAP3/AAAAAAAAAAAEAP3/AAAAAAAAAAAFAP3/AAAAAAAAAAAGAP3/AAAAAAAAAAAGAPz/AAAAAAAAAAAFAPz/AAAAAAAAAAAEAPz/AAAAAAAAAAADAPz/AAAAAAAAAAACAPz/AAAAAAAAAAABAPz/AAAAAAAAAAAAAPz/AAAAAAAAAAD///z/AAAAAAAAAAD+//z/AAAAAAAAAAD9//z/AAAAAAAAAAD8//z/AAAAAAAAAAD8//v/AAAAAAAAAAD9//v/AAAAAAAAAAD+//v/AAAAAAAAAAD///v/AAAAAAAAAAAAAPv/AAAAAAAAAAABAPv/AAAAAAAAAAACAPv/AAAAAAAAAAADAPv/AAAAAAAAAAAEAPv/AAAAAAAAAAAFAPv/AAAAAAAAAAAGAPv/AAAAAAAAAAD6//v/AAAAAAAAAAD5//v/AAAAAAAAAAD4//v/AAAAAAAAAAD4//z/AAAAAAAAAAD4/wMAAAAAAAAAAAD4/wQAAAAAAAAAAAAHAAQAAAAAAAAAAAAHAAMAAAAAAAAAAAAHAAIAAAAAAAAAAAAHAAEAAAAAAAAAAAAHAP//AAAAAAAAAAAHAP7/AAAAAAAAAAAHAAAAAAAAAAAAAAAHAPv/AAAAAAAAAAAHAPz/AAAAAAAAAAAHAP3/AAAAAAAAAAD4/wUAAAAAAAAAAAD5/wUAAAAAAAAAAAD6/wUAAAAAAAAAAAD7/wUAAAAAAAAAAAD8/wUAAAAAAAAAAAD9/wUAAAAAAAAAAAD+/wUAAAAAAAAAAAD//wUAAAAAAAAAAAAAAAUAAAAAAAAAAAABAAUAAAAAAAAAAAACAAUAAAAAAAAAAAADAAUAAAAAAAAAAAAEAAUAAAAAAAAAAAAFAAUAAAAAAAAAAAAGAAUAAAAAAAAAAAAHAAUAAAAAAAAAAAD3/wUAAAAAAAAAAAD3/wQAAAAAAAAAAAD3/wMAAAAAAAAAAAD3/wIAAAAAAAAAAAD3/wEAAAAAAAAAAAD3/wAAAAAAAAAAAAD3////AAAAAAAAAAD3//7/AAAAAAAAAAD3//3/AAAAAAAAAAD3//z/AAAAAAAAAAD3//v/AAAAAAAAAAD3//r/AAAAAAAAAAD4//r/AAAAAAAAAAD5//r/AAAAAAAAAAD6//r/AAAAAAAAAAD7//r/AAAAAAAAAAD8//r/AAAAAAAAAAD9//r/AAAAAAAAAAD+//r/AAAAAAAAAAD///r/AAAAAAAAAAAAAPr/AAAAAAAAAAABAPr/AAAAAAAAAAACAPr/AAAAAAAAAAADAPr/AAAAAAAAAAAEAPr/AAAAAAAAAAAFAPr/AAAAAAAAAAAGAPr/AAAAAAAAAAAHAPr/AAAAAAAAAAAIAPr/AAAAAAAAAAAIAPv/AAAAAAAAAAAIAPz/AAAAAAAAAAAIAP3/AAAAAAAAAAAIAP7/AAAAAAAAAAAIAP//AAAAAAAAAAAIAAAAAAAAAAAAAAAIAAEAAAAAAAAAAAAIAAIAAAAAAAAAAAAIAAMAAAAAAAAAAAAIAAQAAAAAAAAAAAAIAAUAAAAAAAAAAAAJAPr/AAAAAAAAAAAJAPv/AAAAAAAAAAAJAPz/AAAAAAAAAAAJAP3/AAAAAAAAAAAJAP7/AAAAAAAAAAAJAP//AAAAAAAAAAAJAAAAAAAAAAAAAAAJAAEAAAAAAAAAAAAJAAIAAAAAAAAAAAAJAAMAAAAAAAAAAAAJAAQAAAAAAAAAAAAJAAUAAAAAAAAAAAD2//r/AAAAAAAAAAD2//v/AAAAAAAAAAD2//z/AAAAAAAAAAD2//3/AAAAAAAAAAD2////AAAAAAAAAAD2/wAAAAAAAAAAAAD2/wEAAAAAAAAAAAD2/wIAAAAAAAAAAAD2//7/AAAAAAAAAAD2/wMAAAAAAAAAAAD2/wQAAAAAAAAAAAD2/wUAAAAAAAAAAAA=")
+
 [node name="Player" parent="Y-Sort" parent_id_path=PackedInt32Array(1050274422) index="0" unique_id=820894451]
 position = Vector2(-428, 160)
 
-[node name="HWall" parent="Y-Sort" parent_id_path=PackedInt32Array(1050274422) index="1" unique_id=12530250 instance=ExtResource("2_845dy")]
+[node name="TorchSide" parent="Y-Sort" parent_id_path=PackedInt32Array(1050274422) index="1" unique_id=530198874 instance=ExtResource("11_dwyms")]
+position = Vector2(237, -71)
+rotation = 3.1415927
+scale = Vector2(3, -3)
+
+[node name="Torch" parent="Y-Sort" parent_id_path=PackedInt32Array(1050274422) index="2" unique_id=1588614372 instance=ExtResource("12_6xwso")]
+position = Vector2(-338, -247)
+
+[node name="Torch2" parent="Y-Sort" parent_id_path=PackedInt32Array(1050274422) index="3" unique_id=2014842488 instance=ExtResource("12_6xwso")]
+position = Vector2(-308, 73)
+
+[node name="Torch3" parent="Y-Sort" parent_id_path=PackedInt32Array(1050274422) index="4" unique_id=535857737 instance=ExtResource("12_6xwso")]
+position = Vector2(411, 43)
+
+[node name="Torch4" parent="Y-Sort" parent_id_path=PackedInt32Array(1050274422) index="5" unique_id=630490671 instance=ExtResource("12_6xwso")]
+position = Vector2(264, 297)
+
+[node name="HWall" parent="Y-Sort" parent_id_path=PackedInt32Array(1050274422) index="6" unique_id=12530250 instance=ExtResource("2_845dy")]
 position = Vector2(-453, 34)
 
-[node name="HWall2" parent="Y-Sort" parent_id_path=PackedInt32Array(1050274422) index="2" unique_id=1115574959 instance=ExtResource("2_845dy")]
+[node name="HWall2" parent="Y-Sort" parent_id_path=PackedInt32Array(1050274422) index="7" unique_id=1115574959 instance=ExtResource("2_845dy")]
 position = Vector2(-357, 34)
 
-[node name="HWall3" parent="Y-Sort" parent_id_path=PackedInt32Array(1050274422) index="3" unique_id=801346182 instance=ExtResource("2_845dy")]
+[node name="HWall3" parent="Y-Sort" parent_id_path=PackedInt32Array(1050274422) index="8" unique_id=801346182 instance=ExtResource("2_845dy")]
 position = Vector2(-261, 34)
 
-[node name="HWall4" parent="Y-Sort" parent_id_path=PackedInt32Array(1050274422) index="4" unique_id=534389715 instance=ExtResource("2_845dy")]
+[node name="HWall4" parent="Y-Sort" parent_id_path=PackedInt32Array(1050274422) index="9" unique_id=534389715 instance=ExtResource("2_845dy")]
 position = Vector2(-165, 34)
 
-[node name="HWallRight" parent="Y-Sort" parent_id_path=PackedInt32Array(1050274422) index="5" unique_id=551698426 instance=ExtResource("3_dswqx")]
+[node name="HWallRight" parent="Y-Sort" parent_id_path=PackedInt32Array(1050274422) index="10" unique_id=551698426 instance=ExtResource("3_dswqx")]
 position = Vector2(-69, 34)
 
-[node name="Barrel" parent="Y-Sort" parent_id_path=PackedInt32Array(1050274422) index="6" unique_id=1043327210 instance=ExtResource("4_laj7o")]
+[node name="Barrel" parent="Y-Sort" parent_id_path=PackedInt32Array(1050274422) index="11" unique_id=1043327210 instance=ExtResource("4_laj7o")]
 position = Vector2(-57, 132)
 
-[node name="Barrel2" parent="Y-Sort" parent_id_path=PackedInt32Array(1050274422) index="7" unique_id=1372942387 instance=ExtResource("4_laj7o")]
+[node name="Barrel2" parent="Y-Sort" parent_id_path=PackedInt32Array(1050274422) index="12" unique_id=1372942387 instance=ExtResource("4_laj7o")]
 position = Vector2(-53, 200)
 
-[node name="VWallTop" parent="Y-Sort" parent_id_path=PackedInt32Array(1050274422) index="8" unique_id=175270831 instance=ExtResource("5_fi56y")]
+[node name="VWallTop" parent="Y-Sort" parent_id_path=PackedInt32Array(1050274422) index="13" unique_id=175270831 instance=ExtResource("5_fi56y")]
 position = Vector2(-50, 247)
 
-[node name="Rat" parent="Y-Sort" parent_id_path=PackedInt32Array(1050274422) index="9" unique_id=668174716 instance=ExtResource("6_hldbq")]
-position = Vector2(34, 186)
+[node name="Rat" parent="Y-Sort" parent_id_path=PackedInt32Array(1050274422) index="14" unique_id=668174716 instance=ExtResource("6_hldbq")]
+position = Vector2(-402, -41)
+
+[node name="Minotaur" parent="Y-Sort" parent_id_path=PackedInt32Array(1050274422) index="15" unique_id=1980817846 instance=ExtResource("7_fsnos")]
+position = Vector2(361, 170)
+
+[node name="HWall6" parent="Y-Sort" parent_id_path=PackedInt32Array(1050274422) index="16" unique_id=35735757 instance=ExtResource("2_845dy")]
+position = Vector2(358, -12)
+
+[node name="HWall7" parent="Y-Sort" parent_id_path=PackedInt32Array(1050274422) index="17" unique_id=939049554 instance=ExtResource("2_845dy")]
+position = Vector2(454, -12)
+
+[node name="VWallBottom" parent="Y-Sort" parent_id_path=PackedInt32Array(1050274422) index="18" unique_id=560250719 instance=ExtResource("9_tqnj0")]
+position = Vector2(208, -6)
+
+[node name="HWallLeft" parent="Y-Sort" parent_id_path=PackedInt32Array(1050274422) index="19" unique_id=271371248 instance=ExtResource("10_dwyms")]
+position = Vector2(262, -12)
+
+[node name="VWallTop2" parent="Y-Sort" parent_id_path=PackedInt32Array(1050274422) index="20" unique_id=1151913947 instance=ExtResource("5_fi56y")]
+position = Vector2(208, -102)
+
+[node name="Rat2" parent="Y-Sort" parent_id_path=PackedInt32Array(1050274422) index="21" unique_id=178192119 instance=ExtResource("6_hldbq")]
+position = Vector2(333, -61)
+
+[node name="Barrel3" parent="Y-Sort" parent_id_path=PackedInt32Array(1050274422) index="22" unique_id=19011442 instance=ExtResource("4_laj7o")]
+position = Vector2(467, -176)
+
+[node name="Barrel4" parent="Y-Sort" parent_id_path=PackedInt32Array(1050274422) index="23" unique_id=956744639 instance=ExtResource("4_laj7o")]
+position = Vector2(424, 270)

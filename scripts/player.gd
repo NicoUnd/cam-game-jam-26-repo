@@ -62,6 +62,12 @@ func play_animation(animation_name: String, duration : float = -1) -> void:
 
 func _physics_process(delta):	
 	if state in [PLAYER_STATE.DYING, PLAYER_STATE.PETRIFYING]:
+		if state == PLAYER_STATE.PETRIFYING:
+			var input_dir: Vector2 = get_input_dir();
+			if input_dir.x != 0:
+				animated_sprite_2d.flip_h = input_dir.x < 0;
+			if input_dir.length() > 0:
+				_last_input_direction = input_dir.normalized();
 		return;
 	
 	_time_since_last_dash += delta
@@ -81,6 +87,7 @@ func _physics_process(delta):
 			var kinematic_collision: KinematicCollision2D = move_and_collide(_last_input_direction * dash_speed * delta);
 			if kinematic_collision: # collided with something
 				play_animation("bump");
+				_time_since_last_dash = 0;
 				velocity = Vector2.ZERO;
 				var collider: Object = kinematic_collision.get_collider();
 				if collider is Barrel:
@@ -126,11 +133,11 @@ func footsteps():
 		_time_since_footstep = 0
 
 func die() -> void:
-	if state != PLAYER_STATE.PETRIFYING:
-		animated_sprite_2d.play("die");
-		AudioManager.play_sfx(death_sound)
-		state = PLAYER_STATE.DYING;
-		FadeToBlack.fade_to_black.fade_in(get_tree().reload_current_scene, "You Died")
+	petrify_visuals_timer.stop();
+	animated_sprite_2d.play("die");
+	AudioManager.play_sfx(death_sound)
+	state = PLAYER_STATE.DYING;
+	FadeToBlack.fade_to_black.fade_in(get_tree().reload_current_scene, "You Died")
 
 func petrify() -> void:
 	#var direction: Vector2 = get_input_dir();
@@ -151,7 +158,8 @@ func petrify_visuals() -> void:
 	gpu_particles_2d.restart();
 	medusa.petrify(_last_input_direction);
 	hurtbox_area_2d.monitorable = false;
-	state = PLAYER_STATE.DYING;
+	if not in_tutorial:
+		state = PLAYER_STATE.DYING;
 
 func _process(delta: float) -> void:
 	if _time_since_footstep < _footstep_cooldown:
