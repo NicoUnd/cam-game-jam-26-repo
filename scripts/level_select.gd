@@ -3,6 +3,7 @@ extends Control
 @export var level_music : AudioStream
 @export var minotaur_music : AudioStream
 
+
 func get_all_buttons() -> Array:
 	# Using the node path from the root of the scene
 	return $MarginContainer/ScrollContainer/VBoxContainer.get_children()
@@ -19,6 +20,10 @@ func _ready():
 		var button = buttons[i]
 		if button is PetrifiableButton:
 			button.lock()
+	
+	var first_btn = buttons[0]
+	if first_btn is PetrifiableButton:
+		first_btn.grab_focus()
 		
 
 func start_level(level : int) -> void:
