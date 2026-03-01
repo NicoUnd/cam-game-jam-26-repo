@@ -25,6 +25,6 @@ func start_level(level : int) -> void:
 	LevelManager.current_level_index = level
 	if level > 1:
 		AudioManager.play_music(level_music)
-	AudioManager.music_volume(50)
+	AudioManager.music_volume(10)
 	get_tree().change_scene_to_file("res://scenes/levels/level_" + str(level) + ".tscn")
 	

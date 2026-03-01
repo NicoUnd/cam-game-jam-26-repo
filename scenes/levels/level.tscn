@@ -1,6 +1,7 @@
 [gd_scene format=4 uid="uid://dbt3y68kh4xu1"]
 
 [ext_resource type="Texture2D" uid="uid://hgelqskh7k8v" path="res://assets/sprites/floor.png" id="1_377w7"]
+[ext_resource type="Script" uid="uid://db1lii8ks4lat" path="res://scripts/level.gd" id="1_mbbpy"]
 [ext_resource type="PackedScene" uid="uid://yn8xdstbyhre" path="res://scenes/player.tscn" id="2_bovvr"]
 [ext_resource type="PackedScene" uid="uid://04chy73giuu4" path="res://scenes/ui/black.tscn" id="2_xb4v1"]
 [ext_resource type="PackedScene" uid="uid://7dehfnrb6r5g" path="res://scenes/ui/text_box_manager.tscn" id="3_b2cq8"]
@@ -43,6 +44,7 @@ normal = Vector2(1, 0)
 polygon = PackedVector2Array(-78, -346, 2, -345, -2, 327, -117, 337)
 
 [node name="Level" type="Node2D" unique_id=951364413]
+script = ExtResource("1_mbbpy")
 
 [node name="TextBoxManager" parent="." unique_id=2063301136 instance=ExtResource("3_b2cq8")]
 visible = false

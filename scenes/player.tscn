@@ -5,6 +5,7 @@
 [ext_resource type="AudioStream" uid="uid://ckv8dkuqnmxaj" path="res://assets/audio/sound_effects/walk.wav" id="2_qlg0r"]
 [ext_resource type="PackedScene" uid="uid://cd180mx115x52" path="res://scenes/medusa.tscn" id="3_qhqgy"]
 [ext_resource type="AudioStream" uid="uid://d1x3uyswfonyh" path="res://assets/audio/sound_effects/death.wav" id="3_tuyoq"]
+[ext_resource type="AudioStream" uid="uid://dmalejbftieyv" path="res://assets/audio/sound_effects/dodge.wav" id="4_tuyoq"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_g2els"]
 radius = 18.0
@@ -502,6 +503,7 @@ dash_speed = 400.0
 dash_cooldown = 0.8
 footstep_sounds = ExtResource("2_qlg0r")
 death_sound = ExtResource("3_tuyoq")
+dash_sound = ExtResource("4_tuyoq")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1083232016]
 shape = SubResource("CapsuleShape2D_g2els")
