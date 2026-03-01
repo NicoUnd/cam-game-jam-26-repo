@@ -9,8 +9,6 @@ static var player : Player
 @export var player_attack_grace : float = 0.2
 @export var petrification_duration: float = 1
 @export var aggro_sound: AudioStream
-var aggro_sound_cooldown : float = 3
-var time_since_aggro_sound : float = 2.9
 
 @export var player_hit_sound : AudioStream
 var _is_petrified : bool = false
@@ -22,6 +20,7 @@ var _time_since_player_in_range : float = 0
 var _last_spotted: float = INF;
 var _been_idle_for: float = 0;
 var _been_sleeping_for: float = INF;
+var _just_spotted : bool = true
 
 @export var sight_distance: float = 300;
 
@@ -61,12 +60,12 @@ func petrify() -> void:
 	tween.tween_property(animated_sprite_2d.material, "shader_parameter/progress", 1.0, petrification_duration)
 
 func spotted_player() -> void:
-	state = ENEMY_STATE.CHASING;
-	hitbox_area_2d.monitoring = true;
 	_last_spotted = 0;
-	if time_since_aggro_sound >= aggro_sound_cooldown :
+	if _just_spotted:
+		hitbox_area_2d.monitoring = true;
+		state = ENEMY_STATE.CHASING;
 		AudioManager.play_sfx(aggro_sound);
-		time_since_aggro_sound = 0;
+		_just_spotted = false
 
 func sleep() -> void:
 	state = ENEMY_STATE.SLEEPING;
@@ -108,12 +107,11 @@ func _physics_process(delta: float) -> void:
 		_last_spotted += delta;
 		if state == ENEMY_STATE.CHASING and _last_spotted > chase_for:
 			state = ENEMY_STATE.IDLE;
+			_just_spotted = true
 			_been_idle_for = 0;
 			hitbox_area_2d.monitoring = true;
 
 func _process(delta: float) -> void:
-	if time_since_aggro_sound < aggro_sound_cooldown:
-		time_since_aggro_sound += delta
 	match state:
 		ENEMY_STATE.CHASING:
 			animated_sprite_2d.play("run")

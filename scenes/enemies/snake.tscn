@@ -2,8 +2,9 @@
 
 [ext_resource type="PackedScene" uid="uid://28fxek2ibb54" path="res://scenes/enemies/enemy.tscn" id="1_lcdrh"]
 [ext_resource type="Texture2D" uid="uid://csuhyr5hd1h1" path="res://assets/sprites/snake_sheet.png" id="1_uprpt"]
-[ext_resource type="Script" uid="uid://dxhgjggsmowsy" path="res://scripts/enemies/snake.gd" id="2_0y5n7"]
+[ext_resource type="Script" path="res://scripts/enemies/snake.gd" id="2_0y5n7"]
 [ext_resource type="Shader" uid="uid://ktmwyg86ce11" path="res://shaders/petrification.gdshader" id="2_lcdrh"]
+[ext_resource type="AudioStream" uid="uid://bdo0iymmg7bkd" path="res://assets/audio/sound_effects/snake_aggro.wav" id="3_3rqwa"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_lcdrh"]
 radius = 11.495
@@ -108,6 +109,7 @@ height = 61.61
 script = ExtResource("2_0y5n7")
 damage = 5
 player_attack_grace = 0.2
+aggro_sound = ExtResource("3_3rqwa")
 player_hit_sound = null
 
 [node name="CollisionShape2D" parent="." index="0" unique_id=580851608]
