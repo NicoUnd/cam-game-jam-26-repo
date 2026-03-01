@@ -8,6 +8,9 @@ static var player : Player
 @export var attack_cooldown : float = 1.0
 @export var player_attack_grace : float = 0.2
 @export var petrification_duration: float = 1
+@export var aggro_sound: AudioStream
+var aggro_sound_cooldown : float = 3
+var time_since_aggro_sound : float = 2.9
 
 @export var player_hit_sound : AudioStream
 var _is_petrified : bool = false
@@ -61,6 +64,9 @@ func spotted_player() -> void:
 	state = ENEMY_STATE.CHASING;
 	hitbox_area_2d.monitoring = true;
 	_last_spotted = 0;
+	if time_since_aggro_sound >= aggro_sound_cooldown :
+		AudioManager.play_sfx(aggro_sound);
+		time_since_aggro_sound = 0;
 
 func sleep() -> void:
 	state = ENEMY_STATE.SLEEPING;
@@ -106,6 +112,8 @@ func _physics_process(delta: float) -> void:
 			hitbox_area_2d.monitoring = true;
 
 func _process(delta: float) -> void:
+	if time_since_aggro_sound < aggro_sound_cooldown:
+		time_since_aggro_sound += delta
 	match state:
 		ENEMY_STATE.CHASING:
 			animated_sprite_2d.play("run")

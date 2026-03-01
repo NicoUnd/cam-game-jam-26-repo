@@ -2,6 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://28fxek2ibb54" path="res://scenes/enemies/enemy.tscn" id="1_lcdrh"]
 [ext_resource type="Texture2D" uid="uid://csuhyr5hd1h1" path="res://assets/sprites/snake_sheet.png" id="1_uprpt"]
+[ext_resource type="Script" uid="uid://dxhgjggsmowsy" path="res://scripts/enemies/snake.gd" id="2_0y5n7"]
 [ext_resource type="Shader" uid="uid://ktmwyg86ce11" path="res://shaders/petrification.gdshader" id="2_lcdrh"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_lcdrh"]
@@ -104,9 +105,11 @@ radius = 19.840002
 height = 61.61
 
 [node name="Snake" unique_id=668174716 instance=ExtResource("1_lcdrh")]
-speed = 80.0
+script = ExtResource("2_0y5n7")
 damage = 5
-sight_distance = 200.0
+attack_cooldown = 1.0
+player_attack_grace = 0.2
+player_hit_sound = null
 
 [node name="CollisionShape2D" parent="." index="0" unique_id=580851608]
 position = Vector2(4.84, -0.18)

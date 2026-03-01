@@ -3,6 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://28fxek2ibb54" path="res://scenes/enemies/enemy.tscn" id="1_wiekd"]
 [ext_resource type="Texture2D" uid="uid://v6mbx3w4qkms" path="res://assets/sprites/minotaur_sheet.png" id="2_1svwf"]
 [ext_resource type="Script" uid="uid://cuvej20x3yjht" path="res://scripts/enemies/minotaur.gd" id="2_gj0oe"]
+[ext_resource type="AudioStream" uid="uid://cbxakqjgtwc3s" path="res://assets/audio/sound_effects/minotaur_aggro.wav" id="3_wm3mn"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_gj0oe"]
 radius = 13.0
@@ -159,6 +160,7 @@ height = 62.000008
 [node name="Minotaur" unique_id=668174716 instance=ExtResource("1_wiekd")]
 script = ExtResource("2_gj0oe")
 speed = 300.0
+aggro_sound = ExtResource("3_wm3mn")
 sight_distance = 500.0
 chase_for = 2.0
 idle_until_sleep = 0.0

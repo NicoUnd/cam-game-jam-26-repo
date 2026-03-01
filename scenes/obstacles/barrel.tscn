@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://o54b34qbo2wv" path="res://assets/sprites/barrel.png" id="2_2xqb5"]
 [ext_resource type="Script" uid="uid://dn40jd2ksifjb" path="res://scripts/obstacles/barrel.gd" id="2_fmijs"]
 [ext_resource type="Texture2D" uid="uid://dbcme7w4asrhd" path="res://assets/sprites/barrel_sheet.png" id="3_2xqb5"]
+[ext_resource type="AudioStream" uid="uid://dhm4uugfovjgb" path="res://assets/audio/sound_effects/barrel_break.wav" id="3_c8cku"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_jxlug"]
 radius = 25.0
@@ -58,6 +59,7 @@ polygon = PackedVector2Array(-18, -12, -15, -12, -15, -21, 15, -21, 15, -12, 18,
 [node name="Barrel" unique_id=12530250 groups=["Barrels"] instance=ExtResource("1_jxlug")]
 collision_layer = 8
 script = ExtResource("2_fmijs")
+barrel_destroy_sound = ExtResource("3_c8cku")
 
 [node name="Sprite2D" parent="." index="0" unique_id=772725384]
 visible = false
