@@ -20,10 +20,11 @@ func _ready():
 		var button = buttons[i]
 		if button is PetrifiableButton:
 			button.lock()
-	
 	var first_btn = buttons[0]
 	if first_btn is PetrifiableButton:
 		first_btn.grab_focus()
+		
+	$MarginContainer/ScrollContainer.follow_focus = true
 		
 
 func start_level(level : int) -> void:

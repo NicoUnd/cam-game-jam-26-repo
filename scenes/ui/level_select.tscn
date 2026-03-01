@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://bpx4f5j2gwl1t" path="res://scripts/level_select.gd" id="1_l0h45"]
 [ext_resource type="PackedScene" uid="uid://bvfh111qyafjd" path="res://scenes/ui/button.tscn" id="1_x15a5"]
 [ext_resource type="AudioStream" uid="uid://28muoj4ia6vp" path="res://assets/audio/music/completetheme.wav" id="2_7l8mc"]
-[ext_resource type="Shader" uid="uid://bepfcfgtkqyxd" path="res://shaders/main_menu_bg.gdshader" id="3_swyxg"]
+[ext_resource type="Shader" path="res://shaders/main_menu_bg.gdshader" id="3_swyxg"]
 [ext_resource type="Texture2D" uid="uid://boiamdqybgoux" path="res://assets/sprites/tile.png" id="4_8yp2s"]
 
 [sub_resource type="AudioStreamWAV" id="AudioStreamWAV_7l8mc"]
