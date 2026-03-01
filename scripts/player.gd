@@ -120,7 +120,7 @@ func _physics_process(delta):
 func footsteps():
 	if _time_since_footstep > _footstep_cooldown:
 		AudioManager.play_sfx(footstep_sounds)
-		_footstep_cooldown = 0.3-randf()/10
+		_footstep_cooldown = 0.21+randf()/10
 		_time_since_footstep = 0
 
 func die() -> void:
