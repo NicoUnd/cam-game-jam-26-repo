@@ -5,19 +5,32 @@
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_2gch8"]
 radius = 18.0
-height = 90.0
+height = 71.56
 
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_2gch8"]
 polygon = PackedVector2Array(-24, -36, -21, -36, -21, -33, -9, -33, -9, 60, -6, 60, -6, 63, 6, 63, 6, 60, 9, 60, 9, -33, 21, -33, 21, -36, 24, -36, 24, -51, 21, -51, 21, -54, 9, -54, 9, -57, -9, -57, -9, -54, -21, -54, -21, -51, -24, -51)
 
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ji6oi"]
+radius = 18.0
+height = 48.0
+
 [node name="Pillar" unique_id=12530250 instance=ExtResource("1_2gch8")]
 
 [node name="Sprite2D" parent="." index="0" unique_id=772725384]
+position = Vector2(0, -6)
 texture = ExtResource("2_ji6oi")
 
 [node name="CollisionShape2D" parent="." index="1" unique_id=1902074252]
-position = Vector2(0, 23.22)
+position = Vector2(0, 27.625)
 shape = SubResource("CapsuleShape2D_2gch8")
 
 [node name="LightOccluder2D" parent="." index="2" unique_id=649625072]
+position = Vector2(0, -6)
 occluder = SubResource("OccluderPolygon2D_2gch8")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." index="3" unique_id=459003590]
+collision_layer = 16
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" index="0" unique_id=537134730]
+position = Vector2(0, -20)
+shape = SubResource("CapsuleShape2D_ji6oi")

@@ -5,6 +5,8 @@ const SNAKE_SCENE = preload("uid://c8oau2rn4hi80")
 var time_elapsed: float = 0;
 var phase: int = 0;
 
+@onready var text_box_manager: Control = $TextBoxManager
+
 @onready var y_sort: Node2D = $"Y-Sort"
 
 @onready var player: Player = $"Y-Sort/Player"
@@ -30,13 +32,13 @@ func _process(delta: float) -> void:
 	
 	match phase:
 		0:
-			if time_elapsed > 15:
+			if time_elapsed > 15 or Input.is_action_just_pressed("Escape"):
 				var new_snake: Enemy = SNAKE_SCENE.instantiate();
 				y_sort.add_child(new_snake);
 				new_snake.position = Vector2(300, 50);
 				phase += 1;
 		1:
-			if time_elapsed > 45:
+			if time_elapsed > 45 or Input.is_action_just_pressed("Escape"):
 				v_wall.queue_free();
 				v_wall_2.queue_free();
 				v_wall_3.queue_free();

@@ -168,9 +168,6 @@ func _process(delta: float) -> void:
 		return;
 	if Input.is_action_just_pressed("Petrify"):
 		petrify();
-	
-	if in_tutorial:
-		hurtbox_area_2d.collision_layer = 0;
 
 func _on_animated_sprite_2d_animation_finished() -> void:
 	if state in [PLAYER_STATE.DASHING, PLAYER_STATE.BUMPING]:

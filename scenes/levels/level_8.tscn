@@ -1,26 +1,69 @@
 [gd_scene format=3 uid="uid://56t80i83aar1"]
 
 [ext_resource type="PackedScene" uid="uid://bidivnh002n86" path="res://scenes/levels/cave_level.tscn" id="1_aq65u"]
-[ext_resource type="PackedScene" uid="uid://wab4gk5t5glw" path="res://scenes/obstacles/barrel.tscn" id="2_irbrv"]
-[ext_resource type="PackedScene" uid="uid://brp71dtg7r8e1" path="res://scenes/obstacles/pillar.tscn" id="3_805pq"]
-[ext_resource type="PackedScene" uid="uid://d3tmox7ixgkd0" path="res://scenes/enemies/minotaur.tscn" id="4_ki8mi"]
+[ext_resource type="PackedScene" uid="uid://dgm4ae64akcuu" path="res://scenes/obstacles/v_wall.tscn" id="2_irbrv"]
+[ext_resource type="PackedScene" uid="uid://cfy8f18vpt5oi" path="res://scenes/obstacles/v_wall_top.tscn" id="3_805pq"]
+[ext_resource type="PackedScene" uid="uid://b5kfhqcljyb8n" path="res://scenes/obstacles/v_wall_bottom.tscn" id="4_ki8mi"]
+[ext_resource type="PackedScene" uid="uid://wab4gk5t5glw" path="res://scenes/obstacles/barrel.tscn" id="5_u61dc"]
+[ext_resource type="PackedScene" uid="uid://dcvo6ylw4wftk" path="res://scenes/enemies/rat.tscn" id="6_7snfr"]
+[ext_resource type="PackedScene" uid="uid://ccl0jq7i4c6ju" path="res://scenes/enemies/bat.tscn" id="7_w2i51"]
+[ext_resource type="PackedScene" uid="uid://1r34p0avoibv" path="res://scenes/obstacles/h_wall.tscn" id="8_xsrpe"]
+[ext_resource type="PackedScene" uid="uid://pd1mcvb1knm8" path="res://scenes/obstacles/h_wall_left.tscn" id="9_0kxia"]
+[ext_resource type="PackedScene" uid="uid://d3tmox7ixgkd0" path="res://scenes/enemies/minotaur.tscn" id="10_xsrpe"]
+[ext_resource type="PackedScene" uid="uid://brp71dtg7r8e1" path="res://scenes/obstacles/pillar.tscn" id="11_0kxia"]
 
 [node name="Level8" unique_id=951364413 instance=ExtResource("1_aq65u")]
 
 [node name="Player" parent="Y-Sort" parent_id_path=PackedInt32Array(1050274422) index="0" unique_id=820894451]
-position = Vector2(-243, 236)
+position = Vector2(50, 188)
 
-[node name="Barrel" parent="Y-Sort" parent_id_path=PackedInt32Array(1050274422) index="1" unique_id=12530250 instance=ExtResource("2_irbrv")]
-position = Vector2(-3, 191)
+[node name="VWall" parent="Y-Sort" parent_id_path=PackedInt32Array(1050274422) index="1" unique_id=12530250 instance=ExtResource("2_irbrv")]
+position = Vector2(190, 243)
 
-[node name="Barrel2" parent="Y-Sort" parent_id_path=PackedInt32Array(1050274422) index="2" unique_id=367772721 instance=ExtResource("2_irbrv")]
-position = Vector2(-6, 96)
+[node name="VWall2" parent="Y-Sort" parent_id_path=PackedInt32Array(1050274422) index="2" unique_id=620400293 instance=ExtResource("2_irbrv")]
+position = Vector2(190, 147)
 
-[node name="Barrel3" parent="Y-Sort" parent_id_path=PackedInt32Array(1050274422) index="3" unique_id=1188717036 instance=ExtResource("2_irbrv")]
-position = Vector2(6, 9)
+[node name="VWallTop" parent="Y-Sort" parent_id_path=PackedInt32Array(1050274422) index="3" unique_id=1102859567 instance=ExtResource("3_805pq")]
+position = Vector2(190, 51)
 
-[node name="Pillar" parent="Y-Sort" parent_id_path=PackedInt32Array(1050274422) index="4" unique_id=1330766497 instance=ExtResource("3_805pq")]
-position = Vector2(-175, 184)
+[node name="VWall3" parent="Y-Sort" parent_id_path=PackedInt32Array(1050274422) index="4" unique_id=1699467092 instance=ExtResource("2_irbrv")]
+position = Vector2(187, -268)
 
-[node name="Minotaur" parent="Y-Sort" parent_id_path=PackedInt32Array(1050274422) index="5" unique_id=668174716 instance=ExtResource("4_ki8mi")]
-position = Vector2(332, 127)
+[node name="VWall4" parent="Y-Sort" parent_id_path=PackedInt32Array(1050274422) index="5" unique_id=499578701 instance=ExtResource("2_irbrv")]
+position = Vector2(187, -172)
+
+[node name="VWallBottom" parent="Y-Sort" parent_id_path=PackedInt32Array(1050274422) index="6" unique_id=941549861 instance=ExtResource("4_ki8mi")]
+position = Vector2(187, -76)
+
+[node name="Barrel" parent="Y-Sort" parent_id_path=PackedInt32Array(1050274422) index="7" unique_id=323202538 instance=ExtResource("5_u61dc")]
+position = Vector2(320, -25)
+
+[node name="Rat" parent="Y-Sort" parent_id_path=PackedInt32Array(1050274422) index="8" unique_id=668174716 instance=ExtResource("6_7snfr")]
+position = Vector2(236, -131)
+
+[node name="Rat2" parent="Y-Sort" parent_id_path=PackedInt32Array(1050274422) index="9" unique_id=320541806 instance=ExtResource("6_7snfr")]
+position = Vector2(246, 103)
+
+[node name="Barrel2" parent="Y-Sort" parent_id_path=PackedInt32Array(1050274422) index="10" unique_id=2135157483 instance=ExtResource("5_u61dc")]
+position = Vector2(322, 25)
+
+[node name="bat" parent="Y-Sort" parent_id_path=PackedInt32Array(1050274422) index="11" unique_id=294821531 instance=ExtResource("7_w2i51")]
+position = Vector2(393, 7)
+
+[node name="HWall" parent="Y-Sort" parent_id_path=PackedInt32Array(1050274422) index="12" unique_id=823134713 instance=ExtResource("8_xsrpe")]
+position = Vector2(463, 57)
+
+[node name="HWallLeft" parent="Y-Sort" parent_id_path=PackedInt32Array(1050274422) index="13" unique_id=1477809109 instance=ExtResource("9_0kxia")]
+position = Vector2(367, 57)
+
+[node name="HWall2" parent="Y-Sort" parent_id_path=PackedInt32Array(1050274422) index="14" unique_id=179891567 instance=ExtResource("8_xsrpe")]
+position = Vector2(463, -103)
+
+[node name="HWallLeft2" parent="Y-Sort" parent_id_path=PackedInt32Array(1050274422) index="15" unique_id=244922230 instance=ExtResource("9_0kxia")]
+position = Vector2(367, -103)
+
+[node name="Minotaur" parent="Y-Sort" parent_id_path=PackedInt32Array(1050274422) index="16" unique_id=137291636 instance=ExtResource("10_xsrpe")]
+position = Vector2(-380, 25)
+
+[node name="Pillar" parent="Y-Sort" parent_id_path=PackedInt32Array(1050274422) index="17" unique_id=496635753 instance=ExtResource("11_0kxia")]
+position = Vector2(-7, 113)
