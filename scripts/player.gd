@@ -12,6 +12,8 @@ class_name Player
 @export var dash_cooldown: float = 0.5
 
 @export var footstep_sounds: AudioStream;
+var _footstep_cooldown : float = 0.4-randf()/5
+var _time_since_footstep : float = 0
 @export var death_sound : AudioStream
 
 @onready var hurtbox_area_2d: Area2D = $HurtboxArea2D
@@ -57,7 +59,7 @@ func play_animation(animation_name: String, duration : float = -1) -> void:
 		#print(anim_speed_multiplier)
 		animated_sprite_2d.play(animation_name, anim_speed_multiplier)
 
-func _physics_process(delta):
+func _physics_process(delta):	
 	if state in [PLAYER_STATE.DYING, PLAYER_STATE.PETRIFYING]:
 		return;
 	
@@ -101,6 +103,8 @@ func _physics_process(delta):
 			_last_y_down = false;
 		play_animation("run");
 		move_and_slide()
+		if state != PLAYER_STATE.DASHING:
+			footsteps()
 		
 		for i in get_slide_collision_count():
 			var collision := get_slide_collision(i)
@@ -112,6 +116,12 @@ func _physics_process(delta):
 		return;
 	
 	play_animation("idle");
+
+func footsteps():
+	if _time_since_footstep > _footstep_cooldown:
+		AudioManager.play_sfx(footstep_sounds)
+		_footstep_cooldown = 0.3-randf()/10
+		_time_since_footstep = 0
 
 func die() -> void:
 	if state != PLAYER_STATE.PETRIFYING:
@@ -142,6 +152,8 @@ func petrify_visuals() -> void:
 	hurtbox_area_2d.monitorable = false;
 
 func _process(delta: float) -> void:
+	if _time_since_footstep < _footstep_cooldown:
+		_time_since_footstep += delta
 	if state in [PLAYER_STATE.DYING, PLAYER_STATE.PETRIFYING]:
 		return;
 	if Input.is_action_just_pressed("Petrify"):

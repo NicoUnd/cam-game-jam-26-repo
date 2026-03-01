@@ -30,7 +30,7 @@ func fade_in(on_input : Callable, msg : String, won : bool = false) -> void:
 	_game_over = true
 	
 	var endStream = winAudio if won else loseAudio
-	_time_till_input_enable = _fade_duration + endStream.get_length()
+	_time_till_input_enable = _fade_duration + endStream.get_length() * 0.2
 	var tween = create_tween()
 	tween.tween_property(self, "color:a", 1, _fade_duration)
 	
