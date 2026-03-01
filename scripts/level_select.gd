@@ -1,7 +1,7 @@
 extends Control
 
-@export var level_music : AudioStream
-@export var minotaur_music : AudioStream
+@export var level_music1 : AudioStream
+@export var level_music2 : AudioStream
 
 
 func get_all_buttons() -> Array:
@@ -31,10 +31,10 @@ func start_level(level : int) -> void:
 	print("res://scenes/levels/level_" + str(level) + ".tscn")
 	LevelManager.current_level_index = level
 	if level > 1:
-		if level == 6:
-			AudioManager.play_music(minotaur_music)
+		if (level % 2 == 0):
+			AudioManager.play_music(level_music2)
 		else:
-			AudioManager.play_music(level_music)
+			AudioManager.play_music(level_music1)
 	AudioManager.music_volume(10)
 	get_tree().change_scene_to_file("res://scenes/levels/level_" + str(level) + ".tscn")
 	
