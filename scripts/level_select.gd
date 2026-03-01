@@ -1,5 +1,7 @@
 extends Control
 
+@export var level_music : AudioStream
+
 func get_all_buttons() -> Array:
 	# Using the node path from the root of the scene
 	return $MarginContainer/ScrollContainer/VBoxContainer.get_children()
@@ -18,5 +20,8 @@ func _ready():
 func start_level(level : int) -> void:
 	print("res://scenes/levels/level_" + str(level) + ".tscn")
 	LevelManager.current_level_index = level
+	if level > 1:
+		AudioManager.play_music(level_music)
+	AudioManager.music_volume(50)
 	get_tree().change_scene_to_file("res://scenes/levels/level_" + str(level) + ".tscn")
 	

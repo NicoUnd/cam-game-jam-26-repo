@@ -12,6 +12,7 @@ class_name Player
 @export var dash_cooldown: float = 0.5
 
 @export var footstep_sounds: AudioStream;
+@export var death_sound : AudioStream
 
 @onready var hurtbox_area_2d: Area2D = $HurtboxArea2D
 
@@ -115,6 +116,7 @@ func _physics_process(delta):
 func die() -> void:
 	if state != PLAYER_STATE.PETRIFYING:
 		animated_sprite_2d.play("die");
+		AudioManager.play_sfx(death_sound)
 		state = PLAYER_STATE.DYING;
 		set_collision_layer_value(8 + 16, true);
 		FadeToBlack.fade_to_black.fade_in(get_tree().reload_current_scene, "You Died")
