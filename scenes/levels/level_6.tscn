@@ -6,6 +6,8 @@
 [ext_resource type="PackedScene" uid="uid://b5kfhqcljyb8n" path="res://scenes/obstacles/v_wall_bottom.tscn" id="4_741xk"]
 [ext_resource type="PackedScene" uid="uid://d3tmox7ixgkd0" path="res://scenes/enemies/minotaur.tscn" id="5_i0fhw"]
 [ext_resource type="PackedScene" uid="uid://brp71dtg7r8e1" path="res://scenes/obstacles/pillar.tscn" id="6_5wshb"]
+[ext_resource type="PackedScene" uid="uid://btkthn08if67o" path="res://scenes/torch_side.tscn" id="7_7x7cx"]
+[ext_resource type="PackedScene" uid="uid://omp66yyj208e" path="res://scenes/torch.tscn" id="8_b6i88"]
 
 [node name="Level6" unique_id=951364413 instance=ExtResource("1_gfuhv")]
 
@@ -65,3 +67,22 @@ position = Vector2(297, 151)
 
 [node name="Pillar3" parent="Y-Sort" parent_id_path=PackedInt32Array(1050274422) index="15" unique_id=1839731873 instance=ExtResource("6_5wshb")]
 position = Vector2(-353, -120)
+
+[node name="TorchSide" parent="Y-Sort" parent_id_path=PackedInt32Array(1050274422) index="16" unique_id=530198874 instance=ExtResource("7_7x7cx")]
+position = Vector2(-115, -134)
+
+[node name="TorchSide2" parent="Y-Sort" parent_id_path=PackedInt32Array(1050274422) index="17" unique_id=1540251982 instance=ExtResource("7_7x7cx")]
+position = Vector2(134, -103.00001)
+scale = Vector2(-3, 3)
+
+[node name="Torch" parent="Y-Sort" parent_id_path=PackedInt32Array(1050274422) index="18" unique_id=1588614372 instance=ExtResource("8_b6i88")]
+position = Vector2(381, -248)
+
+[node name="Torch2" parent="Y-Sort" parent_id_path=PackedInt32Array(1050274422) index="19" unique_id=1388791521 instance=ExtResource("8_b6i88")]
+position = Vector2(-374, -250.00002)
+
+[node name="Torch3" parent="Y-Sort" parent_id_path=PackedInt32Array(1050274422) index="20" unique_id=534558587 instance=ExtResource("8_b6i88")]
+position = Vector2(-255, 293)
+
+[node name="Torch4" parent="Y-Sort" parent_id_path=PackedInt32Array(1050274422) index="21" unique_id=109127195 instance=ExtResource("8_b6i88")]
+position = Vector2(290, 298)

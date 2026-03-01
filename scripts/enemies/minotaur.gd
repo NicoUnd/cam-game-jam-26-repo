@@ -6,6 +6,8 @@ const ACCELERATION_MAGNITUDE: float = 300;
 
 var last_velocity: Vector2;
 
+var in_puddle: bool = false;
+
 # Called when the node enters the scene tree for the first time.
 func move(delta: float) -> void:
 	match state:
@@ -27,7 +29,10 @@ func _physics_process(delta: float) -> void:
 		ENEMY_STATE.PETRIFIED:
 			return;
 	
-	if velocity.distance_to(last_velocity) > 300:
+	if in_puddle:
+		velocity = velocity.normalized() * 50;
+	
+	if velocity.distance_to(last_velocity) > 300 and not in_puddle:
 		barrel_check();
 		sleep();
 	
