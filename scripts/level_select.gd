@@ -10,7 +10,7 @@ func get_all_buttons() -> Array:
 
 func _ready():
 	var buttons = get_all_buttons()
-	var unlocked_level = min(buttons.size() - 1, LevelManager.max_level_index + 1)
+	var unlocked_level = min(buttons.size(), LevelManager.max_level_index + 1)
 	for i in range(unlocked_level):
 		var button = buttons[i]
 		if button is PetrifiableButton:
