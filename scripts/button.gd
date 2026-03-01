@@ -35,7 +35,7 @@ func lock() -> void:
 		focus_exited.disconnect(_on_focus_lost)
 	
 	var tween = create_tween()
-	tween.tween_property(_canvas_group.material, "shader_parameter/progress", 1.0, petrification_duration)
+	tween.tween_property(_canvas_group.material, "shader_parameter/progress", 0.0, petrification_duration)
 
 func unlock() -> void:
 	locked = false
@@ -46,15 +46,15 @@ func unlock() -> void:
 	focus_exited.connect(_on_focus_lost)
 	
 	var tween = create_tween()
-	tween.tween_property(_canvas_group.material, "shader_parameter/progress", 0.0, petrification_duration)
+	tween.tween_property(_canvas_group.material, "shader_parameter/progress", 1.0, petrification_duration)
 	
 func _on_focus() -> void:
 	var tween = create_tween()
-	tween.tween_property(_canvas_group.material, "shader_parameter/progress", 1.0, petrification_duration)
+	tween.tween_property(_canvas_group.material, "shader_parameter/progress", 0.0, petrification_duration)
 
 func _on_focus_lost() -> void:
 	var tween = create_tween()
-	tween.tween_property(_canvas_group.material, "shader_parameter/progress", 0.0, petrification_duration)
+	tween.tween_property(_canvas_group.material, "shader_parameter/progress", 1.0, petrification_duration)
 
 func _on_button_pressed() -> void:
 	AudioManager.play_sfx(button_press_sound)
