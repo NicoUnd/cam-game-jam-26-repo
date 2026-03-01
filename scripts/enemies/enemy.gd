@@ -61,9 +61,9 @@ func petrify() -> void:
 
 func spotted_player() -> void:
 	_last_spotted = 0;
+	hitbox_area_2d.monitoring = true;
+	state = ENEMY_STATE.CHASING;
 	if _just_spotted:
-		hitbox_area_2d.monitoring = true;
-		state = ENEMY_STATE.CHASING;
 		AudioManager.play_sfx(aggro_sound);
 		_just_spotted = false
 

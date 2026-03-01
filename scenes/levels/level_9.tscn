@@ -72,7 +72,7 @@ position = Vector2(-144, 125)
 position = Vector2(63, 245)
 
 [node name="Pillar3" parent="Y-Sort" parent_id_path=PackedInt32Array(1050274422) index="16" unique_id=1242751176 instance=ExtResource("7_ltlq2")]
-position = Vector2(340, 185)
+position = Vector2(374.435, 197.38)
 
 [node name="Snake" parent="Y-Sort" parent_id_path=PackedInt32Array(1050274422) index="17" unique_id=519236286 instance=ExtResource("8_6nuwh")]
 position = Vector2(-182, 238)
