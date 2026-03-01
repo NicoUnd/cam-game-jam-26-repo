@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://56t80i83aar1"]
+
+[ext_resource type="PackedScene" uid="uid://bidivnh002n86" path="res://scenes/levels/cave_level.tscn" id="1_aq65u"]
+[ext_resource type="PackedScene" uid="uid://wab4gk5t5glw" path="res://scenes/obstacles/barrel.tscn" id="2_irbrv"]
+[ext_resource type="PackedScene" uid="uid://brp71dtg7r8e1" path="res://scenes/obstacles/pillar.tscn" id="3_805pq"]
+[ext_resource type="PackedScene" uid="uid://d3tmox7ixgkd0" path="res://scenes/enemies/minotaur.tscn" id="4_ki8mi"]
+
+[node name="Level8" unique_id=951364413 instance=ExtResource("1_aq65u")]
+
+[node name="Player" parent="Y-Sort" parent_id_path=PackedInt32Array(1050274422) index="0" unique_id=820894451]
+position = Vector2(-243, 236)
+
+[node name="Barrel" parent="Y-Sort" parent_id_path=PackedInt32Array(1050274422) index="1" unique_id=12530250 instance=ExtResource("2_irbrv")]
+position = Vector2(-3, 191)
+
+[node name="Barrel2" parent="Y-Sort" parent_id_path=PackedInt32Array(1050274422) index="2" unique_id=367772721 instance=ExtResource("2_irbrv")]
+position = Vector2(-6, 96)
+
+[node name="Barrel3" parent="Y-Sort" parent_id_path=PackedInt32Array(1050274422) index="3" unique_id=1188717036 instance=ExtResource("2_irbrv")]
+position = Vector2(6, 9)
+
+[node name="Pillar" parent="Y-Sort" parent_id_path=PackedInt32Array(1050274422) index="4" unique_id=1330766497 instance=ExtResource("3_805pq")]
+position = Vector2(-175, 184)
+
+[node name="Minotaur" parent="Y-Sort" parent_id_path=PackedInt32Array(1050274422) index="5" unique_id=668174716 instance=ExtResource("4_ki8mi")]
+position = Vector2(332, 127)

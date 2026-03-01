@@ -32,7 +32,7 @@ func _physics_process(delta: float) -> void:
 	if in_puddle:
 		velocity = velocity.normalized() * 50;
 	
-	if velocity.distance_to(last_velocity) > 300 and not in_puddle:
+	if velocity.distance_to(last_velocity) > 250 and not in_puddle:
 		barrel_check();
 		sleep();
 	
