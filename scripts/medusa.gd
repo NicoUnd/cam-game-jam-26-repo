@@ -2,6 +2,7 @@ extends Node2D
 
 @onready var player : Player = $".."
 @export var vision_cone_angle : float = PI / 3
+@export var petrify_sound : AudioStream
 
 var switch_to_level_select = func(): get_tree().change_scene_to_file("res://scenes/ui/level_select.tscn")
 
@@ -11,7 +12,7 @@ func petrify(looking_dir : Vector2):
 	var state_space = get_world_2d().direct_space_state
 	var enemies : Array[Node] = get_tree().current_scene.get_tree().get_nodes_in_group("Enemies")
 	#var enemies_and_player: Array[RID] = [self, player]
-	
+	AudioManager.play_sfx(petrify_sound)
 	#for enemy : Node in enemies:
 	#	if enemy is Enemy:
 	#		enemies_and_player.append(enemy.get_rid())

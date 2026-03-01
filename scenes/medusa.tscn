@@ -1,6 +1,8 @@
 [gd_scene format=3 uid="uid://cd180mx115x52"]
 
 [ext_resource type="Script" uid="uid://y3v6xwenfcl1" path="res://scripts/medusa.gd" id="1_d57jd"]
+[ext_resource type="AudioStream" uid="uid://bt2sbunyjxjdj" path="res://assets/audio/sound_effects/petrify.wav" id="2_d57jd"]
 
 [node name="Medusa" type="Node2D" unique_id=1342946002]
 script = ExtResource("1_d57jd")
+petrify_sound = ExtResource("2_d57jd")
