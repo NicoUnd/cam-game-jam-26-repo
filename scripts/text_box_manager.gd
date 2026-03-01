@@ -8,6 +8,7 @@ extends Control
 func _ready() -> void:
 	if queue.size() > 0:
 		play_next();
+		visible = true;
 
 func play_next() -> void:
 	label.text = queue.pop_front();

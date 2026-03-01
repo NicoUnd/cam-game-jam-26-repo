@@ -129,7 +129,7 @@ func petrify() -> void:
 	
 	gpu_particles_2d.emitting = false;
 	
-	petrify_visuals_timer.start(1);
+	petrify_visuals_timer.start(0.7);
 	
 	hurtbox_area_2d.monitorable = true;
 
