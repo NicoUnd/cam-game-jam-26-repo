@@ -118,7 +118,6 @@ func die() -> void:
 		animated_sprite_2d.play("die");
 		AudioManager.play_sfx(death_sound)
 		state = PLAYER_STATE.DYING;
-		set_collision_layer_value(8 + 16, true);
 		FadeToBlack.fade_to_black.fade_in(get_tree().reload_current_scene, "You Died")
 
 func petrify() -> void:
@@ -140,6 +139,7 @@ func petrify_visuals() -> void:
 	gpu_particles_2d.restart();
 	medusa.petrify(_last_input_direction);
 	hurtbox_area_2d.monitorable = false;
+	state = PLAYER_STATE.DYING;
 
 func _process(delta: float) -> void:
 	if state in [PLAYER_STATE.DYING, PLAYER_STATE.PETRIFYING]:
