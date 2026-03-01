@@ -37,6 +37,8 @@ var state: PLAYER_STATE = PLAYER_STATE.DEFAULT;
 
 @onready var gpu_particles_2d: GPUParticles2D = $GPUParticles2D
 
+@onready var collision_shape_2d: CollisionShape2D = $CollisionShape2D
+
 static var player: Player;
 
 func _enter_tree() -> void:
@@ -76,6 +78,7 @@ func _physics_process(delta):
 		#_dash_start = position
 		state = PLAYER_STATE.DASHING;
 		AudioManager.play_sfx(dash_sound)
+		collision_shape_2d.scale = Vector2.ONE * 0.4;
 	
 	set_collision_mask_value(2, state != PLAYER_STATE.DASHING); # don't collide with enemies when dashing
 	hurtbox_area_2d.monitorable = state != PLAYER_STATE.DASHING;
@@ -173,6 +176,7 @@ func _on_animated_sprite_2d_animation_finished() -> void:
 	if state in [PLAYER_STATE.DASHING, PLAYER_STATE.BUMPING]:
 		_time_since_last_dash = 0;
 		state = PLAYER_STATE.DEFAULT;
+		collision_shape_2d.scale = Vector2.ONE;
 	elif state == PLAYER_STATE.PETRIFYING and in_tutorial:
 		state = PLAYER_STATE.DEFAULT;
 	#elif state == PLAYER_STATE.DYING:
