@@ -1,0 +1,5 @@
+[gd_scene format=3 uid="uid://7f16h3lif2rh"]
+
+[ext_resource type="PackedScene" uid="uid://bidivnh002n86" path="res://scenes/levels/cave_level.tscn" id="1_ntash"]
+
+[node name="Level7" unique_id=951364413 instance=ExtResource("1_ntash")]
