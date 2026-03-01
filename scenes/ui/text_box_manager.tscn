@@ -9,7 +9,7 @@ font_size = 48
 font_color = Color(0, 0, 0, 1)
 
 [sub_resource type="Animation" id="Animation_x2ven"]
-length = 0.001
+length = 2.1333334
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true

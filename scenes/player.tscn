@@ -489,9 +489,7 @@ initial_velocity_max = 800.0
 scale_min = 4.0
 scale_max = 4.0
 color = Color(0.59607846, 0.84705883, 0.6, 1)
-collision_mode = 1
-collision_friction = 1.0
-collision_bounce = 0.0
+collision_mode = 2
 
 [node name="Player" type="CharacterBody2D" unique_id=820894451]
 y_sort_enabled = true
@@ -520,16 +518,16 @@ shape = SubResource("CircleShape2D_qhqgy")
 
 [node name="GPUParticles2D" type="GPUParticles2D" parent="." unique_id=2015913133]
 visible = false
-modulate = Color(1, 1, 1, 0.21176471)
+modulate = Color(1, 1, 1, 0.08235294)
 emitting = false
-amount = 256
+amount = 512
 lifetime = 3.0
 one_shot = true
 explosiveness = 0.98
 fixed_fps = 60
 collision_base_size = 4.0
 trail_enabled = true
-trail_lifetime = 0.1
+trail_lifetime = 0.06999999999999999
 process_material = SubResource("ParticleProcessMaterial_qhqgy")
 
 [node name="PetrifyVisualsTimer" type="Timer" parent="." unique_id=478218549]

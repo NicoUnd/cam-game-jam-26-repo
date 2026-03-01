@@ -15,6 +15,8 @@ var phase: int = 0;
 @onready var v_wall_4: Obstacle = $"Y-Sort/VWall4"
 @onready var v_wall_bottom: Obstacle = $"Y-Sort/VWallBottom"
 @onready var v_wall_top: Obstacle = $"Y-Sort/VWallTop"
+@onready var torch_side: AnimatedSprite2D = $"Y-Sort/TorchSide"
+@onready var torch_side_2: AnimatedSprite2D = $"Y-Sort/TorchSide2"
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -41,4 +43,6 @@ func _process(delta: float) -> void:
 				v_wall_4.queue_free();
 				v_wall_top.queue_free();
 				v_wall_bottom.queue_free();
+				torch_side.queue_free();
+				torch_side_2.queue_free();
 				phase += 1;

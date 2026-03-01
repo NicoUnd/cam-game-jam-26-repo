@@ -25,7 +25,7 @@ sources/0 = SubResource("TileSetAtlasSource_bovvr")
 normal = Vector2(-0.01030873, 0.99994683)
 
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_b2cq8"]
-polygon = PackedVector2Array(-595, 1, 603, -6, 624, -103, -654, -94, -605, -5)
+polygon = PackedVector2Array(-589, -11, 623, -10, 624, -103, -654, -94, -605, -5)
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_bovvr"]
 
@@ -74,6 +74,7 @@ shape = SubResource("WorldBoundaryShape2D_ftxyw")
 
 [node name="LightOccluder2D" type="LightOccluder2D" parent="Nwall" unique_id=262598132]
 occluder = SubResource("OccluderPolygon2D_b2cq8")
+occluder_light_mask = 0
 
 [node name="SWall" type="StaticBody2D" parent="." unique_id=1978877461]
 z_index = 5

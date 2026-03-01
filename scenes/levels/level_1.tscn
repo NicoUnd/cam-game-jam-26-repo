@@ -5,11 +5,14 @@
 [ext_resource type="PackedScene" uid="uid://dgm4ae64akcuu" path="res://scenes/obstacles/v_wall.tscn" id="3_nsrm0"]
 [ext_resource type="PackedScene" uid="uid://b5kfhqcljyb8n" path="res://scenes/obstacles/v_wall_bottom.tscn" id="4_6761a"]
 [ext_resource type="PackedScene" uid="uid://cfy8f18vpt5oi" path="res://scenes/obstacles/v_wall_top.tscn" id="5_sk5k4"]
+[ext_resource type="PackedScene" uid="uid://omp66yyj208e" path="res://scenes/torch.tscn" id="6_sk5k4"]
+[ext_resource type="PackedScene" uid="uid://btkthn08if67o" path="res://scenes/torch_side.tscn" id="7_oc4kc"]
 
 [node name="Level1" unique_id=951364413 instance=ExtResource("1_ksju7")]
 script = ExtResource("2_6iamk")
 
 [node name="TextBoxManager" parent="." index="0" unique_id=2063301136]
+visible = false
 queue = Array[String](["Move around with WASD or arrow keys", "Dodge roll with SPACE or SHIFT", "While dodging, you cannot be hit", "Beware dangerous enemies", "Enemies may sleep if they can't find you", "Press E to use Medusa's head", "Usually, you can only use her head once", "Enemies that see the head become petrified", "You need to pretrify all enemies with one use", "Good luck on your escape!"])
 
 [node name="Player" parent="Y-Sort" parent_id_path=PackedInt32Array(1050274422) index="0" unique_id=820894451]
@@ -31,3 +34,19 @@ position = Vector2(0, 288)
 
 [node name="VWallTop" parent="Y-Sort" parent_id_path=PackedInt32Array(1050274422) index="6" unique_id=1815281637 instance=ExtResource("5_sk5k4")]
 position = Vector2(0, -192)
+
+[node name="Torch" parent="Y-Sort" parent_id_path=PackedInt32Array(1050274422) index="7" unique_id=1588614372 instance=ExtResource("6_sk5k4")]
+position = Vector2(-260, -238)
+
+[node name="Torch2" parent="Y-Sort" parent_id_path=PackedInt32Array(1050274422) index="8" unique_id=604296974 instance=ExtResource("6_sk5k4")]
+position = Vector2(249, -236)
+
+[node name="TorchSide" parent="Y-Sort" parent_id_path=PackedInt32Array(1050274422) index="9" unique_id=530198874 instance=ExtResource("7_oc4kc")]
+position = Vector2(-30, 132)
+
+[node name="TorchSide2" parent="Y-Sort" parent_id_path=PackedInt32Array(1050274422) index="10" unique_id=307174591 instance=ExtResource("7_oc4kc")]
+position = Vector2(30, -66)
+scale = Vector2(-3, 3)
+
+[node name="TorchSide3" parent="Y-Sort" parent_id_path=PackedInt32Array(1050274422) index="11" unique_id=656541651 instance=ExtResource("7_oc4kc")]
+position = Vector2(491, 58)
