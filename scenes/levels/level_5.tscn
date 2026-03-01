@@ -1,0 +1,29 @@
+[gd_scene format=3 uid="uid://b6pqqv0un3518"]
+
+[ext_resource type="PackedScene" uid="uid://bidivnh002n86" path="res://scenes/levels/cave_level.tscn" id="1_r1vs7"]
+[ext_resource type="PackedScene" uid="uid://1r34p0avoibv" path="res://scenes/obstacles/h_wall.tscn" id="2_845dy"]
+[ext_resource type="PackedScene" uid="uid://h0ie0t1ggrai" path="res://scenes/obstacles/h_wall_right.tscn" id="3_dswqx"]
+
+[node name="Level5" unique_id=951364413 instance=ExtResource("1_r1vs7")]
+
+[node name="TextBoxManager" parent="." index="0" unique_id=2063301136]
+visible = true
+queue = Array[String](["You can break barrels by rolling into them"])
+
+[node name="Player" parent="Y-Sort" parent_id_path=PackedInt32Array(1050274422) index="0" unique_id=820894451]
+position = Vector2(-428, 160)
+
+[node name="HWall" parent="Y-Sort" parent_id_path=PackedInt32Array(1050274422) index="1" unique_id=12530250 instance=ExtResource("2_845dy")]
+position = Vector2(-453, 34)
+
+[node name="HWall2" parent="Y-Sort" parent_id_path=PackedInt32Array(1050274422) index="2" unique_id=1115574959 instance=ExtResource("2_845dy")]
+position = Vector2(-357, 34)
+
+[node name="HWall3" parent="Y-Sort" parent_id_path=PackedInt32Array(1050274422) index="3" unique_id=801346182 instance=ExtResource("2_845dy")]
+position = Vector2(-261, 34)
+
+[node name="HWall4" parent="Y-Sort" parent_id_path=PackedInt32Array(1050274422) index="4" unique_id=534389715 instance=ExtResource("2_845dy")]
+position = Vector2(-165, 34)
+
+[node name="HWallRight" parent="Y-Sort" parent_id_path=PackedInt32Array(1050274422) index="5" unique_id=551698426 instance=ExtResource("3_dswqx")]
+position = Vector2(-69, 34)

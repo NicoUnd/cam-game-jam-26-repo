@@ -1,0 +1,68 @@
+[gd_scene format=3 uid="uid://ckidhr5105y60"]
+
+[ext_resource type="PackedScene" uid="uid://bidivnh002n86" path="res://scenes/levels/cave_level.tscn" id="1_44gv1"]
+[ext_resource type="PackedScene" uid="uid://omp66yyj208e" path="res://scenes/torch.tscn" id="2_0ljxa"]
+[ext_resource type="PackedScene" uid="uid://1r34p0avoibv" path="res://scenes/obstacles/h_wall.tscn" id="3_0ljxa"]
+[ext_resource type="PackedScene" uid="uid://pd1mcvb1knm8" path="res://scenes/obstacles/h_wall_left.tscn" id="4_0qepi"]
+[ext_resource type="PackedScene" uid="uid://btkthn08if67o" path="res://scenes/torch_side.tscn" id="5_fmg3e"]
+[ext_resource type="PackedScene" uid="uid://dcvo6ylw4wftk" path="res://scenes/enemies/rat.tscn" id="6_ftfob"]
+
+[node name="Level3" unique_id=951364413 instance=ExtResource("1_44gv1")]
+
+[node name="Torch" parent="Y-Sort" parent_id_path=PackedInt32Array(1050274422) index="0" unique_id=1588614372 instance=ExtResource("2_0ljxa")]
+position = Vector2(-56, -238)
+
+[node name="Torch2" parent="Y-Sort" parent_id_path=PackedInt32Array(1050274422) index="1" unique_id=317995917 instance=ExtResource("2_0ljxa")]
+position = Vector2(125, 295)
+
+[node name="Torch3" parent="Y-Sort" parent_id_path=PackedInt32Array(1050274422) index="2" unique_id=1375295714 instance=ExtResource("2_0ljxa")]
+position = Vector2(297, 48)
+
+[node name="Player" parent="Y-Sort" parent_id_path=PackedInt32Array(1050274422) index="3" unique_id=820894451]
+position = Vector2(-327, -150)
+
+[node name="HWall" parent="Y-Sort" parent_id_path=PackedInt32Array(1050274422) index="4" unique_id=12530250 instance=ExtResource("3_0ljxa")]
+position = Vector2(462, 9)
+
+[node name="HWall2" parent="Y-Sort" parent_id_path=PackedInt32Array(1050274422) index="5" unique_id=1325727426 instance=ExtResource("3_0ljxa")]
+position = Vector2(366, 9)
+
+[node name="HWall3" parent="Y-Sort" parent_id_path=PackedInt32Array(1050274422) index="6" unique_id=643743775 instance=ExtResource("3_0ljxa")]
+position = Vector2(270, 9)
+
+[node name="HWall4" parent="Y-Sort" parent_id_path=PackedInt32Array(1050274422) index="7" unique_id=2103852432 instance=ExtResource("3_0ljxa")]
+position = Vector2(174, 9)
+
+[node name="HWall5" parent="Y-Sort" parent_id_path=PackedInt32Array(1050274422) index="8" unique_id=4194720 instance=ExtResource("3_0ljxa")]
+position = Vector2(78, 9)
+
+[node name="HWall6" parent="Y-Sort" parent_id_path=PackedInt32Array(1050274422) index="9" unique_id=127828814 instance=ExtResource("3_0ljxa")]
+position = Vector2(-18, 9)
+
+[node name="HWall7" parent="Y-Sort" parent_id_path=PackedInt32Array(1050274422) index="10" unique_id=661511682 instance=ExtResource("3_0ljxa")]
+position = Vector2(-114, 9)
+
+[node name="HWall8" parent="Y-Sort" parent_id_path=PackedInt32Array(1050274422) index="11" unique_id=43395220 instance=ExtResource("3_0ljxa")]
+position = Vector2(-210, 9)
+
+[node name="HWallLeft" parent="Y-Sort" parent_id_path=PackedInt32Array(1050274422) index="12" unique_id=1438612105 instance=ExtResource("4_0qepi")]
+position = Vector2(-306, 9)
+
+[node name="Torch4" parent="Y-Sort" parent_id_path=PackedInt32Array(1050274422) index="13" unique_id=1303265111 instance=ExtResource("2_0ljxa")]
+position = Vector2(-99, 48)
+
+[node name="TorchSide" parent="Y-Sort" parent_id_path=PackedInt32Array(1050274422) index="14" unique_id=530198874 instance=ExtResource("5_fmg3e")]
+position = Vector2(-491, -3)
+scale = Vector2(-3, 3)
+
+[node name="Rat" parent="Y-Sort" parent_id_path=PackedInt32Array(1050274422) index="15" unique_id=668174716 instance=ExtResource("6_ftfob")]
+position = Vector2(411, 242)
+
+[node name="Rat2" parent="Y-Sort" parent_id_path=PackedInt32Array(1050274422) index="16" unique_id=41358698 instance=ExtResource("6_ftfob")]
+position = Vector2(247, 164)
+
+[node name="Rat3" parent="Y-Sort" parent_id_path=PackedInt32Array(1050274422) index="17" unique_id=1414741447 instance=ExtResource("6_ftfob")]
+position = Vector2(-115, 230)
+
+[node name="Rat4" parent="Y-Sort" parent_id_path=PackedInt32Array(1050274422) index="18" unique_id=2104432583 instance=ExtResource("6_ftfob")]
+position = Vector2(417, -152)

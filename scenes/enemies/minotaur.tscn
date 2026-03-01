@@ -152,6 +152,10 @@ animations = [{
 "speed": 1.0
 }]
 
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_wm3mn"]
+radius = 20.0
+height = 62.000008
+
 [node name="Minotaur" unique_id=668174716 instance=ExtResource("1_wiekd")]
 linear_damp = 3.0
 script = ExtResource("2_gj0oe")
@@ -162,10 +166,15 @@ idle_until_sleep = 0.0
 min_sleep_time = 3.0
 default_state = 1
 
-[node name="CollisionShape2D" parent="." index="1" unique_id=580851608]
+[node name="CollisionShape2D" parent="." index="0" unique_id=580851608]
 shape = SubResource("CapsuleShape2D_gj0oe")
 
-[node name="AnimatedSprite2D" parent="." index="2" unique_id=1003921594]
+[node name="AnimatedSprite2D" parent="Flippable" parent_id_path=PackedInt32Array(1096698229) index="0" unique_id=1003921594]
 material = SubResource("ShaderMaterial_wm3mn")
 sprite_frames = SubResource("SpriteFrames_lo61i")
 animation = &"sleep"
+
+[node name="CollisionShape2D" parent="Flippable/HitboxArea2D" parent_id_path=PackedInt32Array(1413472798) index="0" unique_id=1899254083]
+position = Vector2(0, 2.0000002)
+shape = SubResource("CapsuleShape2D_wm3mn")
+debug_color = Color(0.8887793, 0.30043814, 0.35039055, 0.41960785)

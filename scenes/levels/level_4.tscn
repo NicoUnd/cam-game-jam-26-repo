@@ -1,0 +1,75 @@
+[gd_scene format=3 uid="uid://df3t8og8jh6ow"]
+
+[ext_resource type="PackedScene" uid="uid://bidivnh002n86" path="res://scenes/levels/cave_level.tscn" id="1_06474"]
+[ext_resource type="PackedScene" uid="uid://dgm4ae64akcuu" path="res://scenes/obstacles/v_wall.tscn" id="2_vmkp1"]
+[ext_resource type="PackedScene" uid="uid://cfy8f18vpt5oi" path="res://scenes/obstacles/v_wall_top.tscn" id="3_w6h2s"]
+[ext_resource type="PackedScene" uid="uid://b5kfhqcljyb8n" path="res://scenes/obstacles/v_wall_bottom.tscn" id="4_ogj6a"]
+[ext_resource type="PackedScene" uid="uid://c8oau2rn4hi80" path="res://scenes/enemies/snake.tscn" id="5_anwe6"]
+[ext_resource type="PackedScene" uid="uid://ccl0jq7i4c6ju" path="res://scenes/enemies/bat.tscn" id="6_rej77"]
+[ext_resource type="PackedScene" uid="uid://omp66yyj208e" path="res://scenes/torch.tscn" id="7_5vn0v"]
+[ext_resource type="PackedScene" uid="uid://btkthn08if67o" path="res://scenes/torch_side.tscn" id="8_ts8eg"]
+[ext_resource type="PackedScene" uid="uid://brp71dtg7r8e1" path="res://scenes/obstacles/pillar.tscn" id="9_um320"]
+
+[node name="Level4" unique_id=951364413 instance=ExtResource("1_06474")]
+
+[node name="VWall" parent="Y-Sort" parent_id_path=PackedInt32Array(1050274422) index="1" unique_id=12530250 instance=ExtResource("2_vmkp1")]
+position = Vector2(-126, 15)
+
+[node name="VWall2" parent="Y-Sort" parent_id_path=PackedInt32Array(1050274422) index="2" unique_id=754498629 instance=ExtResource("2_vmkp1")]
+position = Vector2(-126, 111)
+
+[node name="VWall3" parent="Y-Sort" parent_id_path=PackedInt32Array(1050274422) index="3" unique_id=88122155 instance=ExtResource("2_vmkp1")]
+position = Vector2(-126, 207)
+
+[node name="VWall4" parent="Y-Sort" parent_id_path=PackedInt32Array(1050274422) index="4" unique_id=816152746 instance=ExtResource("2_vmkp1")]
+position = Vector2(-126, 303)
+
+[node name="VWallTop" parent="Y-Sort" parent_id_path=PackedInt32Array(1050274422) index="5" unique_id=881400291 instance=ExtResource("3_w6h2s")]
+position = Vector2(-126, -81)
+
+[node name="VWall7" parent="Y-Sort" parent_id_path=PackedInt32Array(1050274422) index="6" unique_id=442832519 instance=ExtResource("2_vmkp1")]
+position = Vector2(121, -25)
+
+[node name="VWall8" parent="Y-Sort" parent_id_path=PackedInt32Array(1050274422) index="7" unique_id=949765240 instance=ExtResource("2_vmkp1")]
+position = Vector2(121, 71)
+
+[node name="VWallBottom" parent="Y-Sort" parent_id_path=PackedInt32Array(1050274422) index="8" unique_id=888361811 instance=ExtResource("4_ogj6a")]
+position = Vector2(122, 165)
+
+[node name="Snake" parent="Y-Sort" parent_id_path=PackedInt32Array(1050274422) index="9" unique_id=668174716 instance=ExtResource("5_anwe6")]
+position = Vector2(217, -95)
+
+[node name="bat" parent="Y-Sort" parent_id_path=PackedInt32Array(1050274422) index="10" unique_id=674249087 instance=ExtResource("6_rej77")]
+position = Vector2(-238, 188)
+
+[node name="bat2" parent="Y-Sort" parent_id_path=PackedInt32Array(1050274422) index="11" unique_id=1483330142 instance=ExtResource("6_rej77")]
+position = Vector2(430, -5)
+
+[node name="VWallTop2" parent="Y-Sort" parent_id_path=PackedInt32Array(1050274422) index="12" unique_id=2100065002 instance=ExtResource("3_w6h2s")]
+position = Vector2(121, -121)
+
+[node name="Torch" parent="Y-Sort" parent_id_path=PackedInt32Array(1050274422) index="13" unique_id=1588614372 instance=ExtResource("7_5vn0v")]
+position = Vector2(-282, -243)
+
+[node name="Torch2" parent="Y-Sort" parent_id_path=PackedInt32Array(1050274422) index="14" unique_id=1277632112 instance=ExtResource("7_5vn0v")]
+position = Vector2(371, -245)
+
+[node name="Torch3" parent="Y-Sort" parent_id_path=PackedInt32Array(1050274422) index="15" unique_id=439575795 instance=ExtResource("7_5vn0v")]
+position = Vector2(233, 296)
+
+[node name="TorchSide" parent="Y-Sort" parent_id_path=PackedInt32Array(1050274422) index="16" unique_id=530198874 instance=ExtResource("8_ts8eg")]
+position = Vector2(-492, 79)
+scale = Vector2(-3, 3)
+
+[node name="TorchSide2" parent="Y-Sort" parent_id_path=PackedInt32Array(1050274422) index="17" unique_id=1855646496 instance=ExtResource("8_ts8eg")]
+position = Vector2(-155, 226)
+
+[node name="TorchSide3" parent="Y-Sort" parent_id_path=PackedInt32Array(1050274422) index="18" unique_id=1974397205 instance=ExtResource("8_ts8eg")]
+position = Vector2(-96, 52)
+scale = Vector2(-3, 3)
+
+[node name="Pillar" parent="Y-Sort" parent_id_path=PackedInt32Array(1050274422) index="19" unique_id=348582615 instance=ExtResource("9_um320")]
+position = Vector2(-343, 22)
+
+[node name="Pillar2" parent="Y-Sort" parent_id_path=PackedInt32Array(1050274422) index="20" unique_id=1474076043 instance=ExtResource("9_um320")]
+position = Vector2(343, 160)

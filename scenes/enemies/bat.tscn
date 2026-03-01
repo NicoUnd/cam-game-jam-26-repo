@@ -158,6 +158,10 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_5m14n"]
+radius = 19.0
+height = 50.000008
+
 [node name="bat" unique_id=668174716 instance=ExtResource("1_rt4uy")]
 collision_layer = 4
 collision_mask = 20
@@ -177,6 +181,11 @@ material = SubResource("ShaderMaterial_i6os3")
 sprite_frames = SubResource("SpriteFrames_ss5yy")
 animation = &"idle"
 autoplay = "idle"
+
+[node name="CollisionShape2D" parent="Flippable/HitboxArea2D" parent_id_path=PackedInt32Array(1413472798) index="0" unique_id=1899254083]
+position = Vector2(0, -10.000001)
+shape = SubResource("CapsuleShape2D_5m14n")
+debug_color = Color(0.9992154, 0, 0.13348177, 0.41960785)
 
 [node name="Spotted" parent="." index="2" unique_id=153104076]
 position = Vector2(0, -66)
