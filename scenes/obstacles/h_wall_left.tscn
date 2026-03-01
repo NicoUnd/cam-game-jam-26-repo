@@ -14,7 +14,7 @@ height = 90.0
 polygon = PackedVector2Array(-33, -18, 47, -20, 47, 87, -36, 89)
 
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_ti7me"]
-polygon = PackedVector2Array(-37, -16, 47, -17, 47, 2, -36, 2)
+polygon = PackedVector2Array(49, -19, 37, -19, 37, -22, 34, -22, 34, -25, 28, -25, 28, -28, 7, -28, 7, -25, 1, -25, 1, -22, -2, -22, -2, -19, -5, -19, -5, -22, -8, -22, -8, -25, -26, -25, -26, -22, -29, -22, -29, -19, -32, -19, -32, -16, -35, -16, -34, -17, -33, -17, -33, -20, -30, -20, -30, -23, -27, -23, -27, -26, -7, -26, -7, -23, -4, -23, -4, -20, -3, -20, -3, -23, 0, -23, 0, -26, 6, -26, 6, -29, 29, -29, 29, -26, 35, -26, 35, -23, 38, -23, 38, -20, 49, -20)
 
 [node name="HWallLeft" unique_id=12530250 instance=ExtResource("1_16ya1")]
 
@@ -33,6 +33,6 @@ shape = SubResource("CapsuleShape2D_16ya1")
 occluder = SubResource("OccluderPolygon2D_16ya1")
 occluder_light_mask = 0
 
-[node name="LightOccluder2D2" type="LightOccluder2D" parent="." index="4" unique_id=1133353431]
-position = Vector2(0, -11)
+[node name="LightOccluder2D2" type="LightOccluder2D" parent="." index="4" unique_id=566953347]
+position = Vector2(-1, -8)
 occluder = SubResource("OccluderPolygon2D_ti7me")
