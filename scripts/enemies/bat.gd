@@ -1,7 +1,6 @@
 extends Enemy
 class_name Bat
 
-
 func move(delta: float) -> void:
 	match state:
 		ENEMY_STATE.CHASING:

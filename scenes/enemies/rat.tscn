@@ -2,6 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://28fxek2ibb54" path="res://scenes/enemies/enemy.tscn" id="1_qn0ow"]
 [ext_resource type="Texture2D" uid="uid://ds13fqv20ps75" path="res://assets/sprites/rat_sheet.png" id="2_l3lpa"]
+[ext_resource type="AudioStream" uid="uid://cxaljuy4vtux4" path="res://assets/audio/sound_effects/rat_aggro.wav" id="2_orb1r"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_qn0ow"]
 radius = 9.0
@@ -158,6 +159,7 @@ height = 56.0
 [node name="Rat" unique_id=668174716 instance=ExtResource("1_qn0ow")]
 speed = 130.0
 damage = 1
+aggro_sound = ExtResource("2_orb1r")
 chase_for = 0.0
 default_state = 1
 
