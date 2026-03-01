@@ -1,0 +1,62 @@
+[gd_scene format=3 uid="uid://btkthn08if67o"]
+
+[ext_resource type="Texture2D" uid="uid://cpjf80e1lheag" path="res://assets/sprites/torch_side_sheet.png" id="1_fvu7c"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l2t1t"]
+atlas = ExtResource("1_fvu7c")
+region = Rect2(0, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vkeyk"]
+atlas = ExtResource("1_fvu7c")
+region = Rect2(16, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c0v17"]
+atlas = ExtResource("1_fvu7c")
+region = Rect2(32, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_54n1s"]
+atlas = ExtResource("1_fvu7c")
+region = Rect2(48, 0, 16, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_qi0e7"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l2t1t")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vkeyk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c0v17")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_54n1s")
+}],
+"loop": true,
+"name": &"default",
+"speed": 6.0
+}]
+
+[sub_resource type="Gradient" id="Gradient_d4v33"]
+offsets = PackedFloat32Array(0, 0.71935487)
+colors = PackedColorArray(1, 0.61960787, 0.24313726, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_fh0ce"]
+gradient = SubResource("Gradient_d4v33")
+width = 128
+height = 128
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+
+[node name="TorchSide" type="AnimatedSprite2D" unique_id=530198874]
+scale = Vector2(3, 3)
+sprite_frames = SubResource("SpriteFrames_qi0e7")
+autoplay = "default"
+frame_progress = 0.3086725
+
+[node name="PointLight2D" type="PointLight2D" parent="." unique_id=2071851075]
+energy = 1.5
+range_z_max = 0
+shadow_enabled = true
+texture = SubResource("GradientTexture2D_fh0ce")
