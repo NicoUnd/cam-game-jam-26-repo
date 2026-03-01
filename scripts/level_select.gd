@@ -1,6 +1,8 @@
 extends Control
 
 @export var level_music : AudioStream
+@export var minotaur_music : AudioStream
+
 
 func get_all_buttons() -> Array:
 	# Using the node path from the root of the scene
@@ -18,13 +20,20 @@ func _ready():
 		var button = buttons[i]
 		if button is PetrifiableButton:
 			button.lock()
+	
+	var first_btn = buttons[0]
+	if first_btn is PetrifiableButton:
+		first_btn.grab_focus()
 		
 
 func start_level(level : int) -> void:
 	print("res://scenes/levels/level_" + str(level) + ".tscn")
 	LevelManager.current_level_index = level
 	if level > 1:
-		AudioManager.play_music(level_music)
+		if level == 6:
+			AudioManager.play_music(minotaur_music)
+		else:
+			AudioManager.play_music(level_music)
 	AudioManager.music_volume(10)
 	get_tree().change_scene_to_file("res://scenes/levels/level_" + str(level) + ".tscn")
 	

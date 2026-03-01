@@ -20,6 +20,7 @@ shader_parameter/pixel_resolution = Vector2(32, 8)
 custom_minimum_size = Vector2(0, 96)
 layout_mode = 3
 anchors_preset = 0
+focus_mode = 2
 script = ExtResource("1_mrrss")
 button_press_sound = ExtResource("2_cxawc")
 

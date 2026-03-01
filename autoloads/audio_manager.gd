@@ -29,6 +29,7 @@ func play_music(stream: AudioStream) -> void:
 		return
 	_music_player.stream = stream
 	_music_player.play()
+		
 
 func stop_music() -> void:
 	if _music_player.playing:
