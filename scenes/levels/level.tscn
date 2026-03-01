@@ -4,6 +4,10 @@
 [ext_resource type="PackedScene" uid="uid://yn8xdstbyhre" path="res://scenes/player.tscn" id="2_bovvr"]
 [ext_resource type="PackedScene" uid="uid://04chy73giuu4" path="res://scenes/ui/black.tscn" id="2_xb4v1"]
 [ext_resource type="PackedScene" uid="uid://7dehfnrb6r5g" path="res://scenes/ui/text_box_manager.tscn" id="3_b2cq8"]
+[ext_resource type="AudioStream" uid="uid://cv6lqxkcj0g6w" path="res://assets/audio/music/winsnippet.wav" id="3_ouxo3"]
+[ext_resource type="AudioStream" uid="uid://bumxg2hsjigyv" path="res://assets/audio/music/losesnippet.wav" id="4_icy5c"]
+[ext_resource type="AudioStream" uid="uid://mpouc5u8gnnr" path="res://assets/audio/sound_effects/footsteps.wav" id="5_d4w6o"]
+[ext_resource type="AudioStream" uid="uid://d1x3uyswfonyh" path="res://assets/audio/sound_effects/death.wav" id="6_mbbpy"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_bovvr"]
 texture = ExtResource("1_377w7")
@@ -51,6 +55,8 @@ offset_bottom = 329.0
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1355967810]
 
 [node name="Black" parent="Camera2D" unique_id=694241931 instance=ExtResource("2_xb4v1")]
+winAudio = ExtResource("3_ouxo3")
+loseAudio = ExtResource("4_icy5c")
 
 [node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=1625917555]
 z_index = -6
@@ -107,3 +113,5 @@ y_sort_enabled = true
 
 [node name="Player" parent="Y-Sort" unique_id=820894451 instance=ExtResource("2_bovvr")]
 dash_cooldown = 0.4
+footstep_sounds = ExtResource("5_d4w6o")
+death_sound = ExtResource("6_mbbpy")

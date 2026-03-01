@@ -37,7 +37,7 @@ func petrify(looking_dir : Vector2):
 			for enemy in petrified_enemies:
 				enemy.z_index = 30
 			LevelManager.max_level_index = max(LevelManager.max_level_index, LevelManager.current_level_index)
-			FadeToBlack.fade_to_black.fade_in(switch_to_level_select, "You petrified all enemies")
+			FadeToBlack.fade_to_black.fade_in(switch_to_level_select, "You petrified all enemies", true)
 		return;
 	if (non_petrified_enemies.size() > 0):
 		for enemy in non_petrified_enemies:
@@ -47,4 +47,4 @@ func petrify(looking_dir : Vector2):
 		for enemy in petrified_enemies:
 			enemy.z_index = 30
 		LevelManager.max_level_index = max(LevelManager.max_level_index, LevelManager.current_level_index)
-		FadeToBlack.fade_to_black.fade_in(switch_to_level_select, "You petrified all enemies")
+		FadeToBlack.fade_to_black.fade_in(switch_to_level_select, "You petrified all enemies", true)
