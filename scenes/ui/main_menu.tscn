@@ -1,9 +1,24 @@
 [gd_scene format=3 uid="uid://dudgtjljsy10w"]
 
 [ext_resource type="Script" uid="uid://bqv8yh3131mxf" path="res://scripts/main_menu.gd" id="1_1g8jr"]
-[ext_resource type="FontFile" uid="uid://bekfx0qjolqss" path="res://assets/fonts/ithaca-font/Ithaca-LVB75.ttf" id="1_sl1te"]
 [ext_resource type="PackedScene" uid="uid://bvfh111qyafjd" path="res://scenes/ui/button.tscn" id="2_fe2o3"]
 [ext_resource type="AudioStream" uid="uid://umvw70uhb2t0" path="res://assets/audio/music/menu_music1.wav" id="2_m1kxf"]
+[ext_resource type="Shader" uid="uid://bepfcfgtkqyxd" path="res://shaders/main_menu_bg.gdshader" id="3_uhagc"]
+[ext_resource type="Texture2D" uid="uid://boiamdqybgoux" path="res://assets/sprites/tile.png" id="4_btxxm"]
+[ext_resource type="Texture2D" uid="uid://2rr4ee3ejkv2" path="res://assets/sprites/medusa_big.png" id="5_x2yvf"]
+[ext_resource type="FontFile" uid="uid://bl8oky6h6pcow" path="res://assets/fonts/star-crush.regular.ttf" id="6_btxxm"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_btxxm"]
+shader = ExtResource("3_uhagc")
+shader_parameter/tile = ExtResource("4_btxxm")
+shader_parameter/tiles = Vector2(27.745, 32.835)
+
+[sub_resource type="LabelSettings" id="LabelSettings_x2yvf"]
+font = ExtResource("6_btxxm")
+font_size = 128
+font_color = Color(0.8901961, 0.7058824, 0.28235295, 1)
+outline_size = 24
+outline_color = Color(0, 0, 0, 1)
 
 [node name="MainMenu" type="Control" unique_id=2079963728]
 layout_mode = 3
@@ -14,6 +29,15 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_1g8jr")
 menu_music = ExtResource("2_m1kxf")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=970661853]
+material = SubResource("ShaderMaterial_btxxm")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 
 [node name="MarginContainer" type="MarginContainer" parent="." unique_id=345482774]
 layout_mode = 1
@@ -29,14 +53,8 @@ theme_override_constants/margin_bottom = 40
 
 [node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer" unique_id=1566054574]
 layout_mode = 2
+size_flags_vertical = 8
 alignment = 1
-
-[node name="Title" type="Label" parent="MarginContainer/VBoxContainer" unique_id=596376252]
-layout_mode = 2
-theme_override_fonts/font = ExtResource("1_sl1te")
-theme_override_font_sizes/font_size = 64
-text = "Perseus"
-horizontal_alignment = 1
 
 [node name="StartButton" parent="MarginContainer/VBoxContainer" unique_id=1402378235 instance=ExtResource("2_fe2o3")]
 layout_mode = 2
@@ -45,6 +63,25 @@ label_text = "Start Game"
 [node name="QuitButton" parent="MarginContainer/VBoxContainer" unique_id=1399669 instance=ExtResource("2_fe2o3")]
 layout_mode = 2
 label_text = "Quit Game"
+
+[node name="Title" type="Label" parent="." unique_id=596376252]
+layout_mode = 0
+offset_left = -12.0
+offset_top = 67.0
+offset_right = 570.0
+offset_bottom = 210.0
+theme_override_font_sizes/font_size = 96
+text = "Perseus"
+label_settings = SubResource("LabelSettings_x2yvf")
+horizontal_alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1800067904]
+layout_mode = 0
+offset_left = 594.0
+offset_top = -93.0
+offset_right = 1028.0
+offset_bottom = 558.0
+texture = ExtResource("5_x2yvf")
 
 [connection signal="interacted" from="MarginContainer/VBoxContainer/StartButton" to="." method="start_game"]
 [connection signal="interacted" from="MarginContainer/VBoxContainer/QuitButton" to="." method="quit_game"]

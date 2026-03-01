@@ -107,7 +107,6 @@ height = 61.61
 [node name="Snake" unique_id=668174716 instance=ExtResource("1_lcdrh")]
 script = ExtResource("2_0y5n7")
 damage = 5
-attack_cooldown = 1.0
 player_attack_grace = 0.2
 player_hit_sound = null
 

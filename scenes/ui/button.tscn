@@ -37,7 +37,7 @@ material = SubResource("ShaderMaterial_x2yvf")
 
 [node name="NinePatchRect" type="NinePatchRect" parent="CanvasGroup" unique_id=1058684425]
 custom_minimum_size = Vector2(160, 96)
-offset_right = 1052.0
+offset_right = 500.0
 offset_bottom = 96.0
 size_flags_horizontal = 4
 texture = ExtResource("3_cxawc")
