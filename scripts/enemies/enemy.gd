@@ -1,4 +1,4 @@
-extends RigidBody2D
+extends CharacterBody2D
 class_name Enemy
 
 var collision_shape_2d: CollisionShape2D;
@@ -49,7 +49,7 @@ func _ready() -> void:
 func petrify() -> void:
 	if state == ENEMY_STATE.PETRIFIED:
 		return
-	linear_velocity = Vector2.ZERO;
+	velocity = Vector2.ZERO;
 	state = ENEMY_STATE.PETRIFIED;
 	animated_sprite_2d.stop()
 	var tween = create_tween()
@@ -63,7 +63,7 @@ func spotted_player() -> void:
 func sleep() -> void:
 	state = ENEMY_STATE.SLEEPING;
 	_been_sleeping_for = 0;
-	linear_velocity = Vector2.ZERO;
+	velocity = Vector2.ZERO;
 	hitbox_area_2d.monitoring = false;
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -82,7 +82,7 @@ func _physics_process(delta: float) -> void:
 	
 	move(delta)
 	attack(delta)
-	flippable.scale.x = -1 if linear_velocity.x < 0 else 1;
+	flippable.scale.x = -1 if velocity.x < 0 else 1;
 	
 	if state == ENEMY_STATE.IDLE and _been_idle_for > idle_until_sleep:
 		sleep();
@@ -116,7 +116,8 @@ func move(delta: float) -> void:
 	match state:
 		ENEMY_STATE.CHASING:
 			var direction = global_position.direction_to(player.global_position)
-			linear_velocity = direction * speed
+			velocity = direction * speed
+			move_and_slide()
 
 func attack(delta : float) -> void:
 	if _player_in_range and _time_since_player_in_range <= player_attack_grace and player.state != Player.PLAYER_STATE.DASHING:
