@@ -2,7 +2,7 @@ extends Enemy
 class_name Mintoaur
 
 var _is_charging: bool = false;
-const ACCELERATION_MAGNITUDE: float = 500;
+const ACCELERATION_MAGNITUDE: float = 300;
 
 var last_velocity: Vector2;
 
@@ -27,7 +27,7 @@ func _physics_process(delta: float) -> void:
 		ENEMY_STATE.PETRIFIED:
 			return;
 	
-	if velocity.distance_to(last_velocity) > 250:
+	if velocity.distance_to(last_velocity) > 300:
 		barrel_check();
 		sleep();
 	

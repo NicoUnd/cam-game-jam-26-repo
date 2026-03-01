@@ -156,7 +156,7 @@ radius = 18.000002
 height = 56.0
 
 [node name="Rat" unique_id=668174716 instance=ExtResource("1_qn0ow")]
-speed = 160.0
+speed = 130.0
 damage = 1
 chase_for = 0.0
 default_state = 1

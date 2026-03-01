@@ -21,3 +21,6 @@ position = Vector2(-1, 10)
 rotation = 1.5707964
 shape = SubResource("CapsuleShape2D_6t1j0")
 debug_color = Color(0, 0.5882353, 0.7647059, 0.96862745)
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]

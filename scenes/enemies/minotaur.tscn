@@ -157,9 +157,8 @@ radius = 20.0
 height = 62.000008
 
 [node name="Minotaur" unique_id=668174716 instance=ExtResource("1_wiekd")]
-linear_damp = 1.0
 script = ExtResource("2_gj0oe")
-speed = 400.0
+speed = 300.0
 sight_distance = 500.0
 chase_for = 2.0
 idle_until_sleep = 0.0

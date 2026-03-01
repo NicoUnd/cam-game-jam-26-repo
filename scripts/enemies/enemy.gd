@@ -37,6 +37,8 @@ var _been_sleeping_for: float = INF;
 
 @onready var hitbox_area_2d: Area2D = $Flippable/HitboxArea2D
 
+@onready var timer: Timer = $Sleeping/Timer
+
 enum ENEMY_STATE {IDLE, SLEEPING, CHASING, PETRIFIED};
 var state: ENEMY_STATE = ENEMY_STATE.SLEEPING;
 
@@ -65,6 +67,7 @@ func sleep() -> void:
 	_been_sleeping_for = 0;
 	velocity = Vector2.ZERO;
 	hitbox_area_2d.monitoring = false;
+	timer.start(0.1);
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta: float) -> void:

@@ -165,8 +165,8 @@ height = 50.000008
 [node name="bat" unique_id=668174716 instance=ExtResource("1_rt4uy")]
 collision_layer = 4
 collision_mask = 20
-linear_damp = 0.2
 script = ExtResource("2_5m14n")
+speed = 80.0
 damage = 1
 sight_distance = 250.0
 chase_for = 0.5
