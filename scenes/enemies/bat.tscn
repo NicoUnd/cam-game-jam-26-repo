@@ -170,8 +170,7 @@ script = ExtResource("2_5m14n")
 speed = 80.0
 damage = 1
 aggro_sound = ExtResource("3_i6os3")
-sight_distance = 250.0
-chase_for = 0.5
+chase_for = 1.0
 idle_until_sleep = 9999.0
 
 [node name="CollisionShape2D" parent="." index="0" unique_id=580851608]
@@ -193,7 +192,7 @@ debug_color = Color(0.9992154, 0, 0.13348177, 0.41960785)
 position = Vector2(0, -66)
 
 [node name="Timer" type="Timer" parent="." index="4" unique_id=1415654928]
-wait_time = 2.0
+wait_time = 1.5
 autostart = true
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

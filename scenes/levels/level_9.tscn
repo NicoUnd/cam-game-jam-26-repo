@@ -1,0 +1,109 @@
+[gd_scene format=3 uid="uid://jfjcgxcj2n78"]
+
+[ext_resource type="PackedScene" uid="uid://bidivnh002n86" path="res://scenes/levels/cave_level.tscn" id="1_t7yg2"]
+[ext_resource type="PackedScene" uid="uid://dyd4vj2mlckcx" path="res://scenes/muddy_puddle.tscn" id="2_6v45j"]
+[ext_resource type="PackedScene" uid="uid://1r34p0avoibv" path="res://scenes/obstacles/h_wall.tscn" id="2_xlc0a"]
+[ext_resource type="PackedScene" uid="uid://h0ie0t1ggrai" path="res://scenes/obstacles/h_wall_right.tscn" id="3_62qgl"]
+[ext_resource type="PackedScene" uid="uid://omp66yyj208e" path="res://scenes/torch.tscn" id="3_kj523"]
+[ext_resource type="PackedScene" uid="uid://d3tmox7ixgkd0" path="res://scenes/enemies/minotaur.tscn" id="4_csf6e"]
+[ext_resource type="PackedScene" uid="uid://cfy8f18vpt5oi" path="res://scenes/obstacles/v_wall_top.tscn" id="5_sd2du"]
+[ext_resource type="PackedScene" uid="uid://ccl0jq7i4c6ju" path="res://scenes/enemies/bat.tscn" id="6_6v45j"]
+[ext_resource type="PackedScene" uid="uid://brp71dtg7r8e1" path="res://scenes/obstacles/pillar.tscn" id="7_ltlq2"]
+[ext_resource type="PackedScene" uid="uid://c8oau2rn4hi80" path="res://scenes/enemies/snake.tscn" id="8_6nuwh"]
+[ext_resource type="PackedScene" uid="uid://btkthn08if67o" path="res://scenes/torch_side.tscn" id="11_xampj"]
+
+[node name="Level9" unique_id=951364413 instance=ExtResource("1_t7yg2")]
+
+[node name="MuddyPuddle" parent="." index="7" unique_id=206173280 instance=ExtResource("2_6v45j")]
+position = Vector2(-131, 226)
+
+[node name="MuddyPuddle2" parent="." index="8" unique_id=1817096235 instance=ExtResource("2_6v45j")]
+position = Vector2(90, 190)
+
+[node name="MuddyPuddle3" parent="." index="9" unique_id=1122074118 instance=ExtResource("2_6v45j")]
+position = Vector2(-226, 197)
+
+[node name="Player" parent="Y-Sort" parent_id_path=PackedInt32Array(1050274422) index="0" unique_id=820894451]
+position = Vector2(-333, 260)
+
+[node name="Torch" parent="Y-Sort" parent_id_path=PackedInt32Array(1050274422) index="1" unique_id=1588614372 instance=ExtResource("3_kj523")]
+position = Vector2(204, -248)
+
+[node name="HWall" parent="Y-Sort" parent_id_path=PackedInt32Array(1050274422) index="2" unique_id=12530250 instance=ExtResource("2_xlc0a")]
+position = Vector2(-455, 47)
+
+[node name="HWall2" parent="Y-Sort" parent_id_path=PackedInt32Array(1050274422) index="3" unique_id=1496585317 instance=ExtResource("2_xlc0a")]
+position = Vector2(-359, 47)
+
+[node name="HWall3" parent="Y-Sort" parent_id_path=PackedInt32Array(1050274422) index="4" unique_id=795276548 instance=ExtResource("2_xlc0a")]
+position = Vector2(-263, 47)
+
+[node name="HWall4" parent="Y-Sort" parent_id_path=PackedInt32Array(1050274422) index="5" unique_id=1923047644 instance=ExtResource("2_xlc0a")]
+position = Vector2(-167, 47)
+
+[node name="HWall5" parent="Y-Sort" parent_id_path=PackedInt32Array(1050274422) index="6" unique_id=952123759 instance=ExtResource("2_xlc0a")]
+position = Vector2(-71, 47)
+
+[node name="HWall6" parent="Y-Sort" parent_id_path=PackedInt32Array(1050274422) index="7" unique_id=1798752094 instance=ExtResource("2_xlc0a")]
+position = Vector2(25, 47)
+
+[node name="HWall7" parent="Y-Sort" parent_id_path=PackedInt32Array(1050274422) index="8" unique_id=118574003 instance=ExtResource("2_xlc0a")]
+position = Vector2(121, 47)
+
+[node name="HWall8" parent="Y-Sort" parent_id_path=PackedInt32Array(1050274422) index="9" unique_id=611382985 instance=ExtResource("2_xlc0a")]
+position = Vector2(217, 47)
+
+[node name="HWallRight" parent="Y-Sort" parent_id_path=PackedInt32Array(1050274422) index="10" unique_id=331342742 instance=ExtResource("3_62qgl")]
+position = Vector2(313, 47)
+
+[node name="VWallTop" parent="Y-Sort" parent_id_path=PackedInt32Array(1050274422) index="11" unique_id=2120456971 instance=ExtResource("5_sd2du")]
+position = Vector2(-375, 244)
+
+[node name="VWallTop2" parent="Y-Sort" parent_id_path=PackedInt32Array(1050274422) index="12" unique_id=1495635261 instance=ExtResource("5_sd2du")]
+position = Vector2(-261, 244)
+
+[node name="bat" parent="Y-Sort" parent_id_path=PackedInt32Array(1050274422) index="13" unique_id=668174716 instance=ExtResource("6_6v45j")]
+position = Vector2(-451, 209)
+
+[node name="Pillar" parent="Y-Sort" parent_id_path=PackedInt32Array(1050274422) index="14" unique_id=1139815211 instance=ExtResource("7_ltlq2")]
+position = Vector2(-144, 125)
+
+[node name="Pillar2" parent="Y-Sort" parent_id_path=PackedInt32Array(1050274422) index="15" unique_id=1443207651 instance=ExtResource("7_ltlq2")]
+position = Vector2(63, 245)
+
+[node name="Pillar3" parent="Y-Sort" parent_id_path=PackedInt32Array(1050274422) index="16" unique_id=1242751176 instance=ExtResource("7_ltlq2")]
+position = Vector2(340, 185)
+
+[node name="Snake" parent="Y-Sort" parent_id_path=PackedInt32Array(1050274422) index="17" unique_id=519236286 instance=ExtResource("8_6nuwh")]
+position = Vector2(-182, 238)
+
+[node name="Snake2" parent="Y-Sort" parent_id_path=PackedInt32Array(1050274422) index="18" unique_id=2042704656 instance=ExtResource("8_6nuwh")]
+position = Vector2(186, 170)
+
+[node name="Minotaur" parent="Y-Sort" parent_id_path=PackedInt32Array(1050274422) index="19" unique_id=1872091152 instance=ExtResource("4_csf6e")]
+position = Vector2(-340, -105)
+
+[node name="Torch2" parent="Y-Sort" parent_id_path=PackedInt32Array(1050274422) index="20" unique_id=1448760144 instance=ExtResource("3_kj523")]
+position = Vector2(-228, -246.00002)
+
+[node name="Torch3" parent="Y-Sort" parent_id_path=PackedInt32Array(1050274422) index="21" unique_id=1437402371 instance=ExtResource("3_kj523")]
+position = Vector2(-358, 93)
+
+[node name="Torch4" parent="Y-Sort" parent_id_path=PackedInt32Array(1050274422) index="22" unique_id=1767002349 instance=ExtResource("3_kj523")]
+position = Vector2(51, 87)
+
+[node name="Torch5" parent="Y-Sort" parent_id_path=PackedInt32Array(1050274422) index="23" unique_id=1650346419 instance=ExtResource("3_kj523")]
+position = Vector2(-105, 295)
+
+[node name="Torch6" parent="Y-Sort" parent_id_path=PackedInt32Array(1050274422) index="24" unique_id=191945546 instance=ExtResource("3_kj523")]
+position = Vector2(395, 288)
+
+[node name="TorchSide" parent="Y-Sort" parent_id_path=PackedInt32Array(1050274422) index="25" unique_id=530198874 instance=ExtResource("11_xampj")]
+position = Vector2(491, -32)
+
+[node name="Torch7" parent="Y-Sort" parent_id_path=PackedInt32Array(1050274422) index="26" unique_id=1397590856 instance=ExtResource("3_kj523")]
+position = Vector2(-60, 1)
+
+[node name="TorchSide2" parent="Y-Sort" parent_id_path=PackedInt32Array(1050274422) index="27" unique_id=1660555732 instance=ExtResource("11_xampj")]
+position = Vector2(-488.00003, -77)
+scale = Vector2(-3, 3)
