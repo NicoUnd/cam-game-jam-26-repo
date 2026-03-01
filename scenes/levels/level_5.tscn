@@ -3,6 +3,9 @@
 [ext_resource type="PackedScene" uid="uid://bidivnh002n86" path="res://scenes/levels/cave_level.tscn" id="1_r1vs7"]
 [ext_resource type="PackedScene" uid="uid://1r34p0avoibv" path="res://scenes/obstacles/h_wall.tscn" id="2_845dy"]
 [ext_resource type="PackedScene" uid="uid://h0ie0t1ggrai" path="res://scenes/obstacles/h_wall_right.tscn" id="3_dswqx"]
+[ext_resource type="PackedScene" uid="uid://wab4gk5t5glw" path="res://scenes/obstacles/barrel.tscn" id="4_laj7o"]
+[ext_resource type="PackedScene" uid="uid://cfy8f18vpt5oi" path="res://scenes/obstacles/v_wall_top.tscn" id="5_fi56y"]
+[ext_resource type="PackedScene" uid="uid://dcvo6ylw4wftk" path="res://scenes/enemies/rat.tscn" id="6_hldbq"]
 
 [node name="Level5" unique_id=951364413 instance=ExtResource("1_r1vs7")]
 
@@ -27,3 +30,15 @@ position = Vector2(-165, 34)
 
 [node name="HWallRight" parent="Y-Sort" parent_id_path=PackedInt32Array(1050274422) index="5" unique_id=551698426 instance=ExtResource("3_dswqx")]
 position = Vector2(-69, 34)
+
+[node name="Barrel" parent="Y-Sort" parent_id_path=PackedInt32Array(1050274422) index="6" unique_id=1043327210 instance=ExtResource("4_laj7o")]
+position = Vector2(-57, 132)
+
+[node name="Barrel2" parent="Y-Sort" parent_id_path=PackedInt32Array(1050274422) index="7" unique_id=1372942387 instance=ExtResource("4_laj7o")]
+position = Vector2(-53, 200)
+
+[node name="VWallTop" parent="Y-Sort" parent_id_path=PackedInt32Array(1050274422) index="8" unique_id=175270831 instance=ExtResource("5_fi56y")]
+position = Vector2(-50, 247)
+
+[node name="Rat" parent="Y-Sort" parent_id_path=PackedInt32Array(1050274422) index="9" unique_id=668174716 instance=ExtResource("6_hldbq")]
+position = Vector2(34, 186)
