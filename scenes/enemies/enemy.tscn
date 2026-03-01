@@ -1,9 +1,10 @@
 [gd_scene format=3 uid="uid://28fxek2ibb54"]
 
 [ext_resource type="Script" uid="uid://d114r30gu8vjt" path="res://scripts/enemies/enemy.gd" id="1_6xk8f"]
-[ext_resource type="PackedScene" uid="uid://ctidcyu548w45" path="res://scenes/spotted.tscn" id="2_8e3ao"]
+[ext_resource type="PackedScene" path="res://scenes/spotted.tscn" id="2_8e3ao"]
+[ext_resource type="AudioStream" uid="uid://xs1e0lempo1j" path="res://assets/audio/sound_effects/hit.wav" id="2_lu5c6"]
 [ext_resource type="Texture2D" uid="uid://bd8ohp53gau56" path="res://assets/sprites/zzz_sheet.png" id="3_38ino"]
-[ext_resource type="Script" uid="uid://chdu5882b75lt" path="res://scripts/sleeping.gd" id="4_fcftc"]
+[ext_resource type="Script" path="res://scripts/sleeping.gd" id="4_fcftc"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_fcftc"]
 atlas = ExtResource("3_38ino")
@@ -88,6 +89,7 @@ script = ExtResource("1_6xk8f")
 damage = 50
 attack_cooldown = 0.0
 player_attack_grace = 0.1
+player_hit_sound = ExtResource("2_lu5c6")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=580851608]
 

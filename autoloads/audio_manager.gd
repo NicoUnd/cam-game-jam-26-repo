@@ -8,14 +8,21 @@ extends Node
 func _ready() -> void:
 	if not _music_player:
 		_music_player = AudioStreamPlayer.new()
-		_music_player.bus = &"Music" # Route to a specific Audio Bus
+		_music_player.bus = &"Music" 
 		add_child(_music_player)
 	default_volume = _music_player.volume_linear
+	
 	if not _sfx_poly_player:
 		_sfx_poly_player = AudioStreamPlayer.new()
 		_sfx_poly_player.bus = &"SFX"
-		_sfx_poly_player.max_polyphony = 32 
+		
+		var poly_stream = AudioStreamPolyphonic.new()
+		poly_stream.polyphony = 32 
+		_sfx_poly_player.stream = poly_stream
+		
 		add_child(_sfx_poly_player)
+		_sfx_poly_player.play()
+	
 
 func play_music(stream: AudioStream) -> void:
 	if _music_player.stream == stream and _music_player.playing:
@@ -27,10 +34,14 @@ func stop_music() -> void:
 	if _music_player.playing:
 		_music_player.stop()
 
+func start_music() -> void:
+	_music_player.play()
+
 func play_sfx(stream: AudioStream) -> void:
 	if stream:
-		_sfx_poly_player.stream = stream
-		_sfx_poly_player.play()
+		var playback = _sfx_poly_player.get_stream_playback() as AudioStreamPlaybackPolyphonic
+		if playback:
+			playback.play_stream(stream)
 		
 func music_volume(volume : float) -> void:
 	_music_player.volume_linear = default_volume * volume / 100
