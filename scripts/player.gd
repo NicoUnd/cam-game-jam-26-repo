@@ -15,6 +15,7 @@ class_name Player
 var _footstep_cooldown : float = 0.4-randf()/5
 var _time_since_footstep : float = 0
 @export var death_sound : AudioStream
+@export var dash_sound : AudioStream
 
 @onready var hurtbox_area_2d: Area2D = $HurtboxArea2D
 
@@ -68,6 +69,7 @@ func _physics_process(delta):
 	if _time_since_last_dash > dash_cooldown and Input.is_action_just_pressed("Dash"):
 		#_dash_start = position
 		state = PLAYER_STATE.DASHING;
+		AudioManager.play_sfx(dash_sound)
 	
 	set_collision_mask_value(2, state != PLAYER_STATE.DASHING); # don't collide with enemies when dashing
 	hurtbox_area_2d.monitorable = state != PLAYER_STATE.DASHING;
