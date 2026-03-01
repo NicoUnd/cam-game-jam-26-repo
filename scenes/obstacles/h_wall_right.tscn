@@ -13,6 +13,9 @@ height = 90.0
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_homsj"]
 polygon = PackedVector2Array(-46, -15, 30, -18, 33, 84, -45, 84)
 
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_s8j55"]
+polygon = PackedVector2Array(-47, -17, 31, -16, 34, -5, -47, -5)
+
 [node name="HWallRight" unique_id=12530250 instance=ExtResource("1_homsj")]
 
 [node name="Sprite2D" parent="." index="0" unique_id=772725384]
@@ -28,3 +31,8 @@ shape = SubResource("CapsuleShape2D_homsj")
 
 [node name="LightOccluder2D" parent="." index="3" unique_id=649625072]
 occluder = SubResource("OccluderPolygon2D_homsj")
+occluder_light_mask = 0
+
+[node name="LightOccluder2D2" type="LightOccluder2D" parent="." index="4" unique_id=565215214]
+position = Vector2(0, -10)
+occluder = SubResource("OccluderPolygon2D_s8j55")

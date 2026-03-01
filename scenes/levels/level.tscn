@@ -43,6 +43,7 @@ polygon = PackedVector2Array(-78, -346, 2, -345, -2, 327, -117, 337)
 [node name="Level" type="Node2D" unique_id=951364413]
 
 [node name="TextBoxManager" parent="." unique_id=2063301136 instance=ExtResource("3_b2cq8")]
+visible = false
 offset_left = -573.0
 offset_top = -323.0
 offset_right = 577.0
