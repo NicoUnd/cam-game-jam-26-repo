@@ -4,15 +4,15 @@ class_name Mintoaur
 var _is_charging: bool = false;
 const ACCELERATION_MAGNITUDE: float = 500;
 
-var last_linear_velocity: Vector2;
+var last_velocity: Vector2;
 
 # Called when the node enters the scene tree for the first time.
 func move(delta: float) -> void:
 	match state:
 		ENEMY_STATE.CHASING:
 			var direction = global_position.direction_to(player.global_position)
-			linear_velocity += direction * ACCELERATION_MAGNITUDE * delta
-			print("MINOTAUR LINEAR VELOCITY: " + str(linear_velocity))
+			velocity += direction * ACCELERATION_MAGNITUDE * delta
+			move_and_slide()
 
 func barrel_check() -> void:
 	var barrels: Array[Node] = get_tree().get_nodes_in_group("Barrels")
@@ -27,13 +27,8 @@ func _physics_process(delta: float) -> void:
 		ENEMY_STATE.PETRIFIED:
 			return;
 	
-	if linear_velocity.distance_to(last_linear_velocity) > 250:
+	if velocity.distance_to(last_velocity) > 250:
 		barrel_check();
 		sleep();
 	
-	last_linear_velocity = linear_velocity;
-
-func _ready() -> void:
-	contact_monitor = true;
-	max_contacts_reported = 1;
-	super._ready();
+	last_velocity = velocity;
