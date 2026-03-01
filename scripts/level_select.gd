@@ -11,10 +11,13 @@ func _ready():
 	var unlocked_level = min(buttons.size() - 1, LevelManager.max_level_index + 1)
 	for i in range(unlocked_level):
 		var button = buttons[i]
-		print(button.name)
 		if button is PetrifiableButton:
-			button.unlock()
 			button.interacted.connect(start_level.bind(i + 1))
+			
+	for i in range(unlocked_level, buttons.size()):
+		var button = buttons[i]
+		if button is PetrifiableButton:
+			button.lock()
 		
 
 func start_level(level : int) -> void:
